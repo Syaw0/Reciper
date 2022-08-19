@@ -1,6 +1,6 @@
 import { globalCss } from './@stitches.config';
 
-export default globalCss({
+const gCss = globalCss({
   '*': {
     padding: '0',
     margin: '0',
@@ -18,3 +18,5 @@ export default globalCss({
   },
 
 });
+
+export default gCss;

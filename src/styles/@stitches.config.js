@@ -134,6 +134,8 @@ export const {
       11: '88px',
       12: '96px',
       13: '102px',
+      14: '110px',
+      15: '120px',
     },
     transitions: {
       coAndBg: 'color 0.5s , background-color 0.5s , fill 0.5s',
