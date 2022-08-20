@@ -11,7 +11,6 @@ import App from '../app';
 jest.mock('../store/utils/querySearch.js');
 jest.useFakeTimers();
 
-
 afterEach(() => {
   cleanup();
 });
@@ -69,6 +68,31 @@ describe('Header section', () => {
       const navBtnToHome = screen.getByTestId('headerNavHome');
       fireEvent.click(navBtnToHome);
       expect(screen.getByTestId('homePage')).toBeInTheDocument();
+    });
+  });
+  describe('navbar section', () => {
+    it('click on the ham menu and open the navbar', () => {
+      render(<App />);
+      fireEvent.click(screen.getByTestId('headerMenuHam'));
+      expect(screen.getByTestId('headerNavbar')).toBeInTheDocument();
+    });
+
+    it('click on the close when nav is open and nav will closed', async () => {
+      render(<App />);
+      fireEvent.click(screen.getByTestId('headerMenuHam'));
+      const navbar = screen.getByTestId('headerNavbar');
+      fireEvent.click(screen.getByTestId('headerNavbarCloseSvg'));
+      jest.runAllTimers();
+      await waitFor(() => expect(navbar).not.toBeInTheDocument());
+    });
+    it('when click on the navbar item navbar closed', async () => {
+      render(<App />);
+      fireEvent.click(screen.getByTestId('headerMenuHam'));
+      const navbar = screen.getByTestId('headerNavbar');
+      const navBtnToOrderList = screen.getAllByTestId('headerNavOrderList');
+      fireEvent.click(navBtnToOrderList[1]);
+      jest.runAllTimers();
+      await waitFor(() => expect(navbar).not.toBeInTheDocument());
     });
   });
 });

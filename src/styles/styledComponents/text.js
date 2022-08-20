@@ -10,6 +10,15 @@ const Text = styled('p', {
         cursor: 'pointer',
       },
     },
+    type: {
+      logo: {
+        headline1: '500',
+        fontFamily: '$yeseva',
+        width: '20%',
+        textAlign: 'center',
+        color: '$onBg',
+      },
+    },
   },
 });
 

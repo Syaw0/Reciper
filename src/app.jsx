@@ -15,7 +15,14 @@ function App() {
     <Flex
       dir="column"
       css={{
+        position: 'relative',
         padding: '0 $15',
+        '@bp1': {
+          padding: '0 $8',
+        },
+        '@bp2': {
+          padding: '0 $4',
+        },
 
       }}
     >
@@ -24,6 +31,7 @@ function App() {
         {currentPage === 'Home' && <Home />}
         {currentPage === 'Add Recipe' && <Add />}
         {currentPage === 'Category' && <OrderList />}
+        {currentPage === 'Searching' && <OrderList />}
       </Flex>
     </Flex>
   );

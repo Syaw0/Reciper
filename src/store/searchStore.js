@@ -5,7 +5,8 @@ const searchStore = (set, get) => ({
   getDataFromServer: (query) => {
     // first set page to order list with loader and when data resolved change them
     // await for that to resolve
-    set((state) => ({ ...state, currentPage: 'Category' }));
+    get().setCurrentPage('Searching');
+    // set((state) => ({ ...state, currentPage: 'Category' }));
     getSearchDataFromServer(query);
   },
 
