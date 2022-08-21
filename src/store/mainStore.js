@@ -15,7 +15,6 @@ export default create((set, get) => ({
       set((state) => ({ ...state, currentPage: pageName, breadCrumbs: newBreads }));
     } else {
       // change happen outside of breadCrumbs
-      console.log(pageName);
       const newbread = handleBreadsOutside(pageName);
       set((state) => ({ ...state, currentPage: pageName, breadCrumbs: newbread }));
     }

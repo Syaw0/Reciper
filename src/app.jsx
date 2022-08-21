@@ -7,13 +7,17 @@ import mainStore from './store/mainStore';
 import Home from './pages/home';
 import Add from './pages/add';
 import OrderList from './pages/orderList';
+import Footer from './components/footer/footer';
 
 function App() {
   const currentPage = mainStore((state) => state.currentPage);
   gCss();
   return (
     <Flex
+      id="wrapper"
       dir="column"
+      justify="between"
+      align="center"
       css={{
         position: 'relative',
         padding: '0 $15',
@@ -33,6 +37,7 @@ function App() {
         {currentPage === 'Category' && <OrderList />}
         {currentPage === 'Searching' && <OrderList />}
       </Flex>
+      <Footer />
     </Flex>
   );
 }

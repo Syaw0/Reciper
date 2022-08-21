@@ -20,6 +20,9 @@ const gCss = globalCss({
   '#root': {
     backgroundColor: '$bg',
   },
+  '#wrapper': {
+    minHeight: '100vh',
+  },
 
 });
 
