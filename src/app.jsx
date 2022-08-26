@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Add from './pages/add';
 import OrderList from './pages/orderList';
 import Footer from './components/footer/footer';
+import Recipe from './pages/recipe';
 
 function App() {
   const currentPage = mainStore((state) => state.currentPage);
@@ -27,15 +28,24 @@ function App() {
         '@bp2': {
           padding: '0 $4',
         },
-
+        '@bp4': {
+          padding: '0 $2',
+        },
       }}
     >
       <Head />
-      <Flex>
+      <Flex align="start" justify="center">
         {currentPage === 'Home' && <Home />}
         {currentPage === 'Add Recipe' && <Add />}
         {currentPage === 'Category' && <OrderList />}
         {currentPage === 'Searching' && <OrderList />}
+        {currentPage === 'Recipe' && <Recipe />}
+        {currentPage === 'Trends Recipes' && <OrderList />}
+        {currentPage === 'New Recipes' && <OrderList />}
+        {currentPage === 'User Suggestion' && <OrderList />}
+        {currentPage === 'Top Categories' && <OrderList />}
+        {currentPage === 'recipeCategory' && <OrderList />}
+
       </Flex>
       <Footer />
     </Flex>

@@ -37,6 +37,7 @@ function Navbar({
         width: '100%',
         left: '0',
         top: '0',
+        zIndex: '1000',
         animation: `${fadeInToBottom} 1s both ease`,
       }}
     >

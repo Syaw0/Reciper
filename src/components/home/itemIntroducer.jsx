@@ -7,9 +7,9 @@ import IcoArrowRight from '../../assest/icons/IcoArrowRight';
 import mainStore from '../../store/mainStore';
 
 function ItemIntroducer({ title, items }) {
-  ItemIntroducer.PropType = {
+  ItemIntroducer.propTypes = {
     title: PropType.string.isRequired,
-    items: PropType.array.isRequired,
+    items: PropType.arrayOf.isRequired,
   };
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
   const handleSeeMoreButton = (whichSeeMore) => {
@@ -17,42 +17,80 @@ function ItemIntroducer({ title, items }) {
   };
   return (
     <Flex
-      as="fieldset"
+      dir="column"
       css={{
         border: 'none',
-        borderTop: '1px solid $onBg200',
+        margin: '$4 0',
         position: 'relative',
-        '& legend': {
-          paddingRight: '$3',
-          headline3: '500',
-          fontFamily: '$yeseva',
-          color: '$onBg',
-        },
+        // overflow: 'hidden',
         '&>div': {
           padding: '$4 0',
         },
       }}
     >
-      <legend>{title}</legend>
+      <Flex
+        as="fieldset"
+        css={{
+          border: 'none',
+          borderTop: '1px solid $onBg200',
+          position: 'relative',
+          '& legend': {
+            paddingRight: '$3',
+            headline3: '500',
+            fontFamily: '$yeseva',
+            color: '$onBg',
+
+          },
+          '@bp3': {
+            '& legend': {
+              headline3: '500',
+              fontFamily: '$yeseva',
+            },
+          },
+          '@bp4': {
+            '& legend': {
+              headline5: '500',
+              fontFamily: '$yeseva',
+              paddingRight: '$2',
+            },
+          },
+        }}
+      >
+
+        <legend>{title}</legend>
+      </Flex>
       <Flex
         justify="between"
         css={{
           height: '100%',
           width: '100%',
-          display: 'inline-flex',
+          overflow: 'auto',
           '&>div': {
-            // marginRight: '20px',
           },
         }}
       >
-        {items}
+        <Flex css={{
+          display: 'inline-flex',
+          width: 'fit-content',
+          '&>div': {
+            margin: '0 16px',
+            '@bp3': {
+              margin: '0 8px',
+            },
+          },
+        }}
+        >
+          {items}
+        </Flex>
+
       </Flex>
       <Text
+        data-testid="itemIntroducerSeeMoreBtn"
         onClick={() => { handleSeeMoreButton(title); }}
         css={{
           position: 'absolute',
           right: '0',
-          top: '-28px',
+          top: '8px',
           backgroundColor: '$bg',
           paddingLeft: '$3',
           color: '$onBg500',
@@ -67,6 +105,9 @@ function ItemIntroducer({ title, items }) {
           '& svg': {
             fill: '$onBg500',
             marginLeft: '$1',
+          },
+          '@bp4': {
+            subhead3: '400',
           },
         }}
       >

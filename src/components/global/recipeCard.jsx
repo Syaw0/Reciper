@@ -1,10 +1,35 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import PropType from 'prop-types';
 import Flex from '../../styles/styledComponents/flex';
 import Text from '../../styles/styledComponents/text';
+import mainStore from '../../store/mainStore';
+import handleOrderListPage from '../../pages/utils/handleOrderListPage';
+import handleBreadsOutside from '../../store/utils/handleBreadsOutside';
 
-function RecipeCard() {
+function RecipeCard({ cardType }) {
+  RecipeCard.propTypes = {
+    cardType: PropType.string.isRequired,
+  };
+  const id = 'meat';
+  const setCurrentPage = mainStore((state) => state.setCurrentPage);
+  const setCurrentCategory = mainStore((state) => state.setCurrentCategory);
+  const handleCardClick = () => {
+    if (cardType === 'category') {
+      // handleOrderListPage('fo');
+      setCurrentCategory(id);
+      // handleBreadsOutside("recipeCategory")
+      setCurrentPage('recipeCategory');
+    } else {
+      setCurrentPage('Recipe');
+    }
+  };
+
   return (
     <Flex
+      data-testid={`${cardType}RecipeCard`}
+      onClick={handleCardClick}
       dir="column"
       css={{
         width: '17rem ',
@@ -15,10 +40,21 @@ function RecipeCard() {
         boxShadow: '$1dp',
         position: 'relative',
         transition: 'all 0.1s',
+        '& p': {
+          cursor: 'pointer',
+        },
         '&:hover': {
           boxShadow: '$8dp',
           transform: 'scale(1.01)',
           transition: 'all 0.2s',
+        },
+        '@bp3': {
+          width: '14rem ',
+          height: '19rem',
+        },
+        '@bp4': {
+          width: '12rem ',
+          height: '17rem',
         },
       }}
     >
@@ -42,7 +78,12 @@ function RecipeCard() {
           css={{
             headline4: '600',
             padding: '12px $2 $1 $2',
-
+            '@bp3': {
+              headline5: '600',
+            },
+            '@bp4': {
+              headline6: '600',
+            },
           }}
         >
           piece of cake
@@ -55,16 +96,31 @@ function RecipeCard() {
               subhead1: '400',
               color: '$onBg700',
               marginRight: '$2',
+              '@bp3': {
+                subhead2: '400',
+              },
+              '@bp4': {
+                // subhead3:"400"
+              },
             },
           }}
         >
-          <Text>16 material</Text>
-          <Text>10 step</Text>
+          {cardType !== 'category' && (
+            <>
+              <Text>16 material</Text>
+              <Text>10 step</Text>
+            </>
+          )}
+          {cardType === 'category' && (
+            <Text>23 Salads Type</Text>
+          )}
         </Flex>
 
       </Flex>
 
+      {cardType !== 'category' && (
       <Flex
+        data-testid="recipeDifLevel"
         title="this show the difficulty of cook this food"
         justify="center"
         align="center"
@@ -78,6 +134,10 @@ function RecipeCard() {
           top: '12px',
           subhead1: '600',
           color: '$onBg900',
+          '@bp4': {
+            padding: '2px 6px',
+          },
+
         }}
       >
         Level
@@ -87,9 +147,14 @@ function RecipeCard() {
           height: '18px',
           backgroundColor: '$EasyDif',
           borderRadius: '50%',
+          '@bp4': {
+            width: '12px',
+            height: '12px',
+          },
         }}
         />
       </Flex>
+      )}
 
     </Flex>
   );

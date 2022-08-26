@@ -3,17 +3,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function IcoTwitter({
-  id, width, height, event, dataTest,
+  id, width, height, event,
 }) {
   IcoTwitter.propTypes = {
     id: PropTypes.string.isRequired,
-    dataTest: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
     event: PropTypes.func.isRequired,
   };
   return (
-    <svg data-testid={dataTest} id={id} width={width} height={height} onClick={(e) => { event(e); }} viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg id={id} width={width} height={height} onClick={(e) => { event(e); }} viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M31.2539 3.74967C30.131 4.26009 28.9206 4.59551 27.6664 4.75592C28.9498 3.98301 29.9414 2.75801 30.4081 1.28509C29.1977 2.01426 27.856 2.52467 26.4414 2.81634C25.2894 1.56217 23.6706 0.833008 21.8331 0.833008C18.406 0.833008 15.606 3.63301 15.606 7.08926C15.606 7.58509 15.6644 8.06634 15.7664 8.51842C10.5748 8.25592 5.95186 5.76217 2.87477 1.98509C2.33519 2.90384 2.02894 3.98301 2.02894 5.12051C2.02894 7.29342 3.12269 9.21842 4.81436 10.3122C3.77894 10.3122 2.81644 10.0205 1.97061 9.58301C1.97061 9.58301 1.97061 9.58301 1.97061 9.62676C1.97061 12.6601 4.12894 15.1976 6.98727 15.7663C6.46227 15.9122 5.90811 15.9851 5.33936 15.9851C4.94561 15.9851 4.55186 15.9413 4.17269 15.8684C4.96019 18.333 7.24977 20.1705 10.006 20.2143C7.87686 21.9059 5.17894 22.8976 2.23311 22.8976C1.73727 22.8976 1.24144 22.8684 0.745605 22.8101C3.51644 24.5893 6.81227 25.6247 10.3414 25.6247C21.8331 25.6247 28.1477 16.0872 28.1477 7.81842C28.1477 7.54134 28.1477 7.27884 28.1331 7.00176C29.3581 6.12676 30.4081 5.01842 31.2539 3.74967Z" />
     </svg>
   );

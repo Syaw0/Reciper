@@ -144,10 +144,12 @@ export const {
   },
 
   media: {
+    bp0: '(max-width:1200px)',
     bp1: '(max-width:1000px)',
     bp2: '(max-width:850px)',
     bp3: '(max-width:750px)',
-    bp4: '(max-width:410px)',
+    bp4: '(max-width:540px)',
+    bp5: '(max-width:420px)',
 
   },
 

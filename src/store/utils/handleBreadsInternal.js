@@ -8,8 +8,12 @@ const handleBreadsInternal = (pagename) => {
   // lets create a new breads and put it into setCurrentPage with new page name
   if (currentBreads[currentBreads.length - 1].name !== pagename.target.innerHTML) {
     const newBreads = currentBreads.slice(0, Number(pagename.target.id.split(' ')[1]) + 1);
-    setCurrentPage(newBreads[newBreads.length - 1].name, newBreads);
-  } 
+    if (newBreads[2] !== undefined && newBreads[1].name === 'Category') {
+      setCurrentPage('recipeCategory', newBreads);
+    } else {
+      setCurrentPage(newBreads[newBreads.length - 1].name, newBreads);
+    }
+  }
 };
 
 export default handleBreadsInternal;
