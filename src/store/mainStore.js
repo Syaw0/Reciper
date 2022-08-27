@@ -11,7 +11,7 @@ export default create((set, get) => ({
   ...orderListStore(set, get),
   breadCrumbs: [{ name: 'Home', level: 0 }],
   currentCategory: 'None',
-  currentPage: 'Home',
+  currentPage: 'Recipe',
   setBreadsCrumbs: (newBreads) => {
     set((state) => ({ ...state, breadCrumbs: newBreads }));
   },

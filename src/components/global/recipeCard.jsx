@@ -5,8 +5,6 @@ import PropType from 'prop-types';
 import Flex from '../../styles/styledComponents/flex';
 import Text from '../../styles/styledComponents/text';
 import mainStore from '../../store/mainStore';
-import handleOrderListPage from '../../pages/utils/handleOrderListPage';
-import handleBreadsOutside from '../../store/utils/handleBreadsOutside';
 
 function RecipeCard({ cardType }) {
   RecipeCard.propTypes = {

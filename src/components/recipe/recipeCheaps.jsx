@@ -20,7 +20,9 @@ function RecipeCheaps({ cheapsInside }) {
         color: '$onBg800',
         width: 'fit-content',
         cursor: 'default',
-
+        '&:hover': {
+          backgroundColor: '$primary100',
+        },
       }}
     >
       {`${cheapsInside[Object.keys(cheapsInside)[0]]}  ${Object.keys(cheapsInside)[0]}`}

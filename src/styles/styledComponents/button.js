@@ -4,23 +4,60 @@ const Button = styled('button', {
   border: 'none',
   cursor: 'pointer',
   backgroundColor: 'transparent',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   '&:focus': {
     outline: 'none',
   },
   '&:hover': {
   },
-  headline6:"500",
-  color:"$onBg700",
-  variants:{
-    type:{
-        shadow:{
-            "&:hover":{
-                color:"$onBg"
-            }
-        }
-    }
-  }
-
+  headline6: '500',
+  color: '$onBg700',
+  '& svg':{
+    marginLeft:"8px"
+  },
+  variants: {
+    type: {
+      shadow: {
+        '&:hover': {
+          color: '$onBg',
+        },
+      },
+      outline: {
+        '& svg':{
+          fill:"$primary"
+        },
+        borderRadius:"32px",
+        color:"$primary",
+        border:"1px solid $primary",
+        '&:hover': {
+          color: '$onPrimary',
+          backgroundColor:"$primary",
+          '& svg':{
+            fill:"$onPrimary"
+          }
+        },
+      },
+      primary: {
+        backgroundColor:"$primary",
+        '& svg':{
+          fill:"$onPrimary"
+        },
+        borderRadius:"32px",
+        color:"$onPrimary",
+        border:"1px solid $onPrimary",
+        '&:hover': {
+          color: '$primary',
+          backgroundColor:"$primary200",
+          // border:"1px solid $primary",
+          '& svg':{
+            fill:"$primary"
+          }
+        },
+      },
+    },
+  },
 
 });
 
