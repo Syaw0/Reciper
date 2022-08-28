@@ -4,11 +4,13 @@ import homeStore from './homeStore';
 import searchStore from './searchStore';
 import handleBreadsOutside from './utils/handleBreadsOutside';
 import orderListStore from './orderLIstStore';
+import floatStore from './floatStore';
 
 export default create((set, get) => ({
   ...homeStore(set, get),
   ...searchStore(set, get),
   ...orderListStore(set, get),
+  ...floatStore(set, get),
   breadCrumbs: [{ name: 'Home', level: 0 }],
   currentCategory: 'None',
   currentPage: 'Recipe',

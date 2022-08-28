@@ -45,7 +45,9 @@ function Navbar({
         justify="between"
         align="center"
         css={{
-
+          '& svg':{
+            fill:"$onBg"
+          }
         }}
       >
         <Text type="logo">

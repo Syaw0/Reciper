@@ -61,24 +61,24 @@ function ItemIntroducer({ title, items }) {
       </Flex>
       <Flex
         justify="between"
+        id="introducerItemHolder"
         css={{
           height: '100%',
           width: '100%',
-          overflow: 'auto',
-          '&>div': {
-          },
+          overflowX: 'auto',
         }}
       >
-        <Flex css={{
-          display: 'inline-flex',
-          width: 'fit-content',
-          '&>div': {
-            margin: '0 16px',
-            '@bp3': {
-              margin: '0 8px',
+        <Flex
+          css={{
+            display: 'inline-flex',
+            width: 'fit-content',
+            '&>div': {
+              margin: '0 16px',
+              '@bp3': {
+                margin: '0 8px',
+              },
             },
-          },
-        }}
+          }}
         >
           {items}
         </Flex>

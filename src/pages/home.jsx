@@ -6,7 +6,7 @@ import Flex from '../styles/styledComponents/flex';
 function Home() {
   const fakelist = [<RecipeCard cardType="normal" />, <RecipeCard cardType="normal" />, <RecipeCard cardType="normal" />, <RecipeCard cardType="normal" />];
 
-  return ( 
+  return (
     <Flex
       data-testid="homePage"
       dir="column"

@@ -14,8 +14,8 @@ const Button = styled('button', {
   },
   headline6: '500',
   color: '$onBg700',
-  '& svg':{
-    marginLeft:"8px"
+  '& svg': {
+    marginLeft: '8px',
   },
   variants: {
     type: {
@@ -25,35 +25,35 @@ const Button = styled('button', {
         },
       },
       outline: {
-        '& svg':{
-          fill:"$primary"
+        '& svg': {
+          fill: '$primary',
         },
-        borderRadius:"32px",
-        color:"$primary",
-        border:"1px solid $primary",
+        borderRadius: '32px',
+        color: '$primary',
+        border: '1px solid $primary',
         '&:hover': {
           color: '$onPrimary',
-          backgroundColor:"$primary",
-          '& svg':{
-            fill:"$onPrimary"
-          }
+          backgroundColor: '$primary',
+          '& svg': {
+            fill: '$onPrimary',
+          },
         },
       },
       primary: {
-        backgroundColor:"$primary",
-        '& svg':{
-          fill:"$onPrimary"
+        backgroundColor: '$primary',
+        '& svg': {
+          fill: '$onPrimary',
         },
-        borderRadius:"32px",
-        color:"$onPrimary",
-        border:"1px solid $onPrimary",
+        borderRadius: '32px',
+        color: '$onPrimary',
+        border: '1px solid $onPrimary',
         '&:hover': {
           color: '$primary',
-          backgroundColor:"$primary200",
+          backgroundColor: '$primary200',
           // border:"1px solid $primary",
-          '& svg':{
-            fill:"$primary"
-          }
+          '& svg': {
+            fill: '$primary',
+          },
         },
       },
     },

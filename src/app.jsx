@@ -9,9 +9,11 @@ import Add from './pages/add';
 import OrderList from './pages/orderList';
 import Footer from './components/footer/footer';
 import Recipe from './pages/recipe';
+import Float from './pages/float';
 
 function App() {
   const currentPage = mainStore((state) => state.currentPage);
+  const toggleFloat = mainStore((state) => state.toggleFloat);
   gCss();
   return (
     <Flex
@@ -22,6 +24,9 @@ function App() {
       css={{
         position: 'relative',
         padding: '0 $15',
+        '& > div:not([id="floatPage"])': {
+          filter: toggleFloat ? 'blur(10px)' : 'blur(0px)',
+        },
         '@bp1': {
           padding: '0 $8',
         },
@@ -45,9 +50,12 @@ function App() {
         {currentPage === 'User Suggestion' && <OrderList />}
         {currentPage === 'Top Categories' && <OrderList />}
         {currentPage === 'recipeCategory' && <OrderList />}
+        {currentPage === 'editRecipe' && <h1>Editing</h1>}
 
       </Flex>
       <Footer />
+
+      {toggleFloat && <Float /> }
     </Flex>
   );
 }

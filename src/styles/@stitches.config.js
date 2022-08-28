@@ -78,9 +78,11 @@ export const {
       onSecondary900: 'rgba(20,30,22,0.9)',
 
       error: 'rgba(186,26,26,1)',
+      error300: 'rgba(186,26,26,0.3)',
       onError: 'rgba(255,255,255,1)',
       mediumDif: 'rgba(245,173,64,1)',
       EasyDif: 'rgba(109,188,96,1)',
+      EasyDif300: 'rgba(109,188,96,0.3)',
     },
 
     shadows: {
@@ -148,6 +150,7 @@ export const {
     bp1: '(max-width:1000px)',
     bp2: '(max-width:850px)',
     bp3: '(max-width:750px)',
+    bp3_1: '(max-width:600px)',
     bp4: '(max-width:540px)',
     bp5: '(max-width:420px)',
 

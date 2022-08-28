@@ -8,4 +8,5 @@ export default {
   'User Suggestion': 'Home/User Suggestion',
   'Top Categories': 'Home/Top Categories',
   recipeCategory: 'Home/Category',
+  editRecipe: 'Home/Edit Recipe',
 };
