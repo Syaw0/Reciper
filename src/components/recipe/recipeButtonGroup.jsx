@@ -40,6 +40,7 @@ function RecipeButtonGroup() {
       }}
     >
       <Button
+        data-testid="recipePageDeleteButton"
         onClick={handleDeleteButton}
         type="shadow"
         css={{
@@ -60,6 +61,7 @@ function RecipeButtonGroup() {
       </Button>
 
       <Button
+        data-testid="recipePageEditButton"
         onClick={handleEditButton}
         type="outline"
         css={{

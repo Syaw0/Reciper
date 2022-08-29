@@ -13,7 +13,7 @@ export default create((set, get) => ({
   ...floatStore(set, get),
   breadCrumbs: [{ name: 'Home', level: 0 }],
   currentCategory: 'None',
-  currentPage: 'Recipe',
+  currentPage: 'Home',
   setBreadsCrumbs: (newBreads) => {
     set((state) => ({ ...state, breadCrumbs: newBreads }));
   },

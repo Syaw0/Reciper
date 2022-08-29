@@ -10,6 +10,7 @@ import OrderList from './pages/orderList';
 import Footer from './components/footer/footer';
 import Recipe from './pages/recipe';
 import Float from './pages/float';
+import Edit from './pages/edit';
 
 function App() {
   const currentPage = mainStore((state) => state.currentPage);
@@ -50,7 +51,7 @@ function App() {
         {currentPage === 'User Suggestion' && <OrderList />}
         {currentPage === 'Top Categories' && <OrderList />}
         {currentPage === 'recipeCategory' && <OrderList />}
-        {currentPage === 'editRecipe' && <h1>Editing</h1>}
+        {currentPage === 'editRecipe' && <Edit />}
 
       </Flex>
       <Footer />
