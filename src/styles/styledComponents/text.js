@@ -18,6 +18,32 @@ const Text = styled('p', {
         textAlign: 'center',
         color: '$onBg',
       },
+      bgColorHeadSecondary: {
+        width: '100%',
+        backgroundColor: '$secondary',
+        color: '$onSecondary',
+        padding: '4px 10px',
+        headline5: '600',
+        borderRadius: '32px',
+        marginBottom: '$2',
+        '@bp4': {
+          headline6: '600',
+
+        },
+      },
+      bgColorHeadPrimary: {
+        width: '100%',
+        backgroundColor: '$primary',
+        color: '$onPrimary',
+        padding: '4px 10px',
+        headline5: '600',
+        borderRadius: '32px',
+        marginBottom: '$2',
+        '@bp4': {
+          headline6: '600',
+
+        },
+      },
     },
   },
 });

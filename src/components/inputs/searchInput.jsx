@@ -21,7 +21,7 @@ function SearchInput({
   };
   return (
     <Flex type="searchInput" onKeyDown={(e) => { onstart(e); }}>
-      <Input data-testid="headSearchInput" id={id} type="search" placeholder={placeholder} onChange={(e) => { onchange(e); }} value={value} />
+      <Input data-testid="headSearchInput" id={id} whichType="search" placeholder={placeholder} onChange={(e) => { onchange(e); }} value={value} />
       <IcoSearch dataTest="headSearchSvg" id={`${id}SearchInput`} width="28px" height="28px" event={onstart} />
       {isError && (
       <Flex data-testid="headSearchError">

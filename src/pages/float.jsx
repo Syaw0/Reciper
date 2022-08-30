@@ -8,10 +8,12 @@ import Text from '../styles/styledComponents/text';
 function Float() {
   const setToggleFloat = mainStore((state) => state.setToggleFloat);
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
+  const setCurrentStep = mainStore((state) => state.setCurrentStep);
 
   const handleDeleteButton = () => {
     setToggleFloat(false);
     setCurrentPage('Home');
+    setCurrentStep(1);
   };
 
   const handleSaveButton = () => {

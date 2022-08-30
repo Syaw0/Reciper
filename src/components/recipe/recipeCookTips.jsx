@@ -40,20 +40,7 @@ function RecipeCookTips({ tips }) {
               marginBottom: '$3',
             }}
           >
-            <Text css={{
-              width: '100%',
-              backgroundColor: '$secondary',
-              color: '$onSecondary',
-              padding: '4px 10px',
-              headline5: '600',
-              borderRadius: '32px',
-              marginBottom: '$2',
-              '@bp4': {
-                headline6: '600',
-
-              },
-            }}
-            >
+            <Text type="bgColorHeadSecondary">
               Note
               {' '}
               {index + 1}

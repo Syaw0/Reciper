@@ -5,15 +5,17 @@ import searchStore from './searchStore';
 import handleBreadsOutside from './utils/handleBreadsOutside';
 import orderListStore from './orderLIstStore';
 import floatStore from './floatStore';
+import addStore from './addStore';
 
 export default create((set, get) => ({
   ...homeStore(set, get),
   ...searchStore(set, get),
   ...orderListStore(set, get),
   ...floatStore(set, get),
+  ...addStore(set, get),
   breadCrumbs: [{ name: 'Home', level: 0 }],
   currentCategory: 'None',
-  currentPage: 'Home',
+  currentPage: 'Add Recipe',
   setBreadsCrumbs: (newBreads) => {
     set((state) => ({ ...state, breadCrumbs: newBreads }));
   },

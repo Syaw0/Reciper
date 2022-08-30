@@ -41,20 +41,7 @@ function RecipeCookSteps({ steps }) {
 
             }}
           >
-            <Text css={{
-              width: '100%',
-              backgroundColor: '$primary',
-              color: '$onPrimary',
-              padding: '4px 10px',
-              headline5: '600',
-              borderRadius: '32px',
-              marginBottom: '$2',
-              '@bp4': {
-                headline6: '600',
-
-              },
-            }}
-            >
+            <Text type="bgColorHeadPrimary">
               Step
               {' '}
               {index + 1}
