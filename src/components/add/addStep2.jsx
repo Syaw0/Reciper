@@ -1,30 +1,20 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React from 'react';
+import mainStore from '../../store/mainStore';
+import Button from '../../styles/styledComponents/button';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
 import Text from '../../styles/styledComponents/text';
 
 const addStep2 = () => {
-  const materialLimit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-  const [materialNumber, setMaterialNumber] = useState(1);
-  const materialItemLists = [];
-  for (let i = 1; i !== materialNumber + 1; i += 1) {
-    materialItemLists.push(
-      <>
-        <Text type="bgColorHeadSecondary">{`Material ${i}`}</Text>
-        <Input
-          css={{
-            marginBottom: '$6',
-          }}
-          whichType="text"
-          placeholder="Enter your Material"
-        />
-      </>,
-    );
-  }
-
-  const handleSelectChange = (e) => {
-    setMaterialNumber(Number(e.target.value));
+  const { step2 } = mainStore((state) => state.cacheData);
+  const setCacheData = mainStore((state) => state.setCacheData);
+  const handleMaterialInput = () => {
+  };
+  const handleAddMaterialButton = () => {
+    const newMaterialList = [...step2.materials, ''];
+    setCacheData({ step2: { ...step2, number: step2.number += 1, materials: newMaterialList } });
   };
 
   return (
@@ -58,22 +48,40 @@ const addStep2 = () => {
         }}
       >
 
-        <label htmlFor="addRecipeMaterialNumber">How Many Material This Recipe Need ?</label>
-        <Input
+        <Button
+          type="outline"
+          onClick={handleAddMaterialButton}
           css={{
-            marginBottom: '$5',
+            textAlign: 'center',
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '$1',
+            marginBottom: '$4',
+            '&:hover': {
+              backgroundColor: '$primary200',
+              color: '$primary',
+            },
           }}
-          onChange={handleSelectChange}
-          id="addRecipeMaterialNumber"
-          whichType="select"
-          as="select"
         >
-          {materialLimit.map((number) => (
-            <option value={number}>{number}</option>
-          ))}
-        </Input>
+          Add Material
+        </Button>
 
-        {materialItemLists}
+        {step2.materials.map((material, index) => (
+          <>
+            <Text type="bgColorHeadSecondary">{`Material ${index + 1}`}</Text>
+            <Input
+              onChange={handleMaterialInput}
+              key={`addMaterialInp ${index}`}
+              id={`addMaterialInp ${index}`}
+              value={material}
+              css={{
+                marginBottom: '$6',
+              }}
+              whichType="text"
+              placeholder="Enter your Material"
+            />
+          </>
+        ))}
 
       </Flex>
     </Flex>

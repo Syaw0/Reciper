@@ -7,4 +7,7 @@
 - navigation will change the bread on the head
 - we must fill all the  inputs to navigate to next section if we don`t error box will show up in bottom of every input that not valid 
 - when we in this page we can not easily navigate between another pages we must throw between warn page first.
-- 
+- when we abort the cache data will lose 
+- when we navigate we can previously see the last data
+- in add material or step or tips we can not add more than limit number item 
+- and so on we can not delete them for one item and down...

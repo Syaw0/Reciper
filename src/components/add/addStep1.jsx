@@ -1,11 +1,54 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import fakeDb from '../../fakeData';
+import mainStore from '../../store/mainStore';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
 import Text from '../../styles/styledComponents/text';
 
 function AddStep1() {
+  const { step1 } = mainStore((state) => state.cacheData);
+  const setCacheData = mainStore((state) => state.setCacheData);
+
+  const textInputHandle = (e, type) => {
+    switch (type) {
+      case 'recipeName':
+        setCacheData({ step1: { ...step1, recipeName: e.target.value } });
+        // setDataStep1((state) => ({ ...state,  }));
+        break;
+      case 'recipeDes':
+        setCacheData({ step1: { ...step1, recipeDes: e.target.value } });
+
+        break;
+      case 'publisherName':
+        setCacheData({ step1: { ...step1, publisherName: e.target.value } });
+
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const selectInputHandle = (e, type) => {
+    switch (type) {
+      case 'category':
+        setCacheData({ step1: { ...step1, category: e.target.value } });
+        break;
+
+      case 'difficulty':
+        setCacheData({ step1: { ...step1, difficulty: e.target.value } });
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const fileInputHandle = (e) => {
+    setCacheData({ step1: { ...step1, imgFile: e.target.value } });
+  };
+
   return (
     <Flex
       dir="column"
@@ -37,22 +80,31 @@ function AddStep1() {
 
         <label htmlFor="addRecipeName">Your Recipe Name</label>
         <Input
+          value={step1.recipeName}
+          onChange={(e) => { textInputHandle(e, 'recipeName'); }}
           whichType="text"
           placeholder="Recipe Name"
           id="addRecipeName"
         />
-
         <label htmlFor="addRecipeDescription">Short Description About Recipe</label>
         <Input
+          value={step1.recipeDes}
+          onChange={(e) => { textInputHandle(e, 'recipeDes'); }}
           whichType="text"
           id="addRecipeDescription"
           placeholder="short description about this recipe"
         />
 
         <label htmlFor="addRecipeDescription">Which Category ?</label>
-        <Input id="addRecipeCategory" whichType="select" as="select">
+        <Input
+          value={step1.category}
+          onChange={(e) => { selectInputHandle(e, 'category'); }}
+          id="addRecipeCategory"
+          whichType="select"
+          as="select"
+        >
           {fakeDb.category.map((category) => (
-            <optgroup key={category} label={category.name}>
+            <optgroup key={category.name} label={category.name}>
               {category.items.map((cateItems) => (
                 <option key={cateItems} value={cateItems}>
                   {cateItems}
@@ -63,7 +115,13 @@ function AddStep1() {
         </Input>
 
         <label htmlFor="addRecipeDifficulty">Difficulty Level ?</label>
-        <Input id="addRecipeDifficulty" whichType="select" as="select">
+        <Input
+          value={step1.difficulty}
+          onChange={(e) => { selectInputHandle(e, 'difficulty'); }}
+          id="addRecipeDifficulty"
+          whichType="select"
+          as="select"
+        >
           <option value="easy">Easy</option>
           <option value="intermediate">Intermediate</option>
           <option value="hard">Hard</option>
@@ -71,6 +129,8 @@ function AddStep1() {
 
         <label htmlFor="addRecipePublisher">Publisher Name</label>
         <Input
+          value={step1.publisherName}
+          onChange={(e) => { textInputHandle(e, 'publisherName'); }}
           whichType="text"
           id="addRecipePublisher"
           placeholder="Please enter your name"
@@ -78,6 +138,7 @@ function AddStep1() {
 
         <label htmlFor="addRecipeFile">Upload Image for This Recipe</label>
         <Input
+          onChange={fileInputHandle}
           type="file"
           whichType="file"
           id="addRecipeFile"
