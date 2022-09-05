@@ -6,6 +6,7 @@ import handleBreadsOutside from './utils/handleBreadsOutside';
 import orderListStore from './orderLIstStore';
 import floatStore from './floatStore';
 import addStore from './addStore';
+import addNavigationCheck from './utils/addNavigationCheck';
 
 export default create((set, get) => ({
   ...homeStore(set, get),
@@ -15,19 +16,27 @@ export default create((set, get) => ({
   ...addStore(set, get),
   breadCrumbs: [{ name: 'Home', level: 0 }],
   currentCategory: 'None',
-  currentPage: 'Add Recipe',
+  currentPage: 'Home',
   setBreadsCrumbs: (newBreads) => {
     set((state) => ({ ...state, breadCrumbs: newBreads }));
   },
   setCurrentPage: (pageName, newBreads) => {
+    // check if we are not during adding or editing recipe
+    if (addNavigationCheck(get().currentPage, pageName)) {
+      return;
+    }
     // handleBreadsInternal(pageName, newBreads);
     if (newBreads !== undefined) {
       // internal change in breadCrumbs
-      set((state) => ({ ...state, currentPage: pageName, breadCrumbs: newBreads }));
+      set((state) => ({
+        ...state, currentPage: pageName, isFirstNav: true, breadCrumbs: newBreads,
+      }));
     } else {
       // change happen outside of breadCrumbs
       const newbread = handleBreadsOutside(pageName);
-      set((state) => ({ ...state, currentPage: pageName, breadCrumbs: newbread }));
+      set((state) => ({
+        ...state, currentPage: pageName, isFirstNav: true, breadCrumbs: newbread,
+      }));
     }
   },
   setCurrentCategory: (categoryId) => {

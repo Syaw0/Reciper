@@ -57,6 +57,25 @@ const Button = styled('button', {
         },
       },
     },
+    floatInfo: {
+      futureFeature: {
+        position: 'relative',
+        '&:hover': {
+          '&::after': {
+            display: 'flex',
+          },
+        },
+        '&::after': {
+          content: 'future feature! :)',
+          // borderBottom:"1px solid $primary",
+          subhead1: '600',
+          position: 'absolute',
+          bottom: '-40px',
+          width: '200px',
+          display: 'none',
+        },
+      },
+    },
   },
 
 });

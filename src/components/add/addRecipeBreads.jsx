@@ -17,32 +17,39 @@ function AddRecipeBreads() {
       </Text>
 
       <Flex
-        justify="center"
+        justify="between"
         align="center"
         css={{
           '& svg': {
             margin: '0 $7',
             fill: '$onBg500',
             cursor: 'default',
+            '@bp4': {
+              margin: '0 $1',
+            },
           },
           '&>p:first-child , &>p:last-child': {
             color: '$onBg400',
           },
         }}
       >
-        <Text>
+        <Text data-testid="addBreadPre">
           {addSteps[currentStep - 1] === undefined ? ' ' : addSteps[currentStep - 1]}
         </Text>
         {currentStep !== 1 && <IcoArrowRight width="7px" height="7px" event={() => {}} /> }
-        <Text css={{
-          subhead1: '600',
-          textAlign: 'center',
-        }}
+        <Text
+          data-testid="addBreadCurrent"
+          css={{
+            subhead1: '600',
+            textAlign: 'center',
+          }}
         >
           {addSteps[currentStep]}
         </Text>
         {currentStep !== 5 && <IcoArrowRight width="7px" height="7px" event={() => {}} /> }
-        <Text>
+        <Text
+          data-testid="addBreadNext"
+        >
           {addSteps[currentStep + 1] === undefined ? ' ' : addSteps[currentStep + 1]}
         </Text>
 

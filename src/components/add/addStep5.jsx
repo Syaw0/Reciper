@@ -29,7 +29,9 @@ function AddStep5() {
       >
         If You Want You Can See The
         <Button
+          title="future feature :)"
           type="primary"
+          floatInfo="futureFeature"
           css={{
             backgroundColor: '$secondary',
             color: '$onSecondary',

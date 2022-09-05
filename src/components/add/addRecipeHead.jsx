@@ -6,7 +6,13 @@ import Text from '../../styles/styledComponents/text';
 
 function AddRecipeHead() {
   const setToggleFloat = mainStore((state) => state.setToggleFloat);
+  const setTextValue = mainStore((state) => state.setTextValue);
+  const setCurrentFloat = mainStore((state) => state.setCurrentFloat);
+  const setIsFirstNav = mainStore((state) => state.setIsFirstNav);
   const handleAbortButton = () => {
+    setCurrentFloat('Abort Adding');
+    setTextValue({ alert: 'Do you want to leave Add Stage?', no: 'Dont leave', yes: 'leave' });
+    setIsFirstNav(false);
     setToggleFloat(true);
   };
   return (
@@ -22,6 +28,14 @@ function AddRecipeHead() {
       <Text css={{
         headline1: '500',
         fontFamily: '$yeseva',
+        '@bp3': {
+          headline2: '500',
+          fontFamily: '$yeseva',
+        },
+        '@bp5': {
+          headline3: '500',
+          fontFamily: '$yeseva',
+        },
       }}
       >
         Let`s Add Recipe
@@ -29,6 +43,7 @@ function AddRecipeHead() {
 
       <Button
         onClick={handleAbortButton}
+        data-testid="addRecipeAbortButton"
         type="primary"
         css={{
           backgroundColor: '$error',

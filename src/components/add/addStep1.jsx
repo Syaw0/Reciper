@@ -51,6 +51,7 @@ function AddStep1() {
 
   return (
     <Flex
+      data-testid="addStep1"
       dir="column"
       css={{
         marginTop: '$3',
@@ -85,6 +86,7 @@ function AddStep1() {
           whichType="text"
           placeholder="Recipe Name"
           id="addRecipeName"
+          data-testid="addRecipeName"
         />
         <label htmlFor="addRecipeDescription">Short Description About Recipe</label>
         <Input
@@ -92,7 +94,8 @@ function AddStep1() {
           onChange={(e) => { textInputHandle(e, 'recipeDes'); }}
           whichType="text"
           id="addRecipeDescription"
-          placeholder="short description about this recipe"
+          data-testid="addRecipeDescription"
+          placeholder="Short description about this recipe"
         />
 
         <label htmlFor="addRecipeDescription">Which Category ?</label>
@@ -133,6 +136,7 @@ function AddStep1() {
           onChange={(e) => { textInputHandle(e, 'publisherName'); }}
           whichType="text"
           id="addRecipePublisher"
+          data-testid="addRecipePublisher"
           placeholder="Please enter your name"
         />
 
@@ -142,6 +146,8 @@ function AddStep1() {
           type="file"
           whichType="file"
           id="addRecipeFile"
+          data-testid="addRecipeFile"
+          accept="image/png, image/jpeg, image/jpg"
           placeholder="short description about this recipe"
         />
 

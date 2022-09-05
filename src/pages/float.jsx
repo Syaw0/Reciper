@@ -1,23 +1,46 @@
 import React from 'react';
 import IcoWarm from '../assest/icons/IcoWarm';
 import mainStore from '../store/mainStore';
+import defaultAddCacheData from '../store/utils/defaultAddCacheData';
 import Button from '../styles/styledComponents/button';
 import Flex from '../styles/styledComponents/flex';
 import Text from '../styles/styledComponents/text';
 
 function Float() {
+  const textValue = mainStore((state) => state.textValue);
   const setToggleFloat = mainStore((state) => state.setToggleFloat);
+  const nextPage = mainStore((state) => state.nextPage);
+  const currentFloat = mainStore((state) => state.currentFloat);
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
   const setCurrentStep = mainStore((state) => state.setCurrentStep);
+  const setCacheData = mainStore((state) => state.setCacheData);
+  const setIsFirstNav = mainStore((state) => state.setIsFirstNav);
 
   const handleDeleteButton = () => {
-    setToggleFloat(false);
-    setCurrentPage('Home');
-    setCurrentStep(1);
+    switch (currentFloat) {
+      case 'exit adding':
+        setToggleFloat(false);
+        setCurrentPage(nextPage);
+        break;
+      case 'Abort Adding':
+        setToggleFloat(false);
+        setCurrentPage('Home');
+        setCurrentStep(1);
+        setCacheData(defaultAddCacheData);
+        break;
+
+      case 'Delete Recipe':
+        setToggleFloat(false);
+        setCurrentPage('Home');
+        break;
+      default:
+        break;
+    }
   };
 
   const handleSaveButton = () => {
     setToggleFloat(false);
+    setIsFirstNav(true);
   };
 
   return (
@@ -60,11 +83,7 @@ function Float() {
           padding: '$2',
         }}
         >
-          Are You Sure You Want
-          {' '}
-          <br />
-          {' '}
-          To Delete This Recipe?
+          {textValue.alert}
         </Text>
       </Flex>
 
@@ -82,6 +101,7 @@ function Float() {
       >
         <Button
           onClick={handleSaveButton}
+          data-testid="floatPageNoButton"
           type="primary"
           css={{
             backgroundColor: '$EasyDif',
@@ -93,11 +113,12 @@ function Float() {
 
           }}
         >
-          No Save Me!
+          {textValue.no}
 
         </Button>
 
         <Button
+          data-testid="floatPageYesButton"
           onClick={handleDeleteButton}
           type="primary"
           css={{
@@ -109,7 +130,7 @@ function Float() {
             },
           }}
         >
-          Delete It
+          {textValue.yes}
 
         </Button>
 

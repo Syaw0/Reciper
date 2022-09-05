@@ -1,34 +1,40 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React from 'react';
+import IcoClose from '../../assest/icons/IcoClose';
+import mainStore from '../../store/mainStore';
+import Button from '../../styles/styledComponents/button';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
 import Text from '../../styles/styledComponents/text';
 
 const addStep3 = () => {
-  const stepLimit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-  const [stepNumber, setStepNumber] = useState(1);
-  const stepItemLists = [];
-  for (let i = 1; i !== stepNumber + 1; i += 1) {
-    stepItemLists.push(
-      <>
-        <Text type="bgColorHeadSecondary">{`Step ${i}`}</Text>
-        <Input
-          css={{
-            marginBottom: '$6',
-          }}
-          whichType="text"
-          placeholder="Enter your Step"
-        />
-      </>,
-    );
-  }
+  const { step3 } = mainStore((state) => state.cacheData);
+  const setCacheData = mainStore((state) => state.setCacheData);
 
-  const handleSelectChange = (e) => {
-    setStepNumber(Number(e.target.value));
+  const handleStepInput = (e) => {
+    const editTarget = e.target.id.split('addStepInp')[1];
+    const newStepList = [...step3.steps];
+    newStepList.splice(Number(editTarget) - 1, 1, e.target.value);
+    setCacheData({ step3: { ...step3, steps: newStepList } });
+  };
+
+  const handleAddStepButton = () => {
+    // limit of adding items
+    if (step3.steps.length >= 15) return;
+    const newStepList = [...step3.steps, ''];
+    setCacheData({ step3: { ...step3, number: step3.number += 1, steps: newStepList } });
+  };
+
+  const handleDeleteStep = (e) => {
+    const delTarget = e.target.id.split('delTipInp')[1];
+    const newStepList = [...step3.steps];
+    newStepList.splice(Number(delTarget) - 1, 1);
+    setCacheData({ step3: { number: step3.number -= 1, steps: newStepList } });
   };
 
   return (
     <Flex
+      data-testid="addStep3"
       dir="column"
       css={{
         marginTop: '$3',
@@ -39,7 +45,7 @@ const addStep3 = () => {
         marginBottom: '$3',
       }}
       >
-        let`s add Steps
+        let`s add Steps !
 
       </Text>
       <Flex
@@ -58,22 +64,69 @@ const addStep3 = () => {
         }}
       >
 
-        <label htmlFor="addRecipeMaterialNumber">How Many Steps This Recipe Need ?</label>
-        <Input
+        <Button
+          type="outline"
+          onClick={handleAddStepButton}
           css={{
-            marginBottom: '$5',
+            textAlign: 'center',
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '$1',
+            marginBottom: '$4',
+            '&:hover': {
+              backgroundColor: '$primary200',
+              color: '$primary',
+            },
+            '@bp4': {
+              padding: '5px',
+            },
           }}
-          onChange={handleSelectChange}
-          id="addRecipeMaterialNumber"
-          whichType="select"
-          as="select"
         >
-          {stepLimit.map((number) => (
-            <option value={number}>{number}</option>
-          ))}
-        </Input>
+          Add Step
+        </Button>
 
-        {stepItemLists}
+        {step3.steps.map((step, index) => (
+          <>
+            <Text
+              type="bgColorHeadSecondary"
+              css={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                '&:hover': {
+                  '& svg': {
+                    display: step3.steps.length === 1 ? 'none' : 'flex',
+                  },
+                },
+                '& svg': {
+                  display: 'none',
+                  fill: '$onSecondary',
+                },
+              }}
+            >
+              {`Step ${index + 1}`}
+              <IcoClose
+                id={`delTipInp${index + 1}`}
+                width="14"
+                height="14"
+                event={handleDeleteStep}
+                dataTest={`delStepInp${index + 1}`}
+              />
+            </Text>
+            <Input
+              onChange={handleStepInput}
+              key={`addStepInp${index + 1}`}
+              id={`addStepInp${index + 1}`}
+              data-testid={`addStepInp${index + 1}`}
+              value={step}
+              css={{
+                marginBottom: '$6',
+              }}
+              whichType="text"
+              placeholder="Enter your Step"
+            />
+          </>
+        ))}
 
       </Flex>
     </Flex>

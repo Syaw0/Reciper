@@ -1,17 +1,29 @@
 const addStore = (set) => ({
-  currentStep: 2,
+  currentStep: 1,
   cacheData: {
     step1: {
       recipeName: '',
       recipeDes: '',
-      category: '',
-      difficulty: '',
+      category: 'Pork',
+      difficulty: 'Easy',
       publisherName: '',
       imgFile: '',
     },
     step2: {
       number: 1,
       materials: [
+        '',
+      ],
+    },
+    step3: {
+      number: 1,
+      steps: [
+        '',
+      ],
+    },
+    step4: {
+      number: 1,
+      tips: [
         '',
       ],
     },

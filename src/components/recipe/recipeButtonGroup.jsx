@@ -9,14 +9,19 @@ import mainStore from '../../store/mainStore';
 function RecipeButtonGroup() {
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
   const setToggleFloat = mainStore((state) => state.setToggleFloat);
+  const setTextValue = mainStore((state) => state.setTextValue);
+  const setCurrentFloat = mainStore((state) => state.setCurrentFloat);
+
   const handleLikeButton = () => {
-    console.log('handlLike');
+    // console.log('handlLike');
   };
   const handleEditButton = () => {
     setCurrentPage('editRecipe');
   };
   const handleDeleteButton = () => {
+    setTextValue({ alert: 'Do you want to remove this recipe?', no: 'No, Save me !', yes: 'delete it' });
     setToggleFloat(true);
+    setCurrentFloat('Delete Recipe');
   };
   return (
     <Flex
@@ -73,6 +78,7 @@ function RecipeButtonGroup() {
       </Button>
 
       <Button
+        floatInfo="futureFeature"
         onClick={handleLikeButton}
         type="primary"
         css={{

@@ -33,6 +33,7 @@ export default styled('input', {
         '&:focus': {
           outline: '2px solid $primary',
           backgroundColor: '$primary100',
+          border: '1px solid $primary500',
           color: '$primary',
         },
         '&::placeholder': {

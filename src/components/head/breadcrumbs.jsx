@@ -28,7 +28,12 @@ function BreadCrumbs() {
     >
       {breadCrumbs.map((bread, index) => (
         <>
-          <Button onClick={handleBreadsInternal} key={bread.level} id={`bread ${bread.level}`}>
+          <Button
+            onClick={handleBreadsInternal}
+            key={bread.level}
+            id={`bread ${bread.level}`}
+            data-testid={`bread${bread.level}`}
+          >
             {bread.name}
           </Button>
           {index !== breadCrumbs.length - 1
