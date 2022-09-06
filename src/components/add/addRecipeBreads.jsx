@@ -17,7 +17,7 @@ function AddRecipeBreads() {
       </Text>
 
       <Flex
-        justify="between"
+        justify="center"
         align="center"
         css={{
           '& svg': {

@@ -17,6 +17,20 @@ const Button = styled('button', {
   '& svg': {
     marginLeft: '8px',
   },
+  '&:disabled': {
+    backgroundColor: 'rgba(50,50,50,0.2)',
+    cursor: 'wait',
+    color: 'rgba(50,50,50,0.5)',
+    '& svg': {
+      fill: 'rgba(50,50,50,0.5)',
+    },
+    '&:hover': {
+      color: 'rgba(50,50,50,0.5)',
+      '& svg': {
+        fill: 'rgba(50,50,50,0.5)',
+      },
+    },
+  },
   variants: {
     type: {
       shadow: {

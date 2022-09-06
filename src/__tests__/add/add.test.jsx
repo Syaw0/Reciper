@@ -1,15 +1,15 @@
+/* eslint-disable no-promise-executor-return */
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
 import React from 'react';
 import {
-  fireEvent, render, screen, cleanup, waitFor,
+  fireEvent, render, screen, cleanup,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../../app';
 import mainStore from '../../store/mainStore';
-import insertRecipeToServer from '../../utils/insertRecipe';
 
-jest.mock('../../utils/insertRecipe.js');
+jest.mock('../../utils/setReq');
 
 beforeEach(() => {
   // prepare the test area
@@ -61,23 +61,6 @@ describe('Adding Recipe', () => {
     const PreBtn = screen.getByTestId('addRecipePreStageBtn');
     fireEvent.click(PreBtn);
     expect(screen.getByTestId('addStep2')).toBeInTheDocument();
-  });
-
-  it('in the final step when click on the insert callback called...', async () => {
-    const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
-    fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
-    fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
-    fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
-    fireEvent.click(nextBtn);
-    fireEvent.change(screen.getByTestId('addMaterialInp1'), { target: { value: 'bela bela' } });
-    fireEvent.click(nextBtn);
-    fireEvent.change(screen.getByTestId('addStepInp1'), { target: { value: 'bela bela' } });
-    fireEvent.click(nextBtn);
-    fireEvent.change(screen.getByTestId('addTipInp1'), { target: { value: 'bela bela' } });
-    fireEvent.click(nextBtn);
-    fireEvent.click(nextBtn);
-    expect(insertRecipeToServer).toHaveBeenCalled();
-    await waitFor(() => expect(screen.getByTestId('homePage')).toBeInTheDocument());
   });
 
   it('when user click on the abort warn show up', () => {

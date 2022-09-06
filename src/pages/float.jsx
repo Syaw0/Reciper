@@ -20,6 +20,7 @@ function Float() {
     switch (currentFloat) {
       case 'exit adding':
         setToggleFloat(false);
+        setIsFirstNav(false);
         setCurrentPage(nextPage);
         break;
       case 'Abort Adding':

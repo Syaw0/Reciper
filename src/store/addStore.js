@@ -1,4 +1,5 @@
 const addStore = (set) => ({
+  finalStepComponent: 'finalMsg',
   currentStep: 1,
   cacheData: {
     step1: {
@@ -27,6 +28,9 @@ const addStore = (set) => ({
         '',
       ],
     },
+  },
+  setFinalComponent: (component) => {
+    set((state) => ({ ...state, finalStepComponent: component }));
   },
   setCacheData: (newData) => {
     set((state) => ({ ...state, cacheData: { ...state.cacheData, ...newData } }));

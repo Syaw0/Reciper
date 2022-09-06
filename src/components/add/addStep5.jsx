@@ -1,11 +1,16 @@
 import React from 'react';
-import Button from '../../styles/styledComponents/button';
+import mainStore from '../../store/mainStore';
 import Flex from '../../styles/styledComponents/flex';
-import Text from '../../styles/styledComponents/text';
+import Loader from '../global/loader';
+import AddStep5ErrorMsg from './addStep5ErrorMsg ';
+import AddStep5FinalMsg from './addStep5FinalMsg';
+import AddStep5SuccessMsg from './addStep5SuccessMsg';
 
 function AddStep5() {
+  const finalStepComponent = mainStore((state) => state.finalStepComponent);
   return (
     <Flex
+      data-testid="addStep5"
       dir="column"
       justify="center"
       align="center"
@@ -13,36 +18,11 @@ function AddStep5() {
         margin: '$10 0px',
       }}
     >
-      <Text css={{
-        headline3: '600',
-      }}
-      >
-        You Successfully Insert All We Need 💫✨
+      {finalStepComponent === 'finalMsg' && <AddStep5FinalMsg />}
+      {finalStepComponent === 'loader' && <Loader />}
+      {finalStepComponent === 'errorMsg' && <AddStep5ErrorMsg />}
+      {finalStepComponent === 'successMsg' && <AddStep5SuccessMsg />}
 
-      </Text>
-      <Text css={{
-        display: 'flex',
-        marginTop: '$2',
-        color: '$onBg600',
-        jc_ac: '',
-      }}
-      >
-        If You Want You Can See The
-        <Button
-          title="future feature :)"
-          type="primary"
-          floatInfo="futureFeature"
-          css={{
-            backgroundColor: '$secondary',
-            color: '$onSecondary',
-            padding: '5px $1',
-            marginLeft: '$1',
-          }}
-        >
-          Preview
-
-        </Button>
-      </Text>
     </Flex>
   );
 }

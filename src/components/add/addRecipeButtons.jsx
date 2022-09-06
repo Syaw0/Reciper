@@ -1,7 +1,6 @@
 import React from 'react';
 import IcoArrowRight from '../../assest/icons/IcoArrowRight';
 import mainStore from '../../store/mainStore';
-import defaultAddCacheData from '../../store/utils/defaultAddCacheData';
 import stepValidator from '../../store/utils/stepValidator';
 import Button from '../../styles/styledComponents/button';
 import Flex from '../../styles/styledComponents/flex';
@@ -10,17 +9,11 @@ import insertRecipeToServer from '../../utils/insertRecipe';
 function AddRecipeButtons() {
   const currentStep = mainStore((state) => state.currentStep);
   const setCurrentStep = mainStore((state) => state.setCurrentStep);
-  const setCurrentPage = mainStore((state) => state.setCurrentPage);
-  const setCacheData = mainStore((state) => state.setCacheData);
-  const setIsFirstNav = mainStore((state) => state.setIsFirstNav);
+  const finalStepComponent = mainStore((state) => state.finalStepComponent);
 
   const nextButtonHandler = () => {
     if (stepValidator(currentStep)) {
       if (currentStep === 5) {
-        setIsFirstNav(false);
-        setCurrentStep(1);
-        setCurrentPage('Home');
-        setCacheData(defaultAddCacheData);
         insertRecipeToServer();
       } else {
         setCurrentStep(currentStep + 1);
@@ -34,6 +27,7 @@ function AddRecipeButtons() {
     }
   };
 
+  const isButtonsDisabled = () => finalStepComponent in { finalMsg: '', errorMsg: '' };
   return (
     <Flex
       justify={currentStep === 1 ? 'end' : 'between'}
@@ -53,6 +47,7 @@ function AddRecipeButtons() {
       {currentStep !== 1
       && (
       <Button
+        disabled={!isButtonsDisabled()}
         data-testid="addRecipePreStageBtn"
         onClick={previousButtonHandler}
         type="shadow"
@@ -69,6 +64,7 @@ function AddRecipeButtons() {
       )}
 
       <Button
+        disabled={!isButtonsDisabled()}
         data-testid="addRecipeNextStageBtn"
         onClick={nextButtonHandler}
         type="primary"

@@ -27,7 +27,7 @@ describe('navigate section', () => {
   });
   it('navigate to Home page', () => {
     render(<App />);
-    const navBtnToAdd = screen.getByTestId('headerNavAdd');
+    const navBtnToAdd = screen.getByTestId('headerNavOrderList');
     fireEvent.click(navBtnToAdd);
     // first nav to another page
     const navBtnToHome = screen.getByTestId('headerNavHome');

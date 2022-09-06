@@ -24,6 +24,6 @@ describe('Recipe Page', () => {
   it('when user click on the delete we will show up warn component', async () => {
     // also when u came in this page we have recipe information on it (in future...)
     fireEvent.click(screen.getByTestId('recipePageDeleteButton'));
-    await waitFor(() => expect(screen.getByTestId('FloatPage  ')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByTestId('FloatPage')).toBeInTheDocument());
   });
 });
