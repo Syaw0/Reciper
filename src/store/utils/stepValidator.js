@@ -18,7 +18,13 @@ const stepValidator = (step) => {
     return true;
   }
   const errInp = [];
-  const stepHolder = document.querySelector(`[data-testid='addStep${step}']`);
+  let stepHolder;
+  if (step === 'editPage') {
+    stepHolder = document.querySelector(`[data-testid='${step}']`);
+  } else {
+    stepHolder = document.querySelector(`[data-testid='addStep${step}']`);
+  }
+
   const stepInputs = stepHolder.querySelectorAll('input');
   for (const i of stepInputs) {
     if (i.type === 'file') {

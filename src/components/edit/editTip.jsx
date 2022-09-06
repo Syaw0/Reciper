@@ -1,62 +1,75 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import IcoClose from '../../assest/icons/IcoClose';
 import mainStore from '../../store/mainStore';
-import Button from '../../styles/styledComponents/button';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
 import Text from '../../styles/styledComponents/text';
 
-function AddStep4() {
-  const { step4 } = mainStore((state) => state.cacheData);
-  const setCacheData = mainStore((state) => state.setCacheData);
+function EditTip() {
+  const { tips } = mainStore((state) => state.editCacheData);
+  const setEditCacheData = mainStore((state) => state.setEditCacheData);
 
   const handleTipInput = (e) => {
-    const editTarget = e.target.id.split('addTipInp')[1];
-    const newTipsList = [...step4.tips];
+    const editTarget = e.target.id.split('editTipInp')[1];
+    const newTipsList = [...tips.values];
     newTipsList.splice(Number(editTarget) - 1, 1, e.target.value);
-    setCacheData({ step4: { ...step4, tips: newTipsList } });
+    setEditCacheData({ tips: { ...tips, values: newTipsList } });
   };
 
   const handleAddTipButton = () => {
     // limit of adding items
-    if (step4.tips.length >= 15) return;
-    const newTipsList = [...step4.tips, ''];
-    setCacheData({ step4: { ...step4, number: step4.number += 1, tips: newTipsList } });
+    if (tips.values.length >= 15) return;
+    const newTipsList = [...tips.values, ''];
+    setEditCacheData({ tips: { ...tips, number: tips.number += 1, values: newTipsList } });
   };
 
   const handleDeleteTip = (e) => {
     const delTarget = e.target.id.split('delTipInp')[1];
-    const newTipsList = [...step4.tips];
+    const newTipsList = [...tips.values];
     newTipsList.splice(Number(delTarget) - 1, 1);
-    setCacheData({ step4: { number: step4.number -= 1, tips: newTipsList } });
+    setEditCacheData({ tips: { number: tips.number -= 1, values: newTipsList } });
   };
 
   return (
     <Flex
-      data-testid="addStep4"
+      data-testid="editTips"
       dir="column"
       css={{
-        marginTop: '$3',
+        marginTop: '$6',
       }}
     >
-      <Text css={{
-        headline5_i: '500',
-        marginBottom: '$3',
-      }}
+      <Text
+        type="bgColorHeadPrimary"
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          '& svg': {
+            fill: '$onPrimary500',
+            transform: 'rotate(45deg)',
+            '&:hover': {
+              fill: '$onPrimary',
+            },
+          },
+        }}
       >
-        let`s add Tips !
-
+        {`Tips (${tips.values.length}) `}
+        <IcoClose
+          width="15"
+          height="15"
+          dataTest="editAddTips"
+          id="editAddTips"
+          event={handleAddTipButton}
+        />
       </Text>
       <Flex
         dir="column"
         css={{
+          marginTop: '$2',
           '& > label': {
             headline6: '400',
             color: '$onBg700',
             marginBottom: '4px',
-          },
-          '& > input , & > select': {
           },
           '& >p': {
             marginBottom: '$2',
@@ -64,29 +77,7 @@ function AddStep4() {
         }}
       >
 
-        <Button
-          type="outline"
-          onClick={handleAddTipButton}
-          data-testid="addStep4AddTipButton"
-          css={{
-            textAlign: 'center',
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '$1',
-            marginBottom: '$4',
-            '&:hover': {
-              backgroundColor: '$primary200',
-              color: '$primary',
-            },
-            '@bp4': {
-              padding: '5px',
-            },
-          }}
-        >
-          Add Tip
-        </Button>
-
-        {step4.tips.map((tip, index) => (
+        {tips.values.map((tip, index) => (
           <>
             <Text
               type="bgColorHeadSecondary"
@@ -96,7 +87,7 @@ function AddStep4() {
                 alignItems: 'center',
                 '&:hover': {
                   '& svg': {
-                    display: step4.tips.length === 1 ? 'none' : 'flex',
+                    display: tips.values.length === 1 ? 'none' : 'flex',
                   },
                 },
                 '& svg': {
@@ -116,9 +107,9 @@ function AddStep4() {
             </Text>
             <Input
               onChange={handleTipInput}
-              key={`addTipInp${index + 1}`}
-              id={`addTipInp${index + 1}`}
-              data-testid={`addTipInp${index + 1}`}
+              key={`editTipInp${index + 1}`}
+              id={`editTipInp${index + 1}`}
+              data-testid={`editTipInp${index + 1}`}
               value={tip}
               css={{
                 marginBottom: '$6',
@@ -134,4 +125,4 @@ function AddStep4() {
   );
 }
 
-export default AddStep4;
+export default EditTip;

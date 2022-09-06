@@ -5,7 +5,12 @@ import Header from './header';
 
 function Head() {
   return (
-    <Flex dir="column">
+    <Flex
+      dir="column"
+      css={{
+        zIndex: '800',
+      }}
+    >
       <Header />
       <BreadCrumbs />
     </Flex>

@@ -1,6 +1,7 @@
 import React from 'react';
 import IcoWarm from '../assest/icons/IcoWarm';
 import mainStore from '../store/mainStore';
+import defaultEditCacheData from '../store/utils/defaultEditCacheData';
 import defaultAddCacheData from '../store/utils/defaultAddCacheData';
 import Button from '../styles/styledComponents/button';
 import Flex from '../styles/styledComponents/flex';
@@ -15,6 +16,7 @@ function Float() {
   const setCurrentStep = mainStore((state) => state.setCurrentStep);
   const setCacheData = mainStore((state) => state.setCacheData);
   const setIsFirstNav = mainStore((state) => state.setIsFirstNav);
+  const setEditCacheData = mainStore((state) => state.setEditCacheData);
 
   const handleDeleteButton = () => {
     switch (currentFloat) {
@@ -22,12 +24,25 @@ function Float() {
         setToggleFloat(false);
         setIsFirstNav(false);
         setCurrentPage(nextPage);
+        setCacheData(defaultAddCacheData);
         break;
       case 'Abort Adding':
         setToggleFloat(false);
         setCurrentPage('Home');
         setCurrentStep(1);
         setCacheData(defaultAddCacheData);
+        break;
+
+      case 'cancel Editing':
+        setToggleFloat(false);
+        setCurrentPage('Home');
+        setEditCacheData(defaultEditCacheData);
+        break;
+
+      case 'exit Editing':
+        setToggleFloat(false);
+        setCurrentPage(nextPage);
+        setEditCacheData(defaultEditCacheData);
         break;
 
       case 'Delete Recipe':

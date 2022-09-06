@@ -2,61 +2,75 @@
 import React from 'react';
 import IcoClose from '../../assest/icons/IcoClose';
 import mainStore from '../../store/mainStore';
-import Button from '../../styles/styledComponents/button';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
 import Text from '../../styles/styledComponents/text';
 
-const addStep3 = () => {
-  const { step3 } = mainStore((state) => state.cacheData);
-  const setCacheData = mainStore((state) => state.setCacheData);
+function EditStep() {
+  const { steps } = mainStore((state) => state.editCacheData);
+  const setEditCacheData = mainStore((state) => state.setEditCacheData);
 
   const handleStepInput = (e) => {
-    const editTarget = e.target.id.split('addStepInp')[1];
-    const newStepList = [...step3.steps];
+    const editTarget = e.target.id.split('editStepInp')[1];
+    const newStepList = [...steps.values];
     newStepList.splice(Number(editTarget) - 1, 1, e.target.value);
-    setCacheData({ step3: { ...step3, steps: newStepList } });
+    setEditCacheData({ steps: { ...steps, values: newStepList } });
   };
 
   const handleAddStepButton = () => {
     // limit of adding items
-    if (step3.steps.length >= 15) return;
-    const newStepList = [...step3.steps, ''];
-    setCacheData({ step3: { ...step3, number: step3.number += 1, steps: newStepList } });
+    if (steps.values.length >= 15) return;
+    const newStepList = [...steps.values, ''];
+    setEditCacheData({ steps: { ...steps, number: steps.number += 1, values: newStepList } });
   };
 
   const handleDeleteStep = (e) => {
     const delTarget = e.target.id.split('delTipInp')[1];
-    const newStepList = [...step3.steps];
+    const newStepList = [...steps.values];
     newStepList.splice(Number(delTarget) - 1, 1);
-    setCacheData({ step3: { number: step3.number -= 1, steps: newStepList } });
+    setEditCacheData({ steps: { number: steps.number -= 1, values: newStepList } });
   };
 
   return (
     <Flex
-      data-testid="addStep3"
+      data-testid="editSteps"
       dir="column"
       css={{
-        marginTop: '$3',
+        marginTop: '$6',
       }}
     >
-      <Text css={{
-        headline5_i: '500',
-        marginBottom: '$3',
-      }}
+      <Text
+        type="bgColorHeadPrimary"
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          '& svg': {
+            fill: '$onPrimary500',
+            transform: 'rotate(45deg)',
+            '&:hover': {
+              fill: '$onPrimary',
+            },
+          },
+        }}
       >
-        let`s add Steps !
-
+        {`Steps (${steps.values.length}) `}
+        <IcoClose
+          width="15"
+          height="15"
+          dataTest="editAddStep"
+          id="editAddStep"
+          event={handleAddStepButton}
+        />
       </Text>
       <Flex
         dir="column"
         css={{
+          marginTop: '$2',
           '& > label': {
             headline6: '400',
             color: '$onBg700',
             marginBottom: '4px',
-          },
-          '& > input , & > select': {
           },
           '& >p': {
             marginBottom: '$2',
@@ -64,29 +78,7 @@ const addStep3 = () => {
         }}
       >
 
-        <Button
-          type="outline"
-          data-testid="addStep3AddStepButton"
-          onClick={handleAddStepButton}
-          css={{
-            textAlign: 'center',
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '$1',
-            marginBottom: '$4',
-            '&:hover': {
-              backgroundColor: '$primary200',
-              color: '$primary',
-            },
-            '@bp4': {
-              padding: '5px',
-            },
-          }}
-        >
-          Add Step
-        </Button>
-
-        {step3.steps.map((step, index) => (
+        {steps.values.map((step, index) => (
           <>
             <Text
               type="bgColorHeadSecondary"
@@ -96,7 +88,7 @@ const addStep3 = () => {
                 alignItems: 'center',
                 '&:hover': {
                   '& svg': {
-                    display: step3.steps.length === 1 ? 'none' : 'flex',
+                    display: steps.values.length === 1 ? 'none' : 'flex',
                   },
                 },
                 '& svg': {
@@ -116,9 +108,9 @@ const addStep3 = () => {
             </Text>
             <Input
               onChange={handleStepInput}
-              key={`addStepInp${index + 1}`}
-              id={`addStepInp${index + 1}`}
-              data-testid={`addStepInp${index + 1}`}
+              key={`editStepInp${index + 1}`}
+              id={`editStepInp${index + 1}`}
+              data-testid={`editStepInp${index + 1}`}
               value={step}
               css={{
                 marginBottom: '$6',
@@ -132,6 +124,6 @@ const addStep3 = () => {
       </Flex>
     </Flex>
   );
-};
+}
 
-export default addStep3;
+export default EditStep;

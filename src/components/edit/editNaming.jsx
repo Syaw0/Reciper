@@ -1,4 +1,3 @@
-/* eslint-disable default-case */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import fakeDb from '../../fakeData';
@@ -7,22 +6,25 @@ import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
 import Text from '../../styles/styledComponents/text';
 
-function AddStep1() {
-  const { step1 } = mainStore((state) => state.cacheData);
-  const setCacheData = mainStore((state) => state.setCacheData);
+function EditNaming() {
+  const { naming } = mainStore((state) => state.editCacheData);
+  const setEditCacheData = mainStore((state) => state.setEditCacheData);
 
   const textInputHandle = (e, type) => {
     switch (type) {
       case 'recipeName':
-        setCacheData({ step1: { ...step1, recipeName: e.target.value } });
-        // setDataStep1((state) => ({ ...state,  }));
+        setEditCacheData({ naming: { ...naming, recipeName: e.target.value } });
         break;
       case 'recipeDes':
-        setCacheData({ step1: { ...step1, recipeDes: e.target.value } });
+        setEditCacheData({ naming: { ...naming, recipeDes: e.target.value } });
 
         break;
       case 'publisherName':
-        setCacheData({ step1: { ...step1, publisherName: e.target.value } });
+        setEditCacheData({ naming: { ...naming, publisherName: e.target.value } });
+
+        break;
+
+      default:
         break;
     }
   };
@@ -30,38 +32,44 @@ function AddStep1() {
   const selectInputHandle = (e, type) => {
     switch (type) {
       case 'category':
-        setCacheData({ step1: { ...step1, category: e.target.value } });
+        setEditCacheData({ naming: { ...naming, category: e.target.value } });
         break;
 
       case 'difficulty':
-        setCacheData({ step1: { ...step1, difficulty: e.target.value } });
+        setEditCacheData({ naming: { ...naming, difficulty: e.target.value } });
+        break;
+
+      default:
         break;
     }
   };
 
   const fileInputHandle = (e) => {
-    setCacheData({ step1: { ...step1, imgFile: e.target.value } });
+    setEditCacheData({ naming: { ...naming, imgFile: e.target.value } });
   };
 
   return (
     <Flex
-      data-testid="addStep1"
+      data-testid="editNaming"
       dir="column"
       css={{
-        marginTop: '$3',
+        marginTop: '$6',
       }}
     >
-      <Text css={{
-        headline5_i: '500',
-        marginBottom: '$3',
-      }}
+      <Text
+        type="bgColorHeadPrimary"
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
       >
-        introduce your recipe
-
+        Naming
       </Text>
       <Flex
         dir="column"
         css={{
+          marginTop: '$1',
           '& > label': {
             headline6: '400',
             color: '$onBg700',
@@ -73,31 +81,30 @@ function AddStep1() {
         }}
       >
 
-        <label htmlFor="addRecipeName">Your Recipe Name</label>
+        <label htmlFor="editRecipeName">Your Recipe Name</label>
         <Input
-          value={step1.recipeName}
+          value={naming.recipeName}
           onChange={(e) => { textInputHandle(e, 'recipeName'); }}
           whichType="text"
           placeholder="Recipe Name"
-          id="addRecipeName"
-          data-testid="addRecipeName"
+          id="editRecipeName"
+          data-testid="editRecipeName"
         />
-        <label htmlFor="addRecipeDescription">Short Description About Recipe</label>
+        <label htmlFor="editRecipeDescription">Short Description About Recipe</label>
         <Input
-          value={step1.recipeDes}
+          value={naming.recipeDes}
           onChange={(e) => { textInputHandle(e, 'recipeDes'); }}
           whichType="text"
-          id="addRecipeDescription"
-          data-testid="addRecipeDescription"
+          id="editRecipeDescription"
+          data-testid="editRecipeDescription"
           placeholder="Short description about this recipe"
         />
 
-        <label htmlFor="addRecipeDescription">Which Category ?</label>
+        <label htmlFor="editRecipeCategory">Which Category ?</label>
         <Input
-          value={step1.category}
+          value={naming.category}
           onChange={(e) => { selectInputHandle(e, 'category'); }}
-          id="addRecipeCategory"
-          data-testid="addRecipeCategory"
+          id="editRecipeCategory"
           whichType="select"
           as="select"
         >
@@ -112,12 +119,11 @@ function AddStep1() {
           ))}
         </Input>
 
-        <label htmlFor="addRecipeDifficulty">Difficulty Level ?</label>
+        <label htmlFor="editRecipeDifficulty">Difficulty Level ?</label>
         <Input
-          value={step1.difficulty}
+          value={naming.difficulty}
           onChange={(e) => { selectInputHandle(e, 'difficulty'); }}
-          id="addRecipeDifficulty"
-          data-testid="addRecipeDifficulty"
+          id="editRecipeDifficulty"
           whichType="select"
           as="select"
         >
@@ -126,23 +132,23 @@ function AddStep1() {
           <option value="hard">Hard</option>
         </Input>
 
-        <label htmlFor="addRecipePublisher">Publisher Name</label>
+        <label htmlFor="editRecipePublisher">Publisher Name</label>
         <Input
-          value={step1.publisherName}
+          value={naming.publisherName}
           onChange={(e) => { textInputHandle(e, 'publisherName'); }}
           whichType="text"
-          id="addRecipePublisher"
-          data-testid="addRecipePublisher"
+          id="editRecipePublisher"
+          data-testid="editRecipePublisher"
           placeholder="Please enter your name"
         />
 
-        <label htmlFor="addRecipeFile">Upload Image for This Recipe</label>
+        <label htmlFor="editRecipeFile">Upload Image for This Recipe</label>
         <Input
           onChange={fileInputHandle}
           type="file"
           whichType="file"
-          id="addRecipeFile"
-          data-testid="addRecipeFile"
+          id="editRecipeFile"
+          data-testid="editRecipeFile"
           accept="image/png, image/jpeg, image/jpg"
           placeholder="short description about this recipe"
         />
@@ -152,4 +158,4 @@ function AddStep1() {
   );
 }
 
-export default AddStep1;
+export default EditNaming;

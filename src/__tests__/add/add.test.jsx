@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import {
-  fireEvent, render, screen, cleanup,
+  fireEvent, render, screen, cleanup, waitFor,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../../app';
@@ -57,6 +57,8 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeCategory'), { target: { value: 'Goat' } });
+    fireEvent.change(screen.getByTestId('addRecipeDifficulty'), { target: { value: 'hard' } });
     fireEvent.click(nextBtn);
     const PreBtn = screen.getByTestId('addRecipePreStageBtn');
     fireEvent.click(PreBtn);
@@ -68,13 +70,14 @@ describe('Adding Recipe', () => {
     expect(screen.getByTestId('FloatPage')).toBeInTheDocument();
   });
 
-  it('when user click on the yes we navigate to home page and cache data reset', () => {
+  it('when user click on the yes we navigate to home page and cache data reset', async () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.click(screen.getByTestId('addRecipeAbortButton'));
     fireEvent.click(screen.getByTestId('floatPageYesButton'));
     expect(screen.getByTestId('homePage')).toBeInTheDocument();
     fireEvent.click(screen.getByTestId('headerNavAdd'));
-    expect(screen.getByTestId('addRecipeName').value).toEqual('');
+    console.log(screen.getByTestId('addRecipeName').value);
+    await waitFor(() => expect(screen.getByTestId('addRecipeName').value).toEqual(''));
   });
 
   it('when user click on the no float page will fade out', () => {
@@ -118,6 +121,61 @@ describe('Adding Recipe', () => {
     expect(screen.getByTestId('addBreadCurrent').innerHTML).toContain('Materials');
     expect(screen.getByTestId('addBreadPre').innerHTML).toContain('Naming');
     expect(screen.getByTestId('addBreadNext').innerHTML).toContain('Steps');
+  });
+
+  it('we can add item in step2 (material) and delete it', () => {
+    const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
+    fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+
+    fireEvent.click(nextBtn);
+
+    fireEvent.click(screen.getByTestId('addStep2AddMaterialButton'));
+    const matInp2 = screen.getByTestId('addMaterialInp2');
+    expect(matInp2).toBeInTheDocument();
+    // delete it
+    fireEvent.click(screen.getByTestId('delMaterialInp2'));
+    expect(matInp2).not.toBeInTheDocument();
+  });
+
+  it('we can add item in step3 (step) and delete it', () => {
+    const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
+    fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+
+    fireEvent.click(nextBtn);
+
+    fireEvent.change(screen.getByTestId('addMaterialInp1'), { target: { value: 'bela bela' } });
+    fireEvent.click(nextBtn);
+
+    fireEvent.click(screen.getByTestId('addStep3AddStepButton'));
+
+    const stepInp2 = screen.getByTestId('addStepInp2');
+    expect(stepInp2).toBeInTheDocument();
+    // delete it
+    fireEvent.click(screen.getByTestId('delStepInp2'));
+    expect(stepInp2).not.toBeInTheDocument();
+  });
+
+  it('we can add item in step4 (tips) and delete it', () => {
+    const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
+    fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.click(nextBtn);
+    fireEvent.change(screen.getByTestId('addMaterialInp1'), { target: { value: 'bela bela' } });
+    fireEvent.click(nextBtn);
+    fireEvent.change(screen.getByTestId('addStepInp1'), { target: { value: 'bela bela' } });
+    fireEvent.click(nextBtn);
+
+    fireEvent.click(screen.getByTestId('addStep4AddTipButton'));
+    const tipInp2 = screen.getByTestId('addTipInp2');
+    expect(tipInp2).toBeInTheDocument();
+    // delete it
+    fireEvent.click(screen.getByTestId('delTipInp2'));
+    expect(tipInp2).not.toBeInTheDocument();
   });
 
   it('we can add a limit item in material or step or tips stage (15items)', () => {

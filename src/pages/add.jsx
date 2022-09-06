@@ -19,6 +19,7 @@ function Add() {
       align="start"
       data-testid="addPage"
       css={{
+        zIndex: '10',
         marginTop: '$5',
         width: '70%',
         height: '100%',

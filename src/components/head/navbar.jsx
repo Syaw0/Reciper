@@ -46,7 +46,7 @@ function Navbar({
         align="center"
         css={{
           '& svg': {
-            fill: '$onBg'
+            fill: '$onBg',
           },
         }}
       >
