@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import mainStore from '../store/mainStore';
 import Flex from '../styles/styledComponents/flex';
 import Text from '../styles/styledComponents/text';
-import handleOrderListPage from './utils/handleOrderListPage';
 
 function OrderList() {
   const currentOrderList = mainStore((state) => state.currentOrderList);
@@ -11,7 +10,6 @@ function OrderList() {
 
   useEffect(() => {
     console.log('hello im render inside useEffect');
-    handleOrderListPage();
   }, [currentPage]);
 
   let title = '';

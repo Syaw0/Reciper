@@ -19,7 +19,7 @@ function EditStep() {
 
   const handleAddStepButton = () => {
     // limit of adding items
-    if (steps.values.length >= 15) return;
+    if (steps.values.length >= 25) return;
     const newStepList = [...steps.values, ''];
     setEditCacheData({ steps: { ...steps, number: steps.number += 1, values: newStepList } });
   };

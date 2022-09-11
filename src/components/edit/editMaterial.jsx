@@ -18,7 +18,7 @@ function EditMaterial() {
 
   const handleEditAddMaterialButton = () => {
     // limit of adding items
-    if (materials.values.length >= 15) return;
+    if (materials.values.length >= 25) return;
     const newMaterialList = [...materials.values, ''];
     setEditCacheData({
       materials: { ...materials, number: materials.number += 1, values: newMaterialList },

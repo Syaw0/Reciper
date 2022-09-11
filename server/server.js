@@ -17,6 +17,13 @@ app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
+
+// app.use((req, res) => {
+//   res.append('Access-Control-Allow-Origin', 'http://localhost:8080');
+//   // res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//   // res.append('Access-Control-Allow-Headers', 'Content-Type');
+// });
+
 app.get('/', (req, res) => {
   res.set({
     'X-Content-Type-Options': 'nosniff',
@@ -25,18 +32,28 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
+
   res.send({
     ...fixDataForHome(),
   });
 });
 
 app.get('/categories', (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
   res.send({
     ...category,
   });
 });
 
 app.get('/categories/:category', (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
   let response;
   const check = checkCategory(req.params.category);
   if (!check) {
@@ -50,6 +67,9 @@ app.get('/categories/:category', (req, res) => {
 });
 
 app.get('/categories/:category/id:recipe/', (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
   const cate = req.params.category;
   const { recipe } = req.params;
   let response;
@@ -62,7 +82,7 @@ app.get('/categories/:category/id:recipe/', (req, res) => {
     if (!checkRec) {
       response = { error: 'no such recipe exist' };
     } else {
-      response = checkRec;
+      response = { ...checkRec };
       response.similar = setSimilarRecipe(recipe, cate);
     }
   }

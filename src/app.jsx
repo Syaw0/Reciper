@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from './components/head/head';
 import gCss from './styles/globalCss.js';
 import Flex from './styles/styledComponents/flex';
@@ -11,10 +11,18 @@ import Footer from './components/footer/footer';
 import Recipe from './pages/recipe';
 import Float from './pages/float';
 import Edit from './pages/edit';
+import Loader from './components/global/loader';
 
 function App() {
   const currentPage = mainStore((state) => state.currentPage);
   const toggleFloat = mainStore((state) => state.toggleFloat);
+  const isLoaderEnable = mainStore((state) => state.isLoaderEnable);
+  const setCurrentPage = mainStore((state) => state.setCurrentPage);
+
+  useEffect(() => {
+    setCurrentPage('Home');
+  }, []);
+
   gCss();
   return (
     <Flex
@@ -40,19 +48,19 @@ function App() {
       }}
     >
       <Head />
-      <Flex align="start" justify="center">
-        {currentPage === 'Home' && <Home />}
-        {currentPage === 'Add Recipe' && <Add />}
-        {currentPage === 'Category' && <OrderList />}
-        {currentPage === 'Searching' && <OrderList />}
-        {currentPage === 'Recipe' && <Recipe />}
-        {currentPage === 'Trends Recipes' && <OrderList />}
-        {currentPage === 'New Recipes' && <OrderList />}
-        {currentPage === 'User Suggestion' && <OrderList />}
-        {currentPage === 'Top Categories' && <OrderList />}
-        {currentPage === 'recipeCategory' && <OrderList />}
-        {currentPage === 'editRecipe' && <Edit />}
-
+      <Flex dir="column" align="center" justify="center">
+        {isLoaderEnable && <Loader />}
+        {currentPage === 'Home' && !isLoaderEnable && <Home />}
+        {currentPage === 'Add Recipe' && !isLoaderEnable && <Add />}
+        {currentPage === 'Category' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'Searching' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'Recipe' && !isLoaderEnable && <Recipe />}
+        {currentPage === 'Trends Recipes' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'New Recipes' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'User Suggestion' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'Top Categories' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'recipeCategory' && !isLoaderEnable && <OrderList />}
+        {currentPage === 'editRecipe' && !isLoaderEnable && <Edit />}
       </Flex>
       <Footer />
 

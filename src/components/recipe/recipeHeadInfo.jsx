@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import Flex from '../../styles/styledComponents/flex';
 import Text from '../../styles/styledComponents/text';
 import RecipeCheaps from './recipeCheaps';
+import mainStore from '../../store/mainStore';
 
 function RecipeHeadInfo({ cheapsData }) {
   RecipeHeadInfo.propTypes = {
     cheapsData: PropTypes.objectOf.isRequired,
   };
+  const recipeCacheData = mainStore((state) => state.recipeCacheData);
   return (
     <>
       <Flex
@@ -27,7 +29,7 @@ function RecipeHeadInfo({ cheapsData }) {
           },
         }}
         >
-          French Strawberry Cake
+          {recipeCacheData.name}
 
         </Text>
         <Flex
@@ -45,7 +47,7 @@ function RecipeHeadInfo({ cheapsData }) {
 
           </Text>
           <Text>
-            Publisher
+            {recipeCacheData.publisher}
 
           </Text>
         </Flex>
@@ -70,9 +72,7 @@ function RecipeHeadInfo({ cheapsData }) {
           },
         }}
         >
-          Reminiscent of a ladyfinger cake, this is a deliciously light
-          cake that is not all that sweet and is best made with fresh, ripe strawberries.
-          Decorate with additional strawberries.
+          {recipeCacheData.description}
         </Text>
         <RecipeCheaps cheapsData={cheapsData} />
       </Flex>

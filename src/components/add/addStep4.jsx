@@ -20,7 +20,7 @@ function AddStep4() {
 
   const handleAddTipButton = () => {
     // limit of adding items
-    if (step4.tips.length >= 15) return;
+    if (step4.tips.length >= 25) return;
     const newTipsList = [...step4.tips, ''];
     setCacheData({ step4: { ...step4, number: step4.number += 1, tips: newTipsList } });
   };

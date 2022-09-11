@@ -20,7 +20,7 @@ const addStep3 = () => {
 
   const handleAddStepButton = () => {
     // limit of adding items
-    if (step3.steps.length >= 15) return;
+    if (step3.steps.length >= 25) return;
     const newStepList = [...step3.steps, ''];
     setCacheData({ step3: { ...step3, number: step3.number += 1, steps: newStepList } });
   };

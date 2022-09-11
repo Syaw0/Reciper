@@ -6,20 +6,23 @@ import Flex from '../../styles/styledComponents/flex';
 import Text from '../../styles/styledComponents/text';
 import mainStore from '../../store/mainStore';
 
-function RecipeCard({ cardType }) {
+function RecipeCard({ cardType, data }) {
   RecipeCard.propTypes = {
     cardType: PropType.string.isRequired,
+    data: PropType.objectOf.isRequired,
   };
-  const id = 'meat';
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
   const setCurrentCategory = mainStore((state) => state.setCurrentCategory);
+  const setCurrentRecipeId = mainStore((state) => state.setCurrentRecipeId);
+  const setCurrentRecipeCategory = mainStore((state) => state.setCurrentRecipeCategory);
+
   const handleCardClick = () => {
     if (cardType === 'category') {
-      // handleOrderListPage('fo');
-      setCurrentCategory(id);
-      // handleBreadsOutside("recipeCategory")
+      setCurrentCategory(data.name);
       setCurrentPage('recipeCategory');
     } else {
+      setCurrentRecipeId(data.recipeId);
+      setCurrentRecipeCategory(data.category);
       setCurrentPage('Recipe');
     }
   };
@@ -59,7 +62,7 @@ function RecipeCard({ cardType }) {
 
       <Flex
         css={{
-          backgroundImage: `url(${'https://user-images.githubusercontent.com/90524474/185795801-545f94fa-8d62-4d71-a365-289c25645b0b.jpg'})`,
+          backgroundImage: `url(${data.imgUrl})`,
           bgCentering: '',
           height: '75%',
           borderRadius: '32px',
@@ -84,7 +87,7 @@ function RecipeCard({ cardType }) {
             },
           }}
         >
-          piece of cake
+          {data.name}
         </Text>
 
         <Flex
@@ -105,12 +108,26 @@ function RecipeCard({ cardType }) {
         >
           {cardType !== 'category' && (
             <>
-              <Text>16 material</Text>
-              <Text>10 step</Text>
+              <Text>
+                {data.materials.length}
+                {' '}
+                material
+              </Text>
+              <Text>
+                {data.steps.length}
+                {' '}
+                step
+              </Text>
             </>
           )}
           {cardType === 'category' && (
-            <Text>23 Salads Type</Text>
+            <Text>
+              {data.number}
+              {' '}
+              {data.name}
+              {' '}
+              Type
+            </Text>
           )}
         </Flex>
 

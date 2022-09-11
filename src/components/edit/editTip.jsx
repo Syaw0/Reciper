@@ -18,7 +18,7 @@ function EditTip() {
 
   const handleAddTipButton = () => {
     // limit of adding items
-    if (tips.values.length >= 15) return;
+    if (tips.values.length >= 25) return;
     const newTipsList = [...tips.values, ''];
     setEditCacheData({ tips: { ...tips, number: tips.number += 1, values: newTipsList } });
   };

@@ -1,29 +1,25 @@
 import React from 'react';
-import RecipeCard from '../components/global/recipeCard';
 import ItemIntroducer from '../components/home/itemIntroducer';
-import RecipeCheaps from '../components/recipe/recipeCheaps';
 import RecipeCookSteps from '../components/recipe/recipeCookSteps';
 import RecipeMaterial from '../components/recipe/recipeMaterial';
 import RecipeCookTips from '../components/recipe/recipeCookTips';
 import Flex from '../styles/styledComponents/flex';
-import Text from '../styles/styledComponents/text';
 import RecipeButtonGroup from '../components/recipe/recipeButtonGroup';
 import RecipeHeadInfo from '../components/recipe/recipeHeadInfo';
+import mainStore from '../store/mainStore';
+import createRecipeCard from './utils/createRecipeCard';
 
 function Recipe() {
+  const recipeCacheData = mainStore((state) => state.recipeCacheData);
+
   const fakeInfoData = [
-    { 'Min Perpetration': '15min' },
-    { 'Min Cook': '15min' },
-    { Level: 'Easy' },
-    { Steps: '3' },
-    { Material: '5' },
+    { Perpetration: recipeCacheData.metaData.prep },
+    { Cook: recipeCacheData.metaData.cook },
+    { Level: recipeCacheData.difficulty },
+    { Steps: recipeCacheData.steps.length },
+    { Material: recipeCacheData.materials.length },
+    { serving: recipeCacheData.metaData.servings },
   ];
-  const fakeData = {
-    needItem: ['2 pounds lean ground beef', '1 (1 ounce) package ranch dressing mix', '1 egg, lightly beaten'],
-    cookStep: ['Preheat the grill for high heat.', 'In a bowl, mix the ground beef, ranch dressing mix, egg, crushed crackers, and onion. Form into hamburger patties.', 'Lightly oil the grill grate. Place patties on the grill, and cook 5 minutes per side, or until well done.'],
-    tips: ['This Food per Serve Have: 268 calories; protein 23.1g; carbohydrates 7.7g; fat 15.2g; cholesterol 97.6mg; sodium 392.7mg.'],
-  };
-  const recipeLikeList = [<RecipeCard cardType="normal" />, <RecipeCard cardType="normal" />, <RecipeCard cardType="normal" />, <RecipeCard cardType="normal" />];
   return (
     <Flex
       data-testid="recipePage"
@@ -57,7 +53,7 @@ function Recipe() {
     >
 
       <Flex css={{
-        backgroundImage: `url(${'https://user-images.githubusercontent.com/90524474/185795801-545f94fa-8d62-4d71-a365-289c25645b0b.jpg'})`,
+        backgroundImage: `url(${recipeCacheData.imgUrl})`,
         bgCentering: '',
         height: '38rem',
         borderRadius: '32px',
@@ -79,17 +75,17 @@ function Recipe() {
 
         <RecipeHeadInfo cheapsData={fakeInfoData} />
 
-        <RecipeMaterial material={fakeData.needItem} />
+        <RecipeMaterial material={recipeCacheData.materials} />
 
-        <RecipeCookSteps steps={fakeData.cookStep} />
+        <RecipeCookSteps steps={recipeCacheData.steps} />
 
-        <RecipeCookTips tips={fakeData.tips} />
+        <RecipeCookTips tips={recipeCacheData.tips} />
 
         <RecipeButtonGroup />
 
       </Flex>
 
-      <ItemIntroducer title="May You Like This !" items={recipeLikeList} />
+      <ItemIntroducer title="May You Like This !" items={createRecipeCard('normal', recipeCacheData.similar)} />
 
     </Flex>
   );

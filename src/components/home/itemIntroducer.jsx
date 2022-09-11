@@ -5,6 +5,7 @@ import Flex from '../../styles/styledComponents/flex';
 import Text from '../../styles/styledComponents/text';
 import IcoArrowRight from '../../assest/icons/IcoArrowRight';
 import mainStore from '../../store/mainStore';
+import createHomeRecipeCard from '../../pages/utils/createHomeRecipeCard';
 
 function ItemIntroducer({ title, items }) {
   ItemIntroducer.propTypes = {
@@ -12,7 +13,26 @@ function ItemIntroducer({ title, items }) {
     items: PropType.arrayOf.isRequired,
   };
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
+  const setCurrentOrderList = mainStore((state) => state.setCurrentOrderList);
+
   const handleSeeMoreButton = (whichSeeMore) => {
+    switch (whichSeeMore) {
+      case 'Trends Recipes':
+
+        setCurrentOrderList(createHomeRecipeCard('normal', 'trendRecipes'));
+        break;
+      case 'New Recipes':
+        setCurrentOrderList(createHomeRecipeCard('normal', 'newRecipes'));
+        break;
+      case 'User Suggestion':
+        setCurrentOrderList(createHomeRecipeCard('normal', 'userSuggestion'));
+        break;
+      case 'Top Categories':
+        setCurrentOrderList(createHomeRecipeCard('category', 'topCategories'));
+        break;
+      default:
+        break;
+    }
     setCurrentPage(whichSeeMore);
   };
   return (

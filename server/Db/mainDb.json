@@ -78,7 +78,7 @@
           "#5":{
             "name":"Breakfast Brownies",
             "description":"This is a hearty breakfast brownie, quick to fix, and yummy. My kids loved it! It's also gluten-free and dairy-free. ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "1 ½ cups quick-cooking oats ",
               "¾ cup brown sugar ",
@@ -116,7 +116,7 @@
           "#6":{
             "name":"Gingerbread Biscotti",
             "description":"These spicy Italian cookies are the perfect accompaniment for cocoa or coffee during the holiday season! Serve with lemon curd or drizzle with lemon flavored almond bark for a special treat. ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "⅓ cup vegetable oil ",
               "1 cup white sugar ",
@@ -156,7 +156,7 @@
           "#7":{
             "name":"Espresso Biscotti",
             "description":"These biscotti make a good Christmas gift! The combination of fruits, nuts, chocolate chips, and spices are prefect for any holiday season. ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "¼ cup unsalted butter ",
               "¾ cup white sugar ",
@@ -200,7 +200,7 @@
           "#8":{
             "name":"Chocolate Truffle Cookies",
             "description":"A very dark, rich chocolate cookie for the true chocoholic. This recipe uses relatively little flour, resulting in dense, fudge-like cookies. These cookies keep well in the freezer (but you may have a hard time waiting for them to thaw before you eat them). ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "4 (1 ounce) squares unsweetened chocolate, chopped ",
               "1 cup semisweet chocolate chips ",
@@ -238,7 +238,7 @@
           "#9":{
             "name":"Chocolate Oatmeal Cookies",
             "description":"These chocolate oatmeal cookies are packed with energizing ingredients and please even a finicky teenager! ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "1 cup all-purpose flour ",
               "3 tablespoons unsweetened cocoa powder ",
@@ -279,7 +279,7 @@
           "#10":{
             "name":"Best Brownies",
             "description":"These brownies always turn out! ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "½ cup butter ",
               "1 cup white sugar ",
@@ -316,7 +316,7 @@
           "#11":{
             "name":"Easy Lemon Cookies",
             "description":"Lemon cookies from cake mix with a twist. ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "1 (15.25 ounce) package lemon cake mix ",
               "2 large eggs ",
@@ -349,7 +349,7 @@
           "#12":{
             "name":"One Bowl Chocolate Cake",
             "description":"This is a rich and moist one bowl chocolate cake. It only takes a few minutes to prepare the batter. Frost with your favorite chocolate frosting. ",
-            "category":"",
+            "category": "Dessert",
             "materials":[
               "2 cups white sugar ",
               "1 ¾ cups all-purpose flour ",
@@ -389,7 +389,7 @@
         "#13":{
             "name":"Goat Stew",
             "description":"This goat meat recipe is based on a Filipino stew recipe called caldereta. It is usually served with rice. I suggest marinating the meat for at least 6 hours. The serving size for this recipe is 2 to 4, depending on how much bone the meat has. Serve over rice. Masarap! ",
-            "category":"",
+            "category": "Goat",
             "materials":[
               "1 pound bone-in goat meat, cut into large chunks ",
               "¼ cup vinegar ",
@@ -432,7 +432,7 @@
           "#14":{
             "name":"Pressure Cooker Goat Curry",
             "description":"Tantalizing Instant Pot goat curry. Using an electric pressure cooker cuts down on the cooking time while still rendering tender meat. Serve over jasmine rice or with naan. ",
-            "category":"",
+            "category": "Goat",
             "materials":[
               "¼ cup vegetable oil, divided ",
               "2 large onions, thinly sliced ",
@@ -546,7 +546,7 @@
         "#15":{
             "name":"Quick Chili",
             "description":"Make quick chili with this easy bean chili recipe that can be as mild or spicy as desired. It's even better the next day. ",
-            "category":"",
+            "category": "Beef",
             "materials":[
               "2 pounds ground beef ",
               "1 onion, finely diced ",
@@ -587,7 +587,7 @@
           "#16":{
             "name":"Easy Homemade Chili",
             "description":"Easy homemade chili. Goes great with cornbread or over corn chips for a chili pie! I like to use spicy pinto beans. ",
-            "category":"",
+            "category": "Beef",
             "materials":[
               "1 pound ground beef ",
               "1 onion, chopped ",
@@ -622,7 +622,7 @@
           "#17":{
             "name":"Best Damn Chili",
             "description":"This is my best chili recipe. After years of adjusting recipes that were either too spicy or too mild, everyone loves this. Even my finance who hates chili. ",
-            "category":"",
+            "category": "Beef",
             "materials":[
               "4 tablespoons olive oil ",
               "1 yellow onion, chopped ",
@@ -679,7 +679,7 @@
           "#18":{
             "name":"Mini Meatloaves",
             "description":"This mini meatloaf recipe is quick and easy to make. It's a family favorite. The ketchup and brown sugar give these loaves a tangy flavor. ",
-            "category":"",
+            "category": "Beef",
             "materials":[
               "1 cup shredded Cheddar cheese ",
               "¾ cup milk ",
@@ -717,7 +717,7 @@
         "#19":{
             "name":"Bang Bang Chicken",
             "description":"This is a wonderful Americanized version of an extremely popular Sichuan Chinese dish. With twice-fried chicken, you get the crispy fried breading you'd expect, and the bang bang sauce drizzle just makes the entire dish spectacular. You'll love this more than any Chinese takeout version. Pay attention to the notes in the directions!! ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "⅓ cup milk ",
               "1 egg ",
@@ -760,7 +760,7 @@
           "#20":{
             "name":"Southern Fried Chicken",
             "description":"This recipe is originally from Alabama, and has been passed down for generations. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "1 (3 pound) whole chicken, cut into pieces ",
               "1 cup all-purpose flour ",
@@ -792,7 +792,7 @@
           "#21":{
             "name":"Chicken Parmesan",
             "description":"My version of chicken Parmesan is a little different than what they do in the restaurants, with less sauce and a crispier crust. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "4 skinless, boneless chicken breast halves ",
               " salt and freshly ground black pepper to taste ",
@@ -837,7 +837,7 @@
           "#22":{
             "name":"Artichoke Chicken",
             "description":"This artichoke chicken is the most flavorful chicken you will ever have in your life. It melts in your mouth and is to die for! ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               " cooking spray ",
               "1 (15 ounce) can artichoke hearts, drained and chopped ",
@@ -869,7 +869,7 @@
           "#23":{
             "name":"Easy Chicken Posole",
             "description":"This easy-to-make chicken and hominy soup is one of many great Mexican Christmas traditions, or simply delicious whenever you want to eat something warm and comforting. Garnish with thinly sliced radishes, shredded lettuce, finely chopped onion, chopped cilantro, and lime wedges, if you like. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "4 tablespoons vegetable oil, divided ",
               "2 ½ pounds skinless, boneless chicken breast halves ",
@@ -906,7 +906,7 @@
           "#24":{
             "name":"Greek Lemon Chicken Soup",
             "description":"This Greek lemon chicken soup is a perfect introduction to a full Greek meal or a hearty bowlful for a meal in itself. Serve with fresh pita triangles, and you'll be sure to please your guests! ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "8 cups chicken broth ",
               "½ cup fresh lemon juice ",
@@ -946,7 +946,7 @@
           "#25":{
             "name":"Crispy Chicken Nuggets",
             "description":"This is easy and a quick kids meal. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "1 egg ",
               " salt and ground black pepper to taste ",
@@ -981,7 +981,7 @@
           "#26":{
             "name":"Golden Chicken Tenders",
             "description":"This is my favorite chicken recipe. It is quick, easy and delicious. I serve the chicken tenders with cranberry sauce, rice and spinach. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "1 (9 ounce) package chicken tenderloins ",
               "½ cup finely crushed dry stuffing mix ",
@@ -1011,7 +1011,7 @@
           "#27":{
             "name":"Buffalo Chicken Fingers",
             "description":"This is a baked version of the popular spicy appetizer. Use more or less cayenne to taste. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "4 skinless, boneless chicken breast halves - cut into finger-sized pieces ",
               "¼ cup all-purpose flour ",
@@ -1047,7 +1047,7 @@
           "#28":{
             "name":"Simple Lemon-Herb Chicken",
             "description":"Lemon-herb chicken is a simple, quick, and delicious dish. All you need are a few herbs, a lemon, and of course, the chicken! The amount of spices are completely up to you. You can add more or less according to your taste. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "2 (5 ounce) skinless, boneless chicken breast halves ",
               "1 medium lemon, juiced, divided ",
@@ -1080,7 +1080,7 @@
           "#29":{
             "name":"Chicken and Waffles",
             "description":"This recipe has crunch, sweet and spicy, savory all in one. ",
-            "category":"",
+            "category": "Chicken",
             "materials":[
               "4 eggs ",
               "¼ cup heavy cream ",
@@ -1128,7 +1128,7 @@
         "#30":{
             "name":"Creamy Chicken Spaghetti",
             "description":"Great creamy chicken spaghetti dinner kids will love! Garnish with freshly grated Parmesan cheese and serve with a salad and hot garlic bread. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "1 pound skinless, boneless chicken breasts ",
               "½ teaspoon salt ",
@@ -1168,7 +1168,7 @@
           "#31":{
             "name":"Basic Baked Spaghetti",
             "description":"Easy baked spaghetti made quickly in the oven. Use different cheeses to create your signature dish. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "¾ pound lean ground beef ",
               "1 (16 ounce) jar spaghetti sauce ",
@@ -1201,7 +1201,7 @@
           "#32":{
             "name":"Spaghetti with a Kick",
             "description":"I've been modifying this recipe over the years and this current rendition has become a real crowd-pleaser. It's quick, easy and a nice change of pace from regular spaghetti. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "1 pound spaghetti ",
               "1 tablespoon olive oil ",
@@ -1239,7 +1239,7 @@
           "#33":{
             "name":"Easy Italian Sausage Spaghetti",
             "description":"This sausage spaghetti has the flavor of spaghetti and meatballs, without the hassle of making meatballs! ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "1 tablespoon olive oil ",
               "2 pounds sweet Italian sausage ",
@@ -1280,7 +1280,7 @@
           "#34":{
             "name":"Spaghetti with Corned Beef",
             "description":"Quick and easy spaghetti using canned corned beef and bottled spaghetti sauce. Delicious! For added nutrition, add a can of mixed vegetables or cut-up fresh vegetable, such as chopped onion or green peppers and tomatoes. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "8 ounces spaghetti ",
               "1 (12 ounce) can corned beef ",
@@ -1313,7 +1313,7 @@
           "#35":{
             "name":"Spaghetti a la Philly",
             "description":"Your favorite spaghetti sauce gets a delicious make over when combined with cream cheese and cooked ground beef. It's mixed with hot cooked spaghetti for an easy supper. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "1 pound lean ground beef ",
               "1 (24 ounce) jar spaghetti sauce ",
@@ -1345,7 +1345,7 @@
           "#36":{
             "name":"Chicken Spaghetti Bake",
             "description":"A cheesy baked blend of chicken and spaghetti. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "1 (16 ounce) package spaghetti ",
               "3 (12.5 fl oz) cans chicken chunks, drained ",
@@ -1378,7 +1378,7 @@
           "#37":{
             "name":"Baked Spaghetti",
             "description":"Comforting baked spaghetti recipe with plenty of melted cheese — the perfect dish for potlucks, family gatherings, or a weeknight dinner. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "1 (16 ounce) package spaghetti ",
               "1 pound ground beef ",
@@ -1418,7 +1418,7 @@
           "#38":{
             "name":"Spaghetti Squash Lasagna",
             "description":"Hearty and delicious vegetarian spaghetti squash lasagna that everyone will love! ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "2 spaghetti squash, halved lengthwise and seeded ",
               "1 tablespoon olive oil ",
@@ -1456,7 +1456,7 @@
           "#39":{
             "name":"Taco Spaghetti",
             "description":"Spaghetti with a Tex-Mex twist. So yummy everyone will come back for seconds. ",
-            "category":"",
+            "category": "Spaghetti",
             "materials":[
               "6 ounces spaghetti ",
               "1 pound ground beef ",
@@ -1493,7 +1493,7 @@
         "#40":{
             "name":"Crispy Pork Cutlets",
             "description":"Serve these crispy pork cutlets with my delicious cream gravy that's flavored with pickles, jalapeño pepper, and green onions. You can substitute veal, beef, turkey, or chicken for the pork without missing a beat. ",
-            "category":"",
+            "category": "Pork",
             "materials":[
               "2 (1 1/4 pound) fully trimmed pork tenderloins, cut into 8 pieces ",
               " salt and freshly ground black pepper to taste ",
@@ -1540,7 +1540,7 @@
           "#41":{
             "name":"Asian Pork Tenderloin",
             "description":"This Asian pork recipe is simple and flavorful. Marinate the pork tenderloin for at least 8 hours (overnight is best) and flip it after 4 hours. It's great with rice and veggies like bok choy. Enjoy! ",
-            "category":"",
+            "category": "Pork",
             "materials":[
               "1 (2 pound) fat-trimmed pork tenderloin ",
               "⅓ cup lite soy sauce ",
@@ -1577,7 +1577,7 @@
           "#42":{
             "name":"Fried Pork Chop",
             "description":"These fried pork chops are so good you'll say they taste like heaven! ",
-            "category":"",
+            "category": "Pork",
             "materials":[
               "1 cup vegetable oil for frying ",
               "½ cup all-purpose flour ",
@@ -1611,7 +1611,7 @@
         "#43":{
             "name":"Chris' Bay Area Burger",
             "description":"These burgers are the hit of my town. All my friends come over every weekend just for these burgers. With a little bit of basil leaves, and some olive oil, you will drooling all over yourself while you eat these. ",
-            "category":"",
+            "category": "Hamburger",
             "materials":[
               "1 pound ground beef ",
               "2 cloves garlic, minced ",
@@ -1644,7 +1644,7 @@
           "#44":{
             "name":"The Perfect Basic Burger",
             "description":"These burger patties are made with ground beef and an easy bread crumb mixture. Nothing beats a simple hamburger on a warm summer evening. Pile these burgers with your favorite condiments and pop open a cool drink! ",
-            "category":"",
+            "category": "Hamburger",
             "materials":[
               "1 large egg ",
               "½ teaspoon salt ",
@@ -1676,7 +1676,7 @@
           "#45":{
             "name":"Juicy Lucy Burgers",
             "description":"A favorite of Minnesotans! The famous Juicy Lucy! Mmmm. So good. You MUST use American cheese on this to achieve the juiciness in the middle! I like sauteed mushrooms and onions on mine! ",
-            "category":"",
+            "category": "Hamburger",
             "materials":[
               "1 ½ pounds ground beef ",
               "1 tablespoon Worcestershire sauce ",
@@ -1709,7 +1709,7 @@
           "#46":{
             "name":"Hamburgers by Eddie",
             "description":"A simple way to spruce up your burgers. Cook out on the grill, or just fry in a pan indoors. Serve on buns with lettuce, tomato, ketchup, mustard and onions. ",
-            "category":"",
+            "category": "Hamburger",
             "materials":[
               "1 pound ground beef ",
               "1 egg ",
@@ -1740,7 +1740,7 @@
           "#47":{
             "name":"Best Hamburger Ever",
             "description":"The best burger recipe for summertime grilling. This juicy burger is jam-packed with all kinds of stuff and no tasteless bread crumbs! Serve on buns with your favorite condiments. ",
-            "category":"",
+            "category": "Hamburger",
             "materials":[
               "1 ½ pounds lean ground beef ",
               "½ onion, finely chopped ",
@@ -1781,7 +1781,7 @@
           "#48":{
             "name":"Big Smokey Burgers",
             "description":"I created this recipe while trying to recreate the best burger I had ever tasted at a restaurant in the Great Smoky Mountains of North Carolina. My family and I think these burgers are better! They are packed with flavor! ",
-            "category":"",
+            "category": "Hamburger",
             "materials":[
               "2 pounds ground beef sirloin ",
               "½ onion, grated ",

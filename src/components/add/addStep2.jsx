@@ -21,7 +21,7 @@ const addStep2 = () => {
 
   const handleAddMaterialButton = () => {
     // limit of adding items
-    if (step2.materials.length >= 15) return;
+    if (step2.materials.length >= 25) return;
     const newMaterialList = [...step2.materials, ''];
     setCacheData({ step2: { ...step2, number: step2.number += 1, materials: newMaterialList } });
   };
