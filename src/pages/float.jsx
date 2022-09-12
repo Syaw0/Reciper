@@ -17,6 +17,7 @@ function Float() {
   const setCacheData = mainStore((state) => state.setCacheData);
   const setIsFirstNav = mainStore((state) => state.setIsFirstNav);
   const setEditCacheData = mainStore((state) => state.setEditCacheData);
+  const setFinalComponent = mainStore((state) => state.setFinalComponent);
 
   const handleDeleteButton = () => {
     switch (currentFloat) {
@@ -25,12 +26,14 @@ function Float() {
         setIsFirstNav(false);
         setCurrentPage(nextPage);
         setCacheData(defaultAddCacheData);
+        setFinalComponent('finalMsg');
         break;
       case 'Abort Adding':
         setToggleFloat(false);
         setCurrentPage('Home');
         setCurrentStep(1);
         setCacheData(defaultAddCacheData);
+        setFinalComponent('finalMsg');
         break;
 
       case 'cancel Editing':

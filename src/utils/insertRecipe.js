@@ -34,12 +34,13 @@ const setStateToSuccessMsg = () => {
 
 const insertRecipeToServer = async () => {
   setStateToLoader();
-  await setRequest()
-    .then(() => {
-      setStateToSuccessMsg();
-    }).catch(() => {
-      setStateToErrorMsg();
-    });
+
+  const result = await setRequest('addRecipe');
+  if (result) {
+    setStateToSuccessMsg();
+  } else {
+    setStateToErrorMsg();
+  }
 
   console.log('inserting to server');
 };

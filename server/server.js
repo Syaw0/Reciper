@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bp = require('body-parser');
+const cors = require('cors');
 const category = require('./Db/categories');
 const checkCategory = require('./utils/checkCategory');
 const checkRecipe = require('./utils/checkRecipe');
@@ -16,13 +17,15 @@ const app = express();
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(cors({
+  origin: '*',
+  optionsSuccessStatus: '204',
+  allowedHeaders: '*',
+  methods: ['POST', 'GET', 'OPTIONS'],
+  preflightContinue: false,
+}));
 
-// app.use((req, res) => {
-//   res.append('Access-Control-Allow-Origin', 'http://localhost:8080');
-//   // res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//   // res.append('Access-Control-Allow-Headers', 'Content-Type');
-// });
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.set({
@@ -33,7 +36,7 @@ app.get('/', (req, res) => {
 
 app.get('/home', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin': '*',
+    // 'Access-Control-Allow-Origin': '*',
   });
 
   res.send({
@@ -91,13 +94,20 @@ app.get('/categories/:category/id:recipe/', (req, res) => {
   });
 });
 
-app.post('/addRecipe', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': '*',
+app.post('/addRecipe', async (req, res) => {
+  let response;
+  await addRecipe(req.body).then(() => {
+    response = {
+      status: 'true',
+      text: 'successfully insert recipe to server',
+    };
+  }).catch(() => {
+    response = {
+      status: 'false',
+      text: 'error Happen during operation',
+    };
   });
-
-  addRecipe(req.body);
-  res.send(req.body);
+  res.send(response);
 });
 
 app.delete('/delete:recipeId', async (req, res) => {
