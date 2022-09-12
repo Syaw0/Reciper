@@ -25,9 +25,10 @@ const setStateToSuccessMsg = () => {
     mainStore.setState((state) => ({
       ...state,
       editCacheData: defaultEditCacheData,
-      currentPage: 'Home',
+      isFirstNav: false,
       editCurrentMsg: 'none',
     }));
+    mainStore.getState().setCurrentPage('Home');
   }, 1000);
 };
 

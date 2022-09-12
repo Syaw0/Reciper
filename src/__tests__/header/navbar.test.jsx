@@ -5,6 +5,13 @@ import {
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../../app';
+import getHomeData from '../../store/utils/getPageData/getHomeData';
+import fakeHomeData from '../fakeData/fakeHomeData';
+
+jest.mock('../../store/utils/getPageData/getHomeData');
+jest.mock('../../store/utils/getPageData/getCategoryData');
+
+getHomeData.mockImplementation(() => fakeHomeData);
 
 jest.useFakeTimers();
 

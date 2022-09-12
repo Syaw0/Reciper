@@ -12,7 +12,7 @@ import createRecipeCard from './utils/createRecipeCard';
 function Recipe() {
   const recipeCacheData = mainStore((state) => state.recipeCacheData);
 
-  const fakeInfoData = [
+  const headInfo = [
     { Perpetration: recipeCacheData.metaData.prep },
     { Cook: recipeCacheData.metaData.cook },
     { Level: recipeCacheData.difficulty },
@@ -73,7 +73,7 @@ function Recipe() {
         }}
       >
 
-        <RecipeHeadInfo cheapsData={fakeInfoData} />
+        <RecipeHeadInfo cheapsData={headInfo} />
 
         <RecipeMaterial material={recipeCacheData.materials} />
 

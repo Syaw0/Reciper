@@ -1,10 +1,21 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import {
-  fireEvent, render, screen, cleanup,
+  fireEvent, render, screen, cleanup, waitFor,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from '../../app';
+import getCategoryData from '../../store/utils/getPageData/getCategoryData';
+import getHomeData from '../../store/utils/getPageData/getHomeData';
+import fakeCategoryData from '../fakeData/fakeCategoryData';
+import fakeHomeData from '../fakeData/fakeHomeData';
+
+jest.mock('../../store/utils/getPageData/getHomeData');
+
+jest.mock('../../store/utils/getPageData/getCategoryData');
+
+getHomeData.mockImplementation(() => fakeHomeData);
+getCategoryData.mockImplementation(() => Object.values(fakeCategoryData));
 
 jest.useFakeTimers();
 
@@ -13,25 +24,25 @@ afterEach(() => {
 });
 
 describe('navigate section', () => {
-  it('navigate to category page', () => {
+  it('navigate to category page', async () => {
     render(<App />);
     const navBtnToOrderList = screen.getByTestId('headerNavOrderList');
     fireEvent.click(navBtnToOrderList);
-    expect(screen.getByTestId('orderListPage')).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByTestId('orderListPage')).toBeInTheDocument());
   });
-  it('navigate to Add page', () => {
-    render(<App />);
+  it('navigate to Add page', async () => {
+    await waitFor(() => render(<App />));
     const navBtnToAdd = screen.getByTestId('headerNavAdd');
     fireEvent.click(navBtnToAdd);
-    expect(screen.getByTestId('addPage')).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByTestId('addPage')).toBeInTheDocument());
   });
-  it('navigate to Home page', () => {
+  it('navigate to Home page', async () => {
     render(<App />);
     const navBtnToAdd = screen.getByTestId('headerNavOrderList');
     fireEvent.click(navBtnToAdd);
     // first nav to another page
     const navBtnToHome = screen.getByTestId('headerNavHome');
     fireEvent.click(navBtnToHome);
-    expect(screen.getByTestId('homePage')).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByTestId('homePage')).toBeInTheDocument());
   });
 });
