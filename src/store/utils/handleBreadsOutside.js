@@ -29,7 +29,6 @@ const handleBreadsOutside = (pagename) => {
   });
 
   if (pagename === 'recipeCategory') {
-    console.log(currentCategory);
     newBread.push({
       name: currentCategory,
       level: newBread.length,

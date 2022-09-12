@@ -33,6 +33,7 @@ function Header() {
       if (inputValue.trim() !== '') {
         isNavOpen ? handleMenuHam('closing') : null;
         getDataFromServer(inputValue);
+        mainStore.setState((state) => ({ ...state, queriedData: inputValue }));
         document.getElementById('header_search').blur();
         setInputValue('');
       } else {

@@ -92,11 +92,19 @@ app.get('/categories/:category/id:recipe/', (req, res) => {
 });
 
 app.post('/addRecipe', (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
+
   addRecipe(req.body);
   res.send(req.body);
 });
 
 app.delete('/delete:recipeId', async (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
+
   let response;
   await deleteRecipe(req.body.id, req.body.category).then(() => {
     response = { status: 'ok', msg: 'successfully delete the recipe' };
@@ -107,6 +115,10 @@ app.delete('/delete:recipeId', async (req, res) => {
 });
 
 app.put('/edit:recipeId', async (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
+
   let response;
   await editRecipe(req.body.id, req.body.category, req.body.editedRecipe).then(() => {
     response = { status: 'ok', msg: 'successfully Edit the recipe' };
@@ -117,6 +129,10 @@ app.put('/edit:recipeId', async (req, res) => {
 });
 
 app.get('/s=:search', async (req, res) => {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+  });
+
   let response;
   const result = searchEng(req.params.search);
   if (result.length === 0) {

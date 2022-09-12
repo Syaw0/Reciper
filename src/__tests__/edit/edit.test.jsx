@@ -7,27 +7,13 @@ import '@testing-library/jest-dom';
 import App from '../../app';
 import mainStore from '../../store/mainStore';
 import setRequest from '../../utils/setReq';
-import getCategoryData from '../../store/utils/getPageData/getCategoryData';
 import getHomeData from '../../store/utils/getPageData/getHomeData';
-import getRecipeData from '../../store/utils/getPageData/getRecipeData';
-import getSpecificCategoryData from '../../store/utils/getPageData/getSpecificCategoryData';
-import fakeCategoryData from '../fakeData/fakeCategoryData';
 import fakeHomeData from '../fakeData/fakeHomeData';
-import fakeRecipeData from '../fakeData/fakeRecipeData';
-import fakeSpecificCategory from '../fakeData/fakeSpecificCategory';
 
-jest.mock('../../store/utils/getPageData/getRecipeData');
-jest.mock('../../store/utils/getPageData/getSpecificCategoryData');
 jest.mock('../../store/utils/getPageData/getHomeData');
-jest.mock('../../store/utils/getPageData/getCategoryData');
-
-getRecipeData.mockImplementation(() => fakeRecipeData);
-getSpecificCategoryData.mockImplementation(() => Object.values(fakeSpecificCategory));
-getHomeData.mockImplementation(() => fakeHomeData);
-getCategoryData.mockImplementation(() => Object.values(fakeCategoryData));
-
 jest.mock('../../utils/setReq');
 
+getHomeData.mockImplementation(() => fakeHomeData);
 setRequest.mockImplementation(() => new Promise((res) => {
   res(true);
 }));

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import mainStore from '../store/mainStore';
 import Flex from '../styles/styledComponents/flex';
 import Text from '../styles/styledComponents/text';
@@ -7,10 +7,7 @@ function OrderList() {
   const currentOrderList = mainStore((state) => state.currentOrderList);
   const currentPage = mainStore((state) => state.currentPage);
   const currentCategory = mainStore((state) => state.currentCategory);
-
-  useEffect(() => {
-    console.log('hello im render inside useEffect');
-  }, [currentPage]);
+  const queriedData = mainStore((state) => state.queriedData);
 
   let title = '';
 
@@ -19,9 +16,10 @@ function OrderList() {
   } else {
     title = currentPage;
   }
-
   return (
     <Flex
+      justify="start"
+      align="start"
       data-testid="orderListPage"
       dir="column"
       css={{
@@ -36,11 +34,12 @@ function OrderList() {
         margin: '$3 0 $2 0',
       }}
       >
-        {title}
+        {title === 'Searching' ? `Searching for ${queriedData}` : title}
       </Text>
 
       <Flex
         justify="between"
+        align="start"
         css={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr 1fr 1fr',

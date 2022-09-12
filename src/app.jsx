@@ -48,7 +48,7 @@ function App() {
       }}
     >
       <Head />
-      <Flex dir="column" align="center" justify="center">
+      <Flex dir="column" align="center" justify="start">
         {isLoaderEnable && <Loader />}
         {currentPage === 'Home' && !isLoaderEnable && <Home />}
         {currentPage === 'Add Recipe' && !isLoaderEnable && <Add />}
