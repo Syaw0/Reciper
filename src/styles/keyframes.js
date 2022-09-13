@@ -12,6 +12,28 @@ const fadeInToBottom = keyframes({
   },
 });
 
+const fadeIn = keyframes({
+  '0%': {
+    opacity: 0,
+    transform: 'scale(0)',
+  },
+  '100%': {
+    opacity: 1,
+    transform: 'scale(1)',
+  },
+});
+
+const fadeOut = keyframes({
+  '0%': {
+    opacity: 1,
+    transform: 'scale(1)',
+  },
+  '100%': {
+    opacity: 0,
+    transform: 'scale(0)',
+  },
+});
+
 const fadeOutToTop = keyframes({
   '0%': {
     opacity: 1,
@@ -29,4 +51,6 @@ const loaderAnimation = keyframes({
   '50%': { transform: 'scaleY(2)' },
 });
 
-export { fadeInToBottom, fadeOutToTop, loaderAnimation };
+export {
+  fadeInToBottom, fadeOutToTop, loaderAnimation, fadeIn, fadeOut,
+};

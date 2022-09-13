@@ -35,6 +35,7 @@ function RecipeMaterial({ material }) {
         },
         '& li': {
           headline5: '400',
+          color: '$onBg',
           paddingLeft: '$4',
           marginBottom: '$2',
           display: 'flex',

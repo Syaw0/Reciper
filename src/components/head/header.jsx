@@ -62,7 +62,11 @@ function Header() {
           display: 'none',
         },
         '& #headerMenuHam': {
+          fill: '$onBg700',
           display: 'none',
+          '&:hover': {
+            fill: '$onBg',
+          },
         },
         '& > div:first-child': {
           width: '35%',

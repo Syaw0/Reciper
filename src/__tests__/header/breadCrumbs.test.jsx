@@ -53,22 +53,27 @@ describe('BreadCrumbs Section', () => {
   it('when user click on the own bread , bread will updated ', async () => {
     render(<Head />);
     const bread = screen.getByTestId('breadHolder');
-    await waitFor(() => expect(bread.childElementCount).toEqual(1));
+    await waitFor(() => expect(bread.childElementCount).toEqual(1 + 1));
+
+    // i increase this because i add icon to this holder
 
     fireEvent.click(screen.getByTestId('headerNavOrderList'));
-    await waitFor(() => expect(bread.childElementCount).toEqual(3));
+    await waitFor(() => expect(bread.childElementCount).toEqual(3 + 1));
     await waitFor(() => expect(screen.getByTestId('breadHolder')).toHaveTextContent('Category'));
 
     fireEvent.click(bread.childNodes[0]);
-    await waitFor(() => expect(bread.childElementCount).toEqual(1));
+    await waitFor(() => expect(bread.childElementCount).toEqual(1 + 1));
     await waitFor(() => expect(screen.getByTestId('breadHolder')).not.toHaveTextContent('Category'));
   });
 
   it('user can not click on the last bread and nothing happen ', () => {
     render(<Head />);
     const bread = screen.getByTestId('breadHolder');
-    expect(bread.childElementCount).toEqual(1);
-    fireEvent.click(bread.childNodes[0]);
-    expect(bread.childElementCount).toEqual(1);
+    expect(bread.childElementCount).toEqual(1 + 1);
+    fireEvent.click(bread.childNodes[0 + 1]);
+
+    // i increase this because i add icon to this holder
+
+    expect(bread.childElementCount).toEqual(1 + 1);
   });
 });

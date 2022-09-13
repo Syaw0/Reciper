@@ -15,6 +15,15 @@ function RecipeCard({ cardType, data }) {
   const setCurrentCategory = mainStore((state) => state.setCurrentCategory);
   const setCurrentRecipeId = mainStore((state) => state.setCurrentRecipeId);
   const setCurrentRecipeCategory = mainStore((state) => state.setCurrentRecipeCategory);
+  let diffLevelColor;
+
+  if (data.difficulty === 'intermediate') {
+    diffLevelColor = 'rgba(245,173,64,1)';
+  } else if (data.difficulty === 'easy') {
+    diffLevelColor = 'rgba(109,188,96,1)';
+  } else {
+    diffLevelColor = 'rgba(186,26,26,1)';
+  }
 
   const handleCardClick = () => {
     if (cardType === 'category') {
@@ -34,7 +43,7 @@ function RecipeCard({ cardType, data }) {
       dir="column"
       css={{
         width: '17rem ',
-        height: '22rem',
+        height: '24rem',
         backgroundColor: '$primary100',
         borderRadius: '32px',
         cursor: 'pointer',
@@ -51,11 +60,11 @@ function RecipeCard({ cardType, data }) {
         },
         '@bp3': {
           width: '14rem ',
-          height: '19rem',
+          height: '20rem',
         },
         '@bp4': {
           width: '12rem ',
-          height: '17rem',
+          height: '16rem',
         },
       }}
     >
@@ -64,26 +73,30 @@ function RecipeCard({ cardType, data }) {
         css={{
           backgroundImage: `url(${data.imgUrl})`,
           bgCentering: '',
-          height: '75%',
+          height: '72%',
           borderRadius: '32px',
         }}
       />
 
       <Flex
         dir="column"
+        justify="between"
         css={{
-          height: '25%',
+          height: '28%',
+          '@bp4': {
+            height: '35%',
+          },
         }}
       >
         <Text
           css={{
-            headline4: '600',
+            headline5: '600',
             padding: '12px $2 $1 $2',
             '@bp3': {
               headline5: '600',
             },
             '@bp4': {
-              headline6: '600',
+              subhead1: '600',
             },
           }}
         >
@@ -101,7 +114,7 @@ function RecipeCard({ cardType, data }) {
                 subhead2: '400',
               },
               '@bp4': {
-                // subhead3:"400"
+                // subhead3: '400',
               },
             },
           }}
@@ -160,7 +173,7 @@ function RecipeCard({ cardType, data }) {
           marginLeft: '5px',
           width: '18px',
           height: '18px',
-          backgroundColor: '$EasyDif',
+          backgroundColor: diffLevelColor,
           borderRadius: '50%',
           '@bp4': {
             width: '12px',

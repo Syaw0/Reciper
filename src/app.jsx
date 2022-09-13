@@ -12,12 +12,15 @@ import Recipe from './pages/recipe';
 import Float from './pages/float';
 import Edit from './pages/edit';
 import Loader from './components/global/loader';
+import darkTheme from './styles/darkTheme';
+import { theme } from './styles/@stitches.config';
 
 function App() {
   const currentPage = mainStore((state) => state.currentPage);
   const toggleFloat = mainStore((state) => state.toggleFloat);
   const isLoaderEnable = mainStore((state) => state.isLoaderEnable);
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
+  const currentTheme = mainStore((state) => state.currentTheme);
 
   useEffect(() => {
     setCurrentPage('Home');
@@ -26,6 +29,7 @@ function App() {
   gCss();
   return (
     <Flex
+      className={currentTheme === 'light' ? theme : darkTheme}
       id="wrapper"
       dir="column"
       justify="between"

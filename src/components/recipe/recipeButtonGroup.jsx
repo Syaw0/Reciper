@@ -82,7 +82,7 @@ function RecipeButtonGroup() {
         }}
       >
         Delete Recipe
-        <IcoClose dataTest="RecipeDeleteButton" width="15px" height="15px" id="RecipeDeleteButton" event={() => {}} />
+        <IcoClose dataTest="RecipeDeleteButton" width="15px" height="15px" id="RecipeDeleteButton" />
       </Button>
 
       <Button
@@ -100,7 +100,7 @@ function RecipeButtonGroup() {
         }}
       >
         Edit Recipe
-        <IcoEidt dataTest="RecipeDeleteButton" width="15px" height="15px" id="RecipeDeleteButton" event={() => {}} />
+        <IcoEidt dataTest="RecipeDeleteButton" width="15px" height="15px" id="RecipeDeleteButton" />
       </Button>
 
       <Button
@@ -118,7 +118,7 @@ function RecipeButtonGroup() {
         }}
       >
         Like Recipe
-        <IcoLike dataTest="RecipeDeleteButton" width="15px" height="15px" id="RecipeDeleteButton" event={() => {}} />
+        <IcoLike dataTest="RecipeDeleteButton" width="15px" height="15px" id="RecipeDeleteButton" />
       </Button>
 
     </Flex>

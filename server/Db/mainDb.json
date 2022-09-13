@@ -40,37 +40,35 @@
             "difficulty": "intermediate",
             "publisher": "Reciper"
         },
-
-        "#4":{
-            "name":"Chocolate Éclair Dessert",
-            "description":"This chocolate éclair dessert is a no-bake pudding dessert that's so quick and easy to make — everyone loves it. I always keep the ingredients on hand in case I need a quick dessert. It's best if it sits overnight before serving. ",
-            "category":"Dessert",
-            "materials":[
-              "2 individual packages graham crackers ",
-              "3 cups cold milk ",
-              "2 (3 ounce) packages instant vanilla pudding mix ",
-              "1 (8 ounce) container frozen whipped topping, thawed ",
-              "1 (16 ounce) package prepared chocolate frosting "
+        "#4": {
+            "name": "Chocolate Éclair Dessert",
+            "description": "This chocolate éclair dessert is a no-bake pudding dessert that's so quick and easy to make — everyone loves it. I always keep the ingredients on hand in case I need a quick dessert. It's best if it sits overnight before serving. ",
+            "category": "Dessert",
+            "materials": [
+                "2 individual packages graham crackers ",
+                "3 cups cold milk ",
+                "2 (3 ounce) packages instant vanilla pudding mix ",
+                "1 (8 ounce) container frozen whipped topping, thawed ",
+                "1 (16 ounce) package prepared chocolate frosting "
             ],
-            "steps":[
-              "Line the bottom of a 9x13-inch pan with a single layer of graham crackers.",
-              "Combine cold milk and pudding in a large bowl; whisk briskly for 2 minutes. Mix whipped topping into pudding mixture until combined. Spread 1/2 of the pudding mixture over graham cracker layer. Top with another layer of graham crackers. Cover with remaining pudding. Top with a final layer of graham crackers.",
-              "Frost top with chocolate frosting. Refrigerate for at least 2 hours before serving to allow graham crackers to soften."
+            "steps": [
+                "Line the bottom of a 9x13-inch pan with a single layer of graham crackers.",
+                "Combine cold milk and pudding in a large bowl; whisk briskly for 2 minutes. Mix whipped topping into pudding mixture until combined. Spread 1/2 of the pudding mixture over graham cracker layer. Top with another layer of graham crackers. Cover with remaining pudding. Top with a final layer of graham crackers.",
+                "Frost top with chocolate frosting. Refrigerate for at least 2 hours before serving to allow graham crackers to soften."
             ],
-            "tips":[
-              "Per Serving:  401 calories; protein 4.2g; carbohydrates 65.6g; fat 13.7g; cholesterol 4.9mg; sodium 481.3mg. "
+            "tips": [
+                "Per Serving:  401 calories; protein 4.2g; carbohydrates 65.6g; fat 13.7g; cholesterol 4.9mg; sodium 481.3mg. "
             ],
-            "imgUrl":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F09%2F23%2F19009-chocolate-eclair-dessert-melissa-goff.jpg",
-            "metaData":{
-              "prep":"15",
-              "cook":"130",
-              "servings":"12"
+            "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F09%2F23%2F19009-chocolate-eclair-dessert-melissa-goff.jpg",
+            "metaData": {
+                "prep": "15",
+                "cook": "130",
+                "servings": "12"
             },
-            "recipeId":"#4",
-            "difficulty":"intermediate",
-            "publisher":"Reciper"
-          },
-
+            "recipeId": "#4",
+            "difficulty": "easy",
+            "publisher": "Reciper"
+        },
         "#5": {
             "name": "Breakfast Brownies",
             "description": "This is a hearty breakfast brownie, quick to fix, and yummy. My kids loved it! It's also gluten-free and dairy-free. ",
@@ -1556,8 +1554,8 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F05%2F23%2F2294328-the-perfect-basic-burger-sanzoe-1x1-2.jpg",
             "metaData": {
-                "prep": "5 mins ",
-                "cook": "80 mins ",
+                "prep": "5",
+                "cook": "80",
                 "servings": "4"
             },
             "recipeId": "#44",
@@ -1614,8 +1612,8 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2247628.jpg",
             "metaData": {
-                "prep": "5 mins ",
-                "cook": "75 mins ",
+                "prep": "5",
+                "cook": "75",
                 "servings": "4"
             },
             "recipeId": "#46",
@@ -1652,8 +1650,8 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F07%2F20%2F72657-Best-Hamburger-Ever-Heather888_5563136_original-1x1-1.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "75 mins ",
+                "prep": "10",
+                "cook": "75",
                 "servings": "4"
             },
             "recipeId": "#47",
@@ -1687,8 +1685,8 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4045578.jpg",
             "metaData": {
-                "prep": "25 mins ",
-                "cook": "75 mins ",
+                "prep": "25",
+                "cook": "75",
                 "servings": "6"
             },
             "recipeId": "#48",

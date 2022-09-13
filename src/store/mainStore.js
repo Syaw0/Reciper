@@ -18,6 +18,7 @@ export default create((set, get) => ({
   ...addStore(set, get),
   ...editStore(set, get),
   breadCrumbs: [{ name: 'Home', level: 0 }],
+  currentTheme: 'light',
   currentCategory: 'None',
   currentPage: 'null',
   isLoaderEnable: false,
