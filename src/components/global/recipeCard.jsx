@@ -17,12 +17,15 @@ function RecipeCard({ cardType, data }) {
   const setCurrentRecipeCategory = mainStore((state) => state.setCurrentRecipeCategory);
   let diffLevelColor;
 
-  if (data.difficulty === 'intermediate') {
-    diffLevelColor = 'rgba(245,173,64,1)';
-  } else if (data.difficulty === 'Easy') {
-    diffLevelColor = 'rgba(109,188,96,1)';
-  } else {
-    diffLevelColor = 'rgba(186,26,26,1)';
+  if (cardType === 'normal') {
+    const lowerDiff = data.difficulty.toLowerCase();
+    if (lowerDiff === 'intermediate') {
+      diffLevelColor = 'rgba(245,173,64,1)';
+    } else if (lowerDiff === 'easy') {
+      diffLevelColor = 'rgba(109,188,96,1)';
+    } else {
+      diffLevelColor = 'rgba(186,26,26,1)';
+    }
   }
 
   const handleCardClick = () => {
