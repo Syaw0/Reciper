@@ -12,7 +12,7 @@ const setStateToLoader = () => {
 const setStateToErrorMsg = () => {
   mainStore.setState((state) => ({
     ...state,
-    editCurrentMsg: 'errorEdit',
+    editCurrentMsg: 'errorMsg',
   }));
 };
 const setStateToSuccessMsg = () => {
@@ -34,14 +34,12 @@ const setStateToSuccessMsg = () => {
 
 const editRecipeAndSend = async () => {
   setStateToLoader();
-  await setRequest()
-    .then(() => {
-      setStateToSuccessMsg();
-    }).catch(() => {
-      setStateToErrorMsg();
-    });
-
-  console.log('edit and insert to server');
+  const result = await setRequest('editRecipe');
+  if (result) {
+    setStateToSuccessMsg();
+  } else {
+    setStateToErrorMsg();
+  }
 };
 
 export default editRecipeAndSend;

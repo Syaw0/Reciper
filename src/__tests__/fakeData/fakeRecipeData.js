@@ -26,8 +26,8 @@ export default {
   imgUrl: 'https://user-images.githubusercontent.com/78824988/188808161-65a2743b-45a7-4c05-a34b-efb88126725f.jpeg',
   recipeId: '#1',
   metaData: {
-    prep: '30Min',
-    cook: '20Min',
+    prep: '30',
+    cook: '20',
     servings: '8',
   },
   difficulty: 'intermediate',

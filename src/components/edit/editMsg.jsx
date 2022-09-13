@@ -15,7 +15,7 @@ function EditMsg() {
     >
       {editCurrentMsg === 'loader' && <Loader />}
       {editCurrentMsg === 'successEdit' && <EditSuccessMsg />}
-      {editCurrentMsg === 'errorEdit' && <EditErrorMsg />}
+      {editCurrentMsg === 'errorMsg' && <EditErrorMsg />}
 
     </Flex>
   );

@@ -2,32 +2,33 @@ const editStore = (set) => ({
   editCurrentMsg: 'none',
   editCacheData: {
     naming: {
-      recipeName: 'chicken',
-      recipeDes: 'something good',
-      category: 'Pork',
-      difficulty: 'Easy',
-      publisherName: 'Haji',
-      imgFile: 'bela bela',
+      recipeName: '',
+      recipeDes: '',
+      category: '',
+      difficulty: '',
+      publisherName: '',
+      serving: '', //
+      prepTime: '', //
+      cookTime: '', //
+      imgFile: '',
+      imgLink: '',
     },
     materials: {
       number: 1,
       values: [
-        'chicken',
-        'water',
+        '',
       ],
     },
     steps: {
       number: 1,
       values: [
-        'bring water to ...',
-        'put chicken to water',
+        '',
       ],
     },
     tips: {
       number: 1,
       values: [
-        'don`t increase heat above 130c',
-        'chicken with potato is great :)',
+        '',
       ],
     },
   },

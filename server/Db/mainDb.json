@@ -1,5 +1,5 @@
 {
-    "currentId": 49,
+    "currentId": 48,
     "Dessert": {
         "#3": {
             "name": "Soft Oatmeal Cookies",
@@ -33,48 +33,44 @@
             "recipeId": "#3",
             "imgUrl": "https://user-images.githubusercontent.com/78824988/188838110-1dc4e3d2-42c1-40d6-9e59-0b7ac3664cb0.jpeg",
             "metaData": {
-                "prep": "15Min",
-                "cook": "10Min",
-                "additional": "1Hr5Min",
+                "prep": "15",
+                "cook": "10",
                 "servings": "24"
             },
             "difficulty": "intermediate",
             "publisher": "Reciper"
         },
-        "#4": {
-            "name": "Buckeye Balls",
-            "description": "Buckeye balls are chocolate-covered balls of peanut butter and confectioners' sugar. ",
-            "category": "Dessert",
-            "materials": [
-                "4 cups sifted confectioners' sugar ",
-                "1 ½ cups creamy peanut butter ",
-                "½ cup butter, softened ",
-                "1 teaspoon vanilla extract ",
-                "6 ounces semi-sweet chocolate chips ",
-                "2 tablespoons shortening "
+
+        "#4":{
+            "name":"Chocolate Éclair Dessert",
+            "description":"This chocolate éclair dessert is a no-bake pudding dessert that's so quick and easy to make — everyone loves it. I always keep the ingredients on hand in case I need a quick dessert. It's best if it sits overnight before serving. ",
+            "category":"Dessert",
+            "materials":[
+              "2 individual packages graham crackers ",
+              "3 cups cold milk ",
+              "2 (3 ounce) packages instant vanilla pudding mix ",
+              "1 (8 ounce) container frozen whipped topping, thawed ",
+              "1 (16 ounce) package prepared chocolate frosting "
             ],
-            "steps": [
-                "Line a baking sheet with waxed paper; set aside.",
-                "Place confectioners' sugar, peanut butter, softened butter, and vanilla into a large bowl; mix together with your hands to form a smooth stiff dough. Shape into balls using 2 teaspoons of dough for each ball. Place on prepared baking sheet; refrigerate until ready to coat.",
-                "Melt shortening and chocolate together in a metal bowl over a pan of lightly simmering water, stirring occasionally, until smooth; remove from heat.",
-                "Remove balls from the refrigerator; insert a wooden toothpick into a ball, and dip into melted chocolate. Return to baking sheet, chocolate-side down, and remove toothpick. Repeat with remaining balls. Refrigerate for 30 minutes to set."
+            "steps":[
+              "Line the bottom of a 9x13-inch pan with a single layer of graham crackers.",
+              "Combine cold milk and pudding in a large bowl; whisk briskly for 2 minutes. Mix whipped topping into pudding mixture until combined. Spread 1/2 of the pudding mixture over graham cracker layer. Top with another layer of graham crackers. Cover with remaining pudding. Top with a final layer of graham crackers.",
+              "Frost top with chocolate frosting. Refrigerate for at least 2 hours before serving to allow graham crackers to soften."
             ],
-            "tips": [
-                "Per Serving:  204 calories; protein 3.7g; carbohydrates 22.8g; fat 12g; cholesterol 8.1mg; sodium 81.2mg. "
+            "tips":[
+              "Per Serving:  401 calories; protein 4.2g; carbohydrates 65.6g; fat 13.7g; cholesterol 4.9mg; sodium 481.3mg. "
             ],
-            "imgUrl": "https://user-images.githubusercontent.com/78824988/188877947-42b9afef-f2e3-45e3-bfd3-3595c41a8433.jpeg",
-            "metaData": {
-                "prep": "45 mins ",
-                "cook": "10 mins ",
-                "additional": "30 mins ",
-                "servings": "30 ",
-                "total": "1 hr 25 mins ",
-                "yield": "5 dozen "
+            "imgUrl":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F09%2F23%2F19009-chocolate-eclair-dessert-melissa-goff.jpg",
+            "metaData":{
+              "prep":"15",
+              "cook":"130",
+              "servings":"12"
             },
-            "recipeId": "#4",
-            "difficulty": "intermediate",
-            "publisher": "Reciper"
-        },
+            "recipeId":"#4",
+            "difficulty":"intermediate",
+            "publisher":"Reciper"
+          },
+
         "#5": {
             "name": "Breakfast Brownies",
             "description": "This is a hearty breakfast brownie, quick to fix, and yummy. My kids loved it! It's also gluten-free and dairy-free. ",
@@ -102,12 +98,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9044284.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "20 mins ",
-                "additional": "5 mins ",
-                "servings": "12 ",
-                "total": "40 mins ",
-                "yield": "1 dozen brownies "
+                "prep": "15",
+                "cook": "20",
+                "servings": "12"
             },
             "recipeId": "#5",
             "difficulty": "intermediate",
@@ -142,12 +135,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2942870.jpg",
             "metaData": {
-                "prep": "25 mins ",
-                "cook": "40 mins ",
-                "additional": "1Hr5Min",
-                "servings": "48 ",
-                "total": "1 hr 5 mins ",
-                "yield": "4 dozen "
+                "prep": "25",
+                "cook": "40",
+                "servings": "48"
             },
             "recipeId": "#6",
             "difficulty": "intermediate",
@@ -186,12 +176,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1823218.jpg",
             "metaData": {
-                "prep": "25 mins ",
-                "cook": "1 hr ",
-                "additional": "1Hr5Min",
-                "servings": "24 ",
-                "total": "1 hr 25 mins ",
-                "yield": "24 biscotti "
+                "prep": "25",
+                "cook": "60",
+                "servings": "24"
             },
             "recipeId": "#7",
             "difficulty": "intermediate",
@@ -224,12 +211,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F442366.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "10 mins ",
-                "additional": "1 hr 35 mins ",
-                "servings": "36 ",
-                "total": "2 hrs ",
-                "yield": "3 dozen "
+                "prep": "15",
+                "cook": "10",
+                "servings": "36"
             },
             "recipeId": "#8",
             "difficulty": "intermediate",
@@ -265,12 +249,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F06%2F23%2F377334-chocolate-oatmeal-cookies-TTV78-4x3-1.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "36 ",
-                "total": "25 mins ",
-                "yield": "3 dozen cookies "
+                "prep": "15",
+                "cook": "10",
+                "servings": "36"
             },
             "recipeId": "#9",
             "difficulty": "intermediate",
@@ -302,12 +283,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F02%2F22%2F10549-Best-brownies-mfs_003.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "30 mins ",
-                "additional": "1Hr5Min",
-                "servings": "16 ",
-                "total": "45 mins ",
-                "yield": "16 brownies "
+                "prep": "15",
+                "cook": "30",
+                "servings": "16"
             },
             "recipeId": "#10",
             "difficulty": "intermediate",
@@ -335,19 +313,16 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F887122.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "36 ",
-                "total": "20 mins ",
-                "yield": "36 cookies "
+                "prep": "10",
+                "cook": "10",
+                "servings": "36"
             },
             "recipeId": "#11",
             "difficulty": "intermediate",
             "publisher": "Reciper"
         },
         "#12": {
-            "name": "One Bowl Chocolate Cake",
+            "name": "One  Bowl Chocolate Cake",
             "description": "This is a rich and moist one bowl chocolate cake. It only takes a few minutes to prepare the batter. Frost with your favorite chocolate frosting. ",
             "category": "Dessert",
             "materials": [
@@ -373,12 +348,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F04%2F22%2F17981-one-bowl-chocolate-cake-iii-Dianne-1x1-1.jpg",
             "metaData": {
-                "prep": "20 mins ",
-                "cook": "30 mins ",
-                "additional": "10 mins ",
-                "servings": "24 ",
-                "total": "1 hr ",
-                "yield": "2 - 9 inch round cake layers "
+                "prep": "20",
+                "cook": "30",
+                "servings": "24"
             },
             "recipeId": "#12",
             "difficulty": "intermediate",
@@ -419,11 +391,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F6944310.jpg",
             "metaData": {
-                "prep": "30 mins ",
-                "cook": "1 hr 10 mins ",
-                "additional": "1 hr ",
-                "servings": "4 ",
-                "total": "2 hrs 40 mins "
+                "prep": "30",
+                "cook": "70",
+                "servings": "4"
             },
             "recipeId": "#13",
             "difficulty": "intermediate",
@@ -462,11 +432,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4489076.jpg",
             "metaData": {
-                "prep": "30 mins ",
-                "cook": "1 hr 5 mins ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "1 hr 35 mins "
+                "prep": "30",
+                "cook": "65",
+                "servings": "8"
             },
             "recipeId": "#14",
             "difficulty": "intermediate",
@@ -474,41 +442,6 @@
         }
     },
     "Beef": {
-        "#1": {
-            "name": "Meatballs",
-            "description": "I never knew how to make good meatballs until I found this recipe. I normally make mine with just ground beef and they still taste great. I`ve used the combination of pork, beef and veal and they are equally good. Definitely use fresh bread crumbs and freshly grate your cheese instead of using the canned variety...it really does make a difference. ",
-            "category": "Beef",
-            "materials": [
-                "1 pound ground beef ",
-                "½ pound ground veal ",
-                "½ pound ground pork ",
-                "2 cloves garlic, minced ",
-                "2 eggs ",
-                "1 cup freshly grated Romano cheese ",
-                "1 ½ tablespoons chopped Italian flat leaf parsley ",
-                "salt and ground black pepper to taste ",
-                "2 cups stale Italian bread, crumbled ",
-                "1 ½ cups lukewarm water ",
-                "1 cup olive oil "
-            ],
-            "steps": [
-                "Combine beef, veal, and pork in a large bowl. Add garlic, eggs, cheese, parsley, salt and pepper.",
-                "Blend bread crumbs into meat mixture. Slowly add the water 1/2 cup at a time. The mixture should be very moist but still hold its shape if rolled into meatballs. (I usually use about 1 1/4 cups of water). Shape into meatballs.",
-                "Heat olive oil in a large skillet. Fry meatballs in batches. When the meatball is very brown and slightly crisp remove from the heat and drain on a paper towel. (If your mixture is too wet, cover the meatballs while they are cooking so that they hold their shape better.)"
-            ],
-            "tips": [
-                "Per Serving:613 calories; protein 26.6g; carbohydrates 6.6g; fat 53.2g; cholesterol 148.6mg; sodium 333.1mg"
-            ],
-            "imgUrl": "https://user-images.githubusercontent.com/78824988/188808161-65a2743b-45a7-4c05-a34b-efb88126725f.jpeg",
-            "recipeId": "#1",
-            "metaData": {
-                "prep": "30Min",
-                "cook": "20Min",
-                "servings": "8"
-            },
-            "difficulty": "intermediate",
-            "publisher": "Reciper"
-        },
         "#2": {
             "name": "Meatloaf",
             "description": "This is a very easy and no fail recipe for meatloaf. It won`t take long to make at all, and it`s quite good! ",
@@ -536,8 +469,8 @@
             "imgUrl": "https://user-images.githubusercontent.com/78824988/188809644-6e1e2de7-bff1-43ba-8a4f-fd7fcf9a7a69.jpeg",
             "recipeId": "#2",
             "metaData": {
-                "prep": "15Min",
-                "cook": "1Hr",
+                "prep": "15",
+                "cook": "60",
                 "servings": "8"
             },
             "difficulty": "intermediate",
@@ -574,11 +507,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2020%2F04%2F10%2F870042_quick-chili-i_rock-lobster.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "40 mins ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "50 mins "
+                "prep": "10",
+                "cook": "40",
+                "servings": "8"
             },
             "recipeId": "#15",
             "difficulty": "intermediate",
@@ -608,12 +539,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F04%2F26%2F16248_easy-homemade-chili_Rita-1x1-1.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "20 mins ",
-                "additional": "1Hr5Min",
-                "servings": "6 ",
-                "total": "30 mins ",
-                "yield": "6 servings "
+                "prep": "10",
+                "cook": "20",
+                "servings": "6"
             },
             "recipeId": "#16",
             "difficulty": "intermediate",
@@ -665,12 +593,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F04%2F06%2F233613-Best-Damn-Chili-mfs-242-2.jpg",
             "metaData": {
-                "prep": "30 mins ",
-                "cook": "2 hrs 15 mins ",
-                "additional": "1Hr5Min",
-                "servings": "12 ",
-                "total": "2 hrs 45 mins ",
-                "yield": "12 servings "
+                "prep": "30",
+                "cook": "135",
+                "servings": "12"
             },
             "recipeId": "#17",
             "difficulty": "intermediate",
@@ -702,13 +627,46 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4549680.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "45 mins ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "1 hr "
+                "prep": "15",
+                "cook": "45",
+                "servings": "8"
             },
             "recipeId": "#18",
+            "difficulty": "intermediate",
+            "publisher": "Reciper"
+        },
+        "#1": {
+            "name": "Meatballs",
+            "description": "I never knew how to make good meatballs until I found this recipe. I normally make mine with just ground beef and they still taste great. I`ve used the combination of pork, beef and veal and they are equally good. Definitely use fresh bread crumbs and freshly grate your cheese instead of using the canned variety...it really does make a difference. ",
+            "category": "Beef",
+            "materials": [
+                "1 pound ground beef ",
+                "½ pound ground veal ",
+                "½ pound ground pork ",
+                "2 cloves garlic, minced ",
+                "2 eggs ",
+                "1 cup freshly grated Romano cheese ",
+                "1 ½ tablespoons chopped Italian flat leaf parsley ",
+                "salt and ground black pepper to taste ",
+                "2 cups stale Italian bread, crumbled ",
+                "1 ½ cups lukewarm water ",
+                "1 cup olive oil "
+            ],
+            "steps": [
+                "Combine beef, veal, and pork in a large bowl. Add garlic, eggs, cheese, parsley, salt and pepper.",
+                "Blend bread crumbs into meat mixture. Slowly add the water 1/2 cup at a time. The mixture should be very moist but still hold its shape if rolled into meatballs. (I usually use about 1 1/4 cups of water). Shape into meatballs.",
+                "Heat olive oil in a large skillet. Fry meatballs in batches. When the meatball is very brown and slightly crisp remove from the heat and drain on a paper towel. (If your mixture is too wet, cover the meatballs while they are cooking so that they hold their shape better.)"
+            ],
+            "tips": [
+                "Per Serving:613 calories; protein 26.6g; carbohydrates 6.6g; fat 53.2g; cholesterol 148.6mg; sodium 333.1mg"
+            ],
+            "imgUrl": "https://www.wahlburgersathome.com/wp-content/uploads/2019/01/Classic-Meatballs.jpg",
+            "metaData": {
+                "prep": "32",
+                "cook": "25",
+                "servings": "8"
+            },
+            "recipeId": "#1",
             "difficulty": "intermediate",
             "publisher": "Reciper"
         }
@@ -746,12 +704,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F07%2F26%2F6644307-bang-bang-chicken-Diana71-1x1-1.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "10 mins ",
-                "additional": "15 mins ",
-                "servings": "4 ",
-                "total": "40 mins ",
-                "yield": "4 servings "
+                "prep": "15",
+                "cook": "10",
+                "servings": "4"
             },
             "recipeId": "#19",
             "difficulty": "intermediate",
@@ -778,12 +733,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8503516.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "20 mins ",
-                "additional": "1Hr5Min",
-                "servings": "6 ",
-                "total": "35 mins ",
-                "yield": "6 servings "
+                "prep": "15",
+                "cook": "20",
+                "servings": "6"
             },
             "recipeId": "#20",
             "difficulty": "intermediate",
@@ -823,12 +775,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F03%2F19%2F223042-Chicken-Parmesan-mfs_003.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "20 mins ",
-                "additional": "10 mins ",
-                "servings": "4 ",
-                "total": "45 mins ",
-                "yield": "4 servings "
+                "prep": "15",
+                "cook": "20",
+                "servings": "4"
             },
             "recipeId": "#21",
             "difficulty": "intermediate",
@@ -856,11 +805,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1127678.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "30 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "40 mins "
+                "prep": "10",
+                "cook": "30",
+                "servings": "4"
             },
             "recipeId": "#22",
             "difficulty": "intermediate",
@@ -893,11 +840,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F06%2F07%2F1126562-easy-chicken-posole-punkieluu-4x3-1.jpg",
             "metaData": {
-                "prep": "20 mins ",
-                "cook": "2 hrs 10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "10 ",
-                "total": "2 hrs 30 mins "
+                "prep": "20",
+                "cook": "130",
+                "servings": "10"
             },
             "recipeId": "#23",
             "difficulty": "intermediate",
@@ -933,11 +878,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5795826.jpg",
             "metaData": {
-                "prep": "25 mins ",
-                "cook": "40 mins ",
-                "additional": "1Hr5Min",
-                "servings": "16 ",
-                "total": "1 hr 5 mins "
+                "prep": "25",
+                "cook": "40",
+                "servings": "16"
             },
             "recipeId": "#24",
             "difficulty": "intermediate",
@@ -967,12 +910,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5635373.jpg",
             "metaData": {
-                "prep": "20 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "10 ",
-                "total": "30 mins ",
-                "yield": "10 servings "
+                "prep": "20",
+                "cook": "10",
+                "servings": "10"
             },
             "recipeId": "#25",
             "difficulty": "intermediate",
@@ -998,11 +938,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F176417.jpg",
             "metaData": {
-                "prep": "15Min",
-                "cook": "10Min",
-                "additional": "1Hr5Min",
-                "servings": "2 ",
-                "yield": "2 servings "
+                "prep": "15",
+                "cook": "10",
+                "servings": "2"
             },
             "recipeId": "#26",
             "difficulty": "intermediate",
@@ -1033,12 +971,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1055204.jpg",
             "metaData": {
-                "prep": "20 mins ",
-                "cook": "20 mins ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "40 mins ",
-                "yield": "8 servings "
+                "prep": "20",
+                "cook": "20",
+                "servings": "8"
             },
             "recipeId": "#27",
             "difficulty": "intermediate",
@@ -1067,11 +1002,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F01%2F26%2FSimple-Lemon-Herb-Chicken-2000.jpg",
             "metaData": {
-                "prep": "5 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "2 ",
-                "total": "15 mins "
+                "prep": "5",
+                "cook": "10",
+                "servings": "2"
             },
             "recipeId": "#28",
             "difficulty": "intermediate",
@@ -1112,43 +1045,13 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F3616323.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "30 mins ",
-                "additional": "20 mins ",
-                "servings": "4 ",
-                "total": "1 hr 5 mins ",
-                "yield": "4 sandwiches "
+                "prep": "15",
+                "cook": "50",
+                "servings": "4"
             },
             "recipeId": "#29",
             "difficulty": "intermediate",
             "publisher": "Reciper"
-        },
-        "#49": {
-            "name": "salad olvie",
-            "description": "this is delisios food that i so much love this",
-            "category": "Chicken",
-            "materials": [
-                "chicken",
-                "nokhod",
-                "potato",
-                "havig"
-            ],
-            "steps": [
-                "felan felan felan",
-                "felan felan felan"
-            ],
-            "tips": [
-                "per serving you can do a lot protoein"
-            ],
-            "imgUrl": "https://user-images.githubusercontent.com/78824988/188838110-1dc4e3d2-42c1-40d6-9e59-0b7ac3664cb0.jpeg",
-            "metaData": {
-                "prep": "15Min",
-                "cook": "30Min",
-                "servings": "5"
-            },
-            "difficulty": "easy",
-            "publisher": "Sivaash",
-            "recipeId": "#49"
         }
     },
     "Spaghetti": {
@@ -1181,12 +1084,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9411232.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "50 mins ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "1 hr ",
-                "yield": "8 servings "
+                "prep": "10",
+                "cook": "115",
+                "servings": "8"
             },
             "recipeId": "#30",
             "difficulty": "intermediate",
@@ -1214,12 +1114,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F06%2F12%2F6770643-basic-baked-spaghetti-ilovecats-1x1-1.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "50 mins ",
-                "additional": "1Hr5Min",
-                "servings": "6 ",
-                "total": "1 hr ",
-                "yield": "1 9x13-inch dish "
+                "prep": "10",
+                "cook": "115",
+                "servings": "6"
             },
             "recipeId": "#31",
             "difficulty": "intermediate",
@@ -1253,11 +1150,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F414607.jpg",
             "metaData": {
-                "prep": "15Min",
-                "cook": "10Min",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "yield": "8 servings "
+                "prep": "15",
+                "cook": "115",
+                "servings": "8"
             },
             "recipeId": "#32",
             "difficulty": "intermediate",
@@ -1294,11 +1189,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpublic-assets-ucg.meredithcorp.io%2F854194d5aff7c9fec228b2be605cf9f1%2F6773214.jpg&w=284&h=377&c=sc&poi=face&q=60&orient=true",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "1 hr ",
-                "additional": "1Hr5Min",
-                "servings": "12 ",
-                "total": "1 hr 15 mins "
+                "prep": "15",
+                "cook": "125",
+                "servings": "12"
             },
             "recipeId": "#33",
             "difficulty": "intermediate",
@@ -1327,11 +1220,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F7705.jpg",
             "metaData": {
-                "prep": "15Min",
-                "cook": "10Min",
-                "additional": "1Hr5Min",
-                "servings": "5 ",
-                "yield": "4 -6 servings "
+                "prep": "15",
+                "cook": "75",
+                "servings": "5"
             },
             "recipeId": "#34",
             "difficulty": "intermediate",
@@ -1358,12 +1249,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F05%2F26%2FSpaghetti-a-la-Philly-2000.jpg",
             "metaData": {
-                "prep": "20 mins ",
-                "cook": "15 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "35 mins ",
-                "yield": "4 servings "
+                "prep": "20",
+                "cook": "80",
+                "servings": "4"
             },
             "recipeId": "#35",
             "difficulty": "intermediate",
@@ -1391,12 +1279,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8609995.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "45 mins ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "55 mins ",
-                "yield": "8 servings "
+                "prep": "10",
+                "cook": "110",
+                "servings": "8"
             },
             "recipeId": "#36",
             "difficulty": "intermediate",
@@ -1431,12 +1316,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F05%2F17%2F6618223-baked-spaghetti-smitty4-1x1-1.jpg",
             "metaData": {
-                "prep": "25 mins ",
-                "cook": "1 hr ",
-                "additional": "1Hr5Min",
-                "servings": "8 ",
-                "total": "1 hr 25 mins ",
-                "yield": "1 9x13-inch casserole "
+                "prep": "25",
+                "cook": "125",
+                "servings": "8"
             },
             "recipeId": "#37",
             "difficulty": "intermediate",
@@ -1470,11 +1352,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8191179.jpg",
             "metaData": {
-                "prep": "35 mins ",
-                "cook": "1 hr 15 mins ",
-                "additional": "5 mins ",
-                "servings": "12 ",
-                "total": "1 hr 55 mins "
+                "prep": "35",
+                "cook": "80",
+                "servings": "12"
             },
             "recipeId": "#38",
             "difficulty": "intermediate",
@@ -1505,11 +1385,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F04%2F26%2Ftaco-spaghetti-1-by-1-Yoly.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "25 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "35 mins "
+                "prep": "10",
+                "cook": "90",
+                "servings": "4"
             },
             "recipeId": "#39",
             "difficulty": "intermediate",
@@ -1553,12 +1431,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F09%2F01%2F228045-crispy-pork-cutlets-ddmfs-1x1-0801.jpg",
             "metaData": {
-                "prep": "20 mins ",
-                "cook": "30 mins ",
-                "additional": "15 mins ",
-                "servings": "4 ",
-                "total": "1 hr 5 mins ",
-                "yield": "8 cutlets "
+                "prep": "20",
+                "cook": "45",
+                "servings": "4"
             },
             "recipeId": "#40",
             "difficulty": "intermediate",
@@ -1591,11 +1466,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F06%2F24%2F683261-asian-pork-tenderloin-Alberta-Rose-1x1-1.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "25 mins ",
-                "additional": "8 hrs ",
-                "servings": "4 ",
-                "total": "8 hrs 40 mins "
+                "prep": "15",
+                "cook": "505",
+                "servings": "4"
             },
             "recipeId": "#41",
             "difficulty": "intermediate",
@@ -1622,12 +1495,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F08%2F09%2F55593-fried-pork-chop-ddmfs-1x1-0109.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "20 mins ",
-                "yield": "4 pork chops "
+                "prep": "10",
+                "cook": "75",
+                "servings": "4"
             },
             "recipeId": "#42",
             "difficulty": "intermediate",
@@ -1657,12 +1527,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F407555.jpg",
             "metaData": {
-                "prep": "10 mins ",
-                "cook": "20 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "30 mins ",
-                "yield": "4 servings "
+                "prep": "10",
+                "cook": "85",
+                "servings": "4"
             },
             "recipeId": "#43",
             "difficulty": "intermediate",
@@ -1690,11 +1557,8 @@
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F05%2F23%2F2294328-the-perfect-basic-burger-sanzoe-1x1-2.jpg",
             "metaData": {
                 "prep": "5 mins ",
-                "cook": "15 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "20 mins ",
-                "yield": "4 burgers patties "
+                "cook": "80 mins ",
+                "servings": "4"
             },
             "recipeId": "#44",
             "difficulty": "intermediate",
@@ -1722,12 +1586,9 @@
             ],
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F07%2F21%2F1384938-juicy-lucy-burgers-KGora-1x1-1.jpg",
             "metaData": {
-                "prep": "15 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "25 mins ",
-                "yield": "4 servings "
+                "prep": "15",
+                "cook": "80",
+                "servings": "4"
             },
             "recipeId": "#45",
             "difficulty": "intermediate",
@@ -1754,11 +1615,8 @@
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2247628.jpg",
             "metaData": {
                 "prep": "5 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "15 mins ",
-                "yield": "4 patties "
+                "cook": "75 mins ",
+                "servings": "4"
             },
             "recipeId": "#46",
             "difficulty": "intermediate",
@@ -1795,11 +1653,8 @@
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F07%2F20%2F72657-Best-Hamburger-Ever-Heather888_5563136_original-1x1-1.jpg",
             "metaData": {
                 "prep": "10 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "4 ",
-                "total": "20 mins ",
-                "yield": "4 burgers "
+                "cook": "75 mins ",
+                "servings": "4"
             },
             "recipeId": "#47",
             "difficulty": "intermediate",
@@ -1833,11 +1688,8 @@
             "imgUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4045578.jpg",
             "metaData": {
                 "prep": "25 mins ",
-                "cook": "10 mins ",
-                "additional": "1Hr5Min",
-                "servings": "6 ",
-                "total": "35 mins ",
-                "yield": "6 burgers "
+                "cook": "75 mins ",
+                "servings": "6"
             },
             "recipeId": "#48",
             "difficulty": "intermediate",

@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-undef */
 import React from 'react';
 import {
@@ -9,19 +10,26 @@ import mainStore from '../../store/mainStore';
 import setRequest from '../../utils/setReq';
 import getHomeData from '../../store/utils/getPageData/getHomeData';
 import fakeHomeData from '../fakeData/fakeHomeData';
+import fakeRecipeData from '../fakeData/fakeRecipeData';
+import getRecipeData from '../../store/utils/getPageData/getRecipeData';
 
+jest.mock('../../store/utils/getPageData/getRecipeData');
 jest.mock('../../store/utils/getPageData/getHomeData');
 jest.mock('../../utils/setReq');
 
 getHomeData.mockImplementation(() => fakeHomeData);
-setRequest.mockImplementation(() => new Promise((res) => {
-  res(true);
-}));
+getRecipeData.mockImplementation(() => fakeRecipeData);
+setRequest.mockImplementation(() => true);
 
-beforeEach(() => {
-  // prepare the test area
-  mainStore.setState((state) => ({ ...state, currentPage: 'editRecipe' }));
-  render(<App />);
+beforeEach(async () => {
+  await waitFor(() => render(<App />));
+  let normalRecipeCard;
+  await waitFor(() => {
+    normalRecipeCard = screen.getAllByTestId('normalRecipeCard')[0];
+  });
+  fireEvent.click(normalRecipeCard);
+  await waitFor(() => expect(screen.getByTestId('recipePage')).toBeInTheDocument());
+  fireEvent.click(screen.getByTestId('recipePageEditButton'));
 });
 
 afterEach(() => {
@@ -56,9 +64,7 @@ describe('Edit Recipes', () => {
     await waitFor(() => expect(screen.getByTestId('editCancelButton').disabled).toBeTruthy());
   });
   it('if server reject request error msg show up ', async () => {
-    setRequest.mockImplementation(() => new Promise((res, rej) => {
-      rej(new Error());
-    }));
+    setRequest.mockImplementation(() => false);
     fireEvent.click(screen.getByTestId('editEditButton'));
     await waitFor(() => expect(screen.getByTestId('editErrorMsg')).toBeInTheDocument());
   });
@@ -95,13 +101,14 @@ describe('Edit Recipes', () => {
   });
   it('we can delete items (material and tip and steps)', async () => {
     fireEvent.click(screen.getByTestId('editAddMaterial'));
-    fireEvent.click(screen.getByTestId('editAddMaterial'));
 
-    const inp2 = screen.getByTestId('editMaterialInp2');
-    await waitFor(() => expect(screen.getByTestId('editMaterialInp2')).toBeInTheDocument());
+    const inp12 = screen.getByTestId('editMaterialInp12');
+    await waitFor(() => expect(screen.getByTestId('editMaterialInp12')).toBeInTheDocument());
+
+    // why 11? because of fake recipe data
 
     fireEvent.click(screen.getByTestId('delMaterialInp1'));
-    await waitFor(() => expect(inp2).not.toBeInTheDocument());
+    await waitFor(() => expect(inp12).not.toBeInTheDocument());
   });
 
   it('we can not delete all the step or material or tips always one still', async () => {

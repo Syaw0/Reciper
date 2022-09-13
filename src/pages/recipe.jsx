@@ -8,13 +8,14 @@ import RecipeButtonGroup from '../components/recipe/recipeButtonGroup';
 import RecipeHeadInfo from '../components/recipe/recipeHeadInfo';
 import mainStore from '../store/mainStore';
 import createRecipeCard from './utils/createRecipeCard';
+import RecipeMsg from '../components/recipe/recipeMsg';
 
 function Recipe() {
   const recipeCacheData = mainStore((state) => state.recipeCacheData);
 
   const headInfo = [
-    { Perpetration: recipeCacheData.metaData.prep },
-    { Cook: recipeCacheData.metaData.cook },
+    { Perpetration: `${recipeCacheData.metaData.prep}Min` },
+    { Cook: `${recipeCacheData.metaData.cook}Min` },
     { Level: recipeCacheData.difficulty },
     { Steps: recipeCacheData.steps.length },
     { Material: recipeCacheData.materials.length },
@@ -80,6 +81,8 @@ function Recipe() {
         <RecipeCookSteps steps={recipeCacheData.steps} />
 
         <RecipeCookTips tips={recipeCacheData.tips} />
+
+        <RecipeMsg />
 
         <RecipeButtonGroup />
 

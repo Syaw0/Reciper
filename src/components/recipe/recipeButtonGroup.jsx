@@ -5,17 +5,22 @@ import IcoClose from '../../assest/icons/IcoClose';
 import IcoEidt from '../../assest/icons/IcoEdit';
 import IcoLike from '../../assest/icons/IcoLike';
 import mainStore from '../../store/mainStore';
+import transformRecipeDataToEdit from './util/transformRecipeDataToEdit';
 
 function RecipeButtonGroup() {
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
   const setToggleFloat = mainStore((state) => state.setToggleFloat);
   const setTextValue = mainStore((state) => state.setTextValue);
   const setCurrentFloat = mainStore((state) => state.setCurrentFloat);
+  const setEditCacheData = mainStore((state) => state.setEditCacheData);
+  const recipeCacheData = mainStore((state) => state.recipeCacheData);
+  const recipeCurrentMsg = mainStore((state) => state.recipeCurrentMsg);
 
   const handleLikeButton = () => {
     // console.log('handlLike');
   };
   const handleEditButton = () => {
+    setEditCacheData(transformRecipeDataToEdit(recipeCacheData));
     setCurrentPage('editRecipe');
   };
   const handleDeleteButton = () => {
@@ -23,6 +28,9 @@ function RecipeButtonGroup() {
     setToggleFloat(true);
     setCurrentFloat('Delete Recipe');
   };
+
+  const isButtonsDisabled = () => recipeCurrentMsg in { null: '', errorMsg: '' };
+
   return (
     <Flex
       justify="end"
@@ -45,9 +53,10 @@ function RecipeButtonGroup() {
       }}
     >
       <Button
+        disabled={!isButtonsDisabled()}
         data-testid="recipePageDeleteButton"
         onClick={handleDeleteButton}
-        type="shadow"
+        type={isButtonsDisabled() ? 'shadow' : 'primary'}
         css={{
           color: '$error',
           '&:hover': {
@@ -58,7 +67,18 @@ function RecipeButtonGroup() {
             stroke: '$error',
 
             fill: '$error',
+
           },
+          '&:disabled': {
+            '& svg': {
+              cursor: 'wait',
+              stroke: '$onBg100',
+            },
+            '&:hover': {
+              borderBottom: 'none',
+            },
+          },
+
         }}
       >
         Delete Recipe
@@ -66,11 +86,17 @@ function RecipeButtonGroup() {
       </Button>
 
       <Button
+        disabled={!isButtonsDisabled()}
         data-testid="recipePageEditButton"
         onClick={handleEditButton}
-        type="outline"
+        type={isButtonsDisabled() ? 'outline' : 'primary'}
         css={{
           padding: '4px $2',
+          '&:disabled': {
+            '& svg': {
+              cursor: 'wait',
+            },
+          },
         }}
       >
         Edit Recipe
@@ -78,11 +104,17 @@ function RecipeButtonGroup() {
       </Button>
 
       <Button
+        disabled={!isButtonsDisabled()}
         floatInfo="futureFeature"
         onClick={handleLikeButton}
         type="primary"
         css={{
           padding: '4px $2',
+          '&:disabled': {
+            '& svg': {
+              cursor: 'wait',
+            },
+          },
         }}
       >
         Like Recipe

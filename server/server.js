@@ -11,6 +11,7 @@ const addRecipe = require('./utils/addRecipe');
 const deleteRecipe = require('./utils/deleteRecipe');
 const editRecipe = require('./utils/editRecipe');
 const searchEng = require('./utils/search');
+const checkHomeData = require('./utils/checkHomeData');
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(cors({
   origin: '*',
   optionsSuccessStatus: '204',
   allowedHeaders: '*',
-  methods: ['POST', 'GET', 'OPTIONS'],
+  methods: ['POST', 'GET', 'PUT', 'OPTIONS', 'DELETE'],
   preflightContinue: false,
 }));
 
@@ -111,29 +112,24 @@ app.post('/addRecipe', async (req, res) => {
 });
 
 app.delete('/delete:recipeId', async (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': '*',
-  });
-
   let response;
   await deleteRecipe(req.body.id, req.body.category).then(() => {
-    response = { status: 'ok', msg: 'successfully delete the recipe' };
+    response = { status: true, msg: 'successfully delete the recipe' };
   }).catch(() => {
-    response = { status: 'not ok', msg: 'something wrong, may your recipe doesn`t exist in db' };
+    response = { status: false, msg: 'something wrong, may your recipe doesn`t exist in db' };
+  });
+  await checkHomeData(req.body.id).then(() => {}).catch(() => {
+    response = { status: false, msg: 'something wrong, may your recipe doesn`t exist in db' };
   });
   res.send(response);
 });
 
-app.put('/edit:recipeId', async (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': '*',
-  });
-
+app.post('/edit:recipeId', async (req, res) => {
   let response;
   await editRecipe(req.body.id, req.body.category, req.body.editedRecipe).then(() => {
-    response = { status: 'ok', msg: 'successfully Edit the recipe' };
+    response = { status: true, msg: 'successfully Edit the recipe' };
   }).catch(() => {
-    response = { status: 'not ok', msg: 'something wrong, may your recipe doesn`t exist in db' };
+    response = { status: false, msg: 'something wrong, may your recipe doesn`t exist in db' };
   });
   res.send(response);
 });

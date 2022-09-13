@@ -25,6 +25,7 @@ export default create((set, get) => ({
   recipeCacheData: {},
   currentRecipeId: '',
   currentRecipeCategory: '',
+  recipeCurrentMsg: 'null',
   setCurrentRecipeId: (recipeId) => {
     set((state) => ({ ...state, currentRecipeId: recipeId }));
   },
@@ -43,9 +44,8 @@ export default create((set, get) => ({
     }
 
     if (await getPageData(pageName)) {
-      console.log('its ok');
+      console.log('Page Load Successfully');
     } else {
-      console.log('its not ok');
       set((state) => ({
         ...state,
         isLoaderEnable: false,

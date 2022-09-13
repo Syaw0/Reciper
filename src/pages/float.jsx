@@ -6,6 +6,7 @@ import defaultAddCacheData from '../store/utils/defaultAddCacheData';
 import Button from '../styles/styledComponents/button';
 import Flex from '../styles/styledComponents/flex';
 import Text from '../styles/styledComponents/text';
+import deleteReq from '../utils/deleteReq';
 
 function Float() {
   const textValue = mainStore((state) => state.textValue);
@@ -18,8 +19,10 @@ function Float() {
   const setIsFirstNav = mainStore((state) => state.setIsFirstNav);
   const setEditCacheData = mainStore((state) => state.setEditCacheData);
   const setFinalComponent = mainStore((state) => state.setFinalComponent);
+  const recipeCacheData = mainStore((state) => state.recipeCacheData);
 
-  const handleDeleteButton = () => {
+  const handleDeleteButton = async () => {
+    let result;
     switch (currentFloat) {
       case 'exit adding':
         setToggleFloat(false);
@@ -49,8 +52,19 @@ function Float() {
         break;
 
       case 'Delete Recipe':
+        mainStore.setState((state) => ({ ...state, recipeCurrentMsg: 'loader' }));
         setToggleFloat(false);
-        setCurrentPage('Home');
+        result = await deleteReq(recipeCacheData.recipeId, recipeCacheData.category);
+        if (result) {
+          mainStore.setState((state) => ({ ...state, recipeCurrentMsg: 'success' }));
+          setTimeout(() => {
+            setCurrentPage('Home');
+            mainStore.setState((state) => ({ ...state, recipeCurrentMsg: 'null' }));
+          }, 2000);
+        } else {
+          mainStore.setState((state) => ({ ...state, recipeCurrentMsg: 'errorMsg' }));
+        }
+
         break;
       default:
         break;

@@ -9,4 +9,5 @@ export default {
   'Top Categories': 'Home/Top Categories',
   recipeCategory: 'Home/Category',
   editRecipe: 'Home/Edit Recipe',
+  errorDuringFetch: 'InternalError',
 };

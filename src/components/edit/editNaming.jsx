@@ -21,7 +21,18 @@ function EditNaming() {
         break;
       case 'publisherName':
         setEditCacheData({ naming: { ...naming, publisherName: e.target.value } });
+        break;
 
+      case 'serving':
+        setEditCacheData({ naming: { ...naming, serving: e.target.value } });
+        break;
+
+      case 'prepTime':
+        setEditCacheData({ naming: { ...naming, prepTime: e.target.value } });
+        break;
+
+      case 'cookTime':
+        setEditCacheData({ naming: { ...naming, cookTime: e.target.value } });
         break;
 
       default:
@@ -136,6 +147,42 @@ function EditNaming() {
           id="editRecipePublisher"
           data-testid="editRecipePublisher"
           placeholder="Please enter your name"
+        />
+
+        <label htmlFor="editRecipeServing">Serving</label>
+        <Input
+          min={1}
+          type="number"
+          value={naming.serving}
+          onChange={(e) => { textInputHandle(e, 'serving'); }}
+          whichType="text"
+          id="editRecipeServing"
+          data-testid="editRecipeServing"
+          placeholder="serve for how many person? like 2 "
+        />
+
+        <label htmlFor="editRecipePrepTime">Preparation Time</label>
+        <Input
+          type="number"
+          min={1}
+          value={naming.prepTime}
+          onChange={(e) => { textInputHandle(e, 'prepTime'); }}
+          whichType="text"
+          id="editRecipePrepTime"
+          data-testid="editRecipePrepTime"
+          placeholder="add preparation time for this recipe like 30min (just number)"
+        />
+
+        <label htmlFor="editRecipeCookTime">Cook Time</label>
+        <Input
+          min={1}
+          type="number"
+          value={naming.cookTime}
+          onChange={(e) => { textInputHandle(e, 'cookTime'); }}
+          whichType="text"
+          id="editRecipeCookTime"
+          data-testid="eitRecipeCookTime"
+          placeholder="add preparation time for this recipe like 80min (just number)"
         />
 
         <label htmlFor="editRecipeFile">Upload Image for This Recipe</label>
