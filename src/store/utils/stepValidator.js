@@ -30,6 +30,13 @@ const stepValidator = (step) => {
     if (i.type === 'file') {
       continue;
     }
+    if (i.type === 'number' && Number(i.value) < 1) {
+      beAErrorInput(i);
+      errInp.push(i);
+      continue;
+    } else {
+      i.style.border = '1px solid rgba(77,98,104,0.5)';
+    }
     if (i.value.trim() === '') {
       beAErrorInput(i);
       errInp.push(i);

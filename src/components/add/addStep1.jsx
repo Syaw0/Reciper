@@ -1,7 +1,7 @@
 /* eslint-disable default-case */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import fakeDb from '../../fakeData';
+import categories from '../../categories';
 import mainStore from '../../store/mainStore';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
@@ -23,6 +23,18 @@ function AddStep1() {
         break;
       case 'publisherName':
         setCacheData({ step1: { ...step1, publisherName: e.target.value } });
+        break;
+
+      case 'serving':
+        setCacheData({ step1: { ...step1, serving: e.target.value } });
+        break;
+
+      case 'prepTime':
+        setCacheData({ step1: { ...step1, prepTime: e.target.value } });
+        break;
+
+      case 'cookTime':
+        setCacheData({ step1: { ...step1, cookTime: e.target.value } });
         break;
     }
   };
@@ -101,14 +113,10 @@ function AddStep1() {
           whichType="select"
           as="select"
         >
-          {fakeDb.category.map((category) => (
-            <optgroup key={category.name} label={category.name}>
-              {category.items.map((cateItems) => (
-                <option key={cateItems} value={cateItems}>
-                  {cateItems}
-                </option>
-              ))}
-            </optgroup>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
           ))}
         </Input>
 
@@ -134,6 +142,42 @@ function AddStep1() {
           id="addRecipePublisher"
           data-testid="addRecipePublisher"
           placeholder="Please enter your name"
+        />
+
+        <label htmlFor="addRecipeServing">Serving</label>
+        <Input
+          min={1}
+          type="number"
+          value={step1.serving}
+          onChange={(e) => { textInputHandle(e, 'serving'); }}
+          whichType="text"
+          id="addRecipeServing"
+          data-testid="addRecipeServing"
+          placeholder="serve for how many person? like 2 "
+        />
+
+        <label htmlFor="addRecipePrepTime">Preparation Time</label>
+        <Input
+          type="number"
+          min={1}
+          value={step1.prepTime}
+          onChange={(e) => { textInputHandle(e, 'prepTime'); }}
+          whichType="text"
+          id="addRecipePrepTime"
+          data-testid="addRecipePrepTime"
+          placeholder="add preparation time for this recipe like 30min (just number)"
+        />
+
+        <label htmlFor="addRecipeCookTime">Cook Time</label>
+        <Input
+          min={1}
+          type="number"
+          value={step1.cookTime}
+          onChange={(e) => { textInputHandle(e, 'cookTime'); }}
+          whichType="text"
+          id="addRecipeCookTime"
+          data-testid="addRecipeCookTime"
+          placeholder="add preparation time for this recipe like 80min (just number)"
         />
 
         <label htmlFor="addRecipeFile">Upload Image for This Recipe</label>

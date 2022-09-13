@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import fakeDb from '../../fakeData';
+import categories from '../../categories';
 import mainStore from '../../store/mainStore';
 import Flex from '../../styles/styledComponents/flex';
 import Input from '../../styles/styledComponents/input';
@@ -108,14 +108,10 @@ function EditNaming() {
           whichType="select"
           as="select"
         >
-          {fakeDb.category.map((category) => (
-            <optgroup key={category.name} label={category.name}>
-              {category.items.map((cateItems) => (
-                <option key={cateItems} value={cateItems}>
-                  {cateItems}
-                </option>
-              ))}
-            </optgroup>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
           ))}
         </Input>
 

@@ -98,12 +98,12 @@ app.post('/addRecipe', async (req, res) => {
   let response;
   await addRecipe(req.body).then(() => {
     response = {
-      status: 'true',
+      status: true,
       text: 'successfully insert recipe to server',
     };
   }).catch(() => {
     response = {
-      status: 'false',
+      status: false,
       text: 'error Happen during operation',
     };
   });

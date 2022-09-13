@@ -41,6 +41,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
     fireEvent.click(nextBtn);
     expect(screen.getByTestId('addStep2')).toBeInTheDocument();
   });
@@ -50,6 +53,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
     fireEvent.click(nextBtn);
     const PreBtn = screen.getByTestId('addRecipePreStageBtn');
     fireEvent.change(screen.getByTestId('addMaterialInp1'), { target: { value: 'bela bela' } });
@@ -57,13 +63,46 @@ describe('Adding Recipe', () => {
     expect(screen.getByTestId('addStep1')).toBeInTheDocument();
   });
 
-  it('if user doesnt fill input , it can not use previous button', () => {
+  it('we can not use letter in prep input or serving or cook time', () => {
+    const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
+    fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 's' } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 'ss' } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 's' } });
+    fireEvent.click(nextBtn);
+    expect(screen.getByTestId('addStep1')).toBeInTheDocument();
+    expect(window.getComputedStyle(screen.getByTestId('addRecipeCookTime')).borderColor).toEqual('rgba(186,26,26,1)');
+    expect(window.getComputedStyle(screen.getByTestId('addRecipePrepTime')).borderColor).toEqual('rgba(186,26,26,1)');
+    expect(window.getComputedStyle(screen.getByTestId('addRecipeServing')).borderColor).toEqual('rgba(186,26,26,1)');
+  });
+
+  it('we can not use numbers less than 1 in prep input or serving or cook time', () => {
+    const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
+    fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: -4 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: -2 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: -1 } });
+    fireEvent.click(nextBtn);
+    expect(screen.getByTestId('addStep1')).toBeInTheDocument();
+    expect(window.getComputedStyle(screen.getByTestId('addRecipeCookTime')).borderColor).toEqual('rgba(186,26,26,1)');
+    expect(window.getComputedStyle(screen.getByTestId('addRecipePrepTime')).borderColor).toEqual('rgba(186,26,26,1)');
+    expect(window.getComputedStyle(screen.getByTestId('addRecipeServing')).borderColor).toEqual('rgba(186,26,26,1)');
+  });
+
+  it('if user doesn"t fill input , it can not use previous button', () => {
     const nextBtn = screen.getByTestId('addRecipeNextStageBtn');
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeCategory'), { target: { value: 'Goat' } });
     fireEvent.change(screen.getByTestId('addRecipeDifficulty'), { target: { value: 'hard' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
     fireEvent.click(nextBtn);
     const PreBtn = screen.getByTestId('addRecipePreStageBtn');
     fireEvent.click(PreBtn);
@@ -120,6 +159,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
     expect(screen.getByTestId('addBreadCurrent').innerHTML).toContain('Naming');
     expect(screen.getByTestId('addBreadPre').innerHTML).toContain('');
     expect(screen.getByTestId('addBreadNext').innerHTML).toContain('Materials');
@@ -134,6 +176,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
 
     fireEvent.click(nextBtn);
 
@@ -150,6 +195,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
 
     fireEvent.click(nextBtn);
 
@@ -170,6 +218,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
     fireEvent.click(nextBtn);
     fireEvent.change(screen.getByTestId('addMaterialInp1'), { target: { value: 'bela bela' } });
     fireEvent.click(nextBtn);
@@ -189,6 +240,9 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeName'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipeDescription'), { target: { value: 'bela bela' } });
     fireEvent.change(screen.getByTestId('addRecipePublisher'), { target: { value: 'bela bela' } });
+    fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
 
     fireEvent.click(nextBtn);
     const addButton = screen.getByTestId('addStep2AddMaterialButton');

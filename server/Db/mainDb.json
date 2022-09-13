@@ -1,5 +1,5 @@
 {
-    "currentId": 48,
+    "currentId": 49,
     "Dessert": {
         "#3": {
             "name": "Soft Oatmeal Cookies",
@@ -1122,6 +1122,33 @@
             "recipeId": "#29",
             "difficulty": "intermediate",
             "publisher": "Reciper"
+        },
+        "#49": {
+            "name": "salad olvie",
+            "description": "this is delisios food that i so much love this",
+            "category": "Chicken",
+            "materials": [
+                "chicken",
+                "nokhod",
+                "potato",
+                "havig"
+            ],
+            "steps": [
+                "felan felan felan",
+                "felan felan felan"
+            ],
+            "tips": [
+                "per serving you can do a lot protoein"
+            ],
+            "imgUrl": "https://user-images.githubusercontent.com/78824988/188838110-1dc4e3d2-42c1-40d6-9e59-0b7ac3664cb0.jpeg",
+            "metaData": {
+                "prep": "15Min",
+                "cook": "30Min",
+                "servings": "5"
+            },
+            "difficulty": "easy",
+            "publisher": "Sivaash",
+            "recipeId": "#49"
         }
     },
     "Spaghetti": {
