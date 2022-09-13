@@ -23,7 +23,7 @@ const checkHomeData = (recipeId) => new Promise((res, rej) => {
         res(true);
       }
     }
-    rej(new Error());
+    res(true);
   }
 });
 

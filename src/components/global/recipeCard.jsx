@@ -19,7 +19,7 @@ function RecipeCard({ cardType, data }) {
 
   if (data.difficulty === 'intermediate') {
     diffLevelColor = 'rgba(245,173,64,1)';
-  } else if (data.difficulty === 'easy') {
+  } else if (data.difficulty === 'Easy') {
     diffLevelColor = 'rgba(109,188,96,1)';
   } else {
     diffLevelColor = 'rgba(186,26,26,1)';

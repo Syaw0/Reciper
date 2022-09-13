@@ -74,6 +74,7 @@ export default create((set, get) => ({
         isLoaderEnable: false,
       }));
     }
+    window.scrollTo(0, 0);
   },
   setCurrentCategory: (categoryId) => {
     set((state) => ({ ...state, currentCategory: categoryId }));
