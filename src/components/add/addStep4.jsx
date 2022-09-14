@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import IcoClose from '../../assest/icons/IcoClose';
@@ -87,7 +88,7 @@ function AddStep4() {
         </Button>
 
         {step4.tips.map((tip, index) => (
-          <>
+          <Flex dir="column" key={index}>
             <Text
               type="bgColorHeadSecondary"
               css={{
@@ -126,7 +127,7 @@ function AddStep4() {
               whichType="text"
               placeholder="Enter your Tip"
             />
-          </>
+          </Flex>
         ))}
 
       </Flex>

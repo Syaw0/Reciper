@@ -4,6 +4,7 @@ import {
   fireEvent, render, screen, cleanup, waitFor,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { act } from 'react-dom/test-utils';
 import App from '../../app';
 import getHomeData from '../../store/utils/getPageData/getHomeData';
 import fakeHomeData from '../fakeData/fakeHomeData';
@@ -20,14 +21,18 @@ afterEach(() => {
 });
 
 describe('navbar section', () => {
-  it('click on the ham menu and open the navbar', () => {
-    render(<App />);
+  it('click on the ham menu and open the navbar', async () => {
+    await act(() => {
+      waitFor(() => render(<App />));
+    });
     fireEvent.click(screen.getByTestId('headerMenuHam'));
-    expect(screen.getByTestId('headerNavbar')).toBeInTheDocument();
+    waitFor(() => expect(screen.getByTestId('headerNavbar')).toBeInTheDocument());
   });
 
   it('click on the close when nav is open and nav will closed', async () => {
-    render(<App />);
+    await act(() => {
+      waitFor(() => render(<App />));
+    });
     fireEvent.click(screen.getByTestId('headerMenuHam'));
     const navbar = screen.getByTestId('headerNavbar');
     fireEvent.click(screen.getByTestId('headerNavbarCloseSvg'));
@@ -35,12 +40,16 @@ describe('navbar section', () => {
     await waitFor(() => expect(navbar).not.toBeInTheDocument());
   });
   it('when click on the navbar item navbar closed', async () => {
-    render(<App />);
+    await act(() => {
+      waitFor(() => render(<App />));
+    });
     fireEvent.click(screen.getByTestId('headerMenuHam'));
     const navbar = screen.getByTestId('headerNavbar');
     const navBtnToOrderList = screen.getAllByTestId('headerNavOrderList');
-    fireEvent.click(navBtnToOrderList[1]);
-    jest.runAllTimers();
+    await act(() => {
+      fireEvent.click(navBtnToOrderList[1]);
+      jest.runAllTimers();
+    });
     await waitFor(() => expect(navbar).not.toBeInTheDocument());
   });
 });

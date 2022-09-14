@@ -37,7 +37,13 @@ function BreadCrumbs() {
       }}
     >
       {breadCrumbs.map((bread, index) => (
-        <>
+        <Flex
+          data-testid={`breadHold${bread.level}`}
+          key={bread.level}
+          css={{
+            width: 'fit-content',
+          }}
+        >
           <Button
             onClick={handleBreadsInternal}
             key={bread.level}
@@ -49,7 +55,7 @@ function BreadCrumbs() {
           {index !== breadCrumbs.length - 1
             ? <IcoArrowRight key={`breadArrow${bread.level}`} width="7px" height="7px" />
             : null}
-        </>
+        </Flex>
       ))}
       <Flex
         title="change theme"

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -35,6 +36,7 @@ function RecipeCookTips({ tips }) {
       >
         {tips.map((item, index) => (
           <Flex
+            key={index}
             dir="column"
             css={{
               marginBottom: '$3',

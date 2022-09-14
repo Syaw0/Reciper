@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import IcoClose from '../../assest/icons/IcoClose';
 import mainStore from '../../store/mainStore';
@@ -78,7 +79,7 @@ function EditTip() {
       >
 
         {tips.values.map((tip, index) => (
-          <>
+          <Flex dir="column" key={index}>
             <Text
               type="bgColorHeadSecondary"
               css={{
@@ -117,7 +118,7 @@ function EditTip() {
               whichType="text"
               placeholder="Enter your Tip"
             />
-          </>
+          </Flex>
         ))}
 
       </Flex>

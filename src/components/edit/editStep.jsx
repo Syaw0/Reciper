@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import IcoClose from '../../assest/icons/IcoClose';
@@ -79,7 +80,7 @@ function EditStep() {
       >
 
         {steps.values.map((step, index) => (
-          <>
+          <Flex dir="column" key={index}>
             <Text
               type="bgColorHeadSecondary"
               css={{
@@ -118,7 +119,7 @@ function EditStep() {
               whichType="text"
               placeholder="Enter your Step"
             />
-          </>
+          </Flex>
         ))}
 
       </Flex>

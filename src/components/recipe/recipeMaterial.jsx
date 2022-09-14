@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -58,8 +59,8 @@ function RecipeMaterial({ material }) {
       }}
       >
         <ul>
-          {material.map((item) => (
-            <li>{item}</li>
+          {material.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
       </Flex>

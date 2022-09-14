@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import IcoClose from '../../assest/icons/IcoClose';
 import mainStore from '../../store/mainStore';
@@ -83,7 +84,7 @@ function EditMaterial() {
       >
 
         {materials.values.map((material, index) => (
-          <>
+          <Flex dir="column" key={index}>
             <Text
               type="bgColorHeadSecondary"
               css={{
@@ -122,7 +123,7 @@ function EditMaterial() {
               whichType="text"
               placeholder="Enter your Material"
             />
-          </>
+          </Flex>
         ))}
 
       </Flex>

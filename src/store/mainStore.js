@@ -1,3 +1,5 @@
+/* eslint-disable no-empty */
+/* eslint-disable no-console */
 /* eslint-disable import/no-cycle */
 import create from 'zustand';
 import homeStore from './homeStore';
@@ -46,7 +48,6 @@ export default create((set, get) => ({
     }
 
     if (await getPageData(pageName)) {
-      console.log('Page Load Successfully');
     } else {
       set((state) => ({
         ...state,
@@ -76,6 +77,7 @@ export default create((set, get) => ({
       }));
     }
     window.scrollTo(0, 0);
+    console.clear();
   },
   setCurrentCategory: (categoryId) => {
     set((state) => ({ ...state, currentCategory: categoryId }));

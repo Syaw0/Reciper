@@ -89,7 +89,7 @@ const addStep2 = () => {
         </Button>
 
         {step2.materials.map((material, index) => (
-          <>
+          <Flex dir="column" key={index}>
             <Text
               type="bgColorHeadSecondary"
               css={{
@@ -128,7 +128,7 @@ const addStep2 = () => {
               whichType="text"
               placeholder="Enter your Material"
             />
-          </>
+          </Flex>
         ))}
 
       </Flex>

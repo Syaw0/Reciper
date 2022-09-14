@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -10,7 +11,7 @@ function IcoClose({
     dataTest: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
-    event: PropTypes.func.isRequired,
+    event: PropTypes.func,
   };
   return (
     <svg data-testid={dataTest} id={id} width={width} height={height} onClick={(e) => { event(e); }} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">

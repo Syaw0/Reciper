@@ -58,10 +58,10 @@ describe('BreadCrumbs Section', () => {
     // i increase this because i add icon to this holder
 
     fireEvent.click(screen.getByTestId('headerNavOrderList'));
-    await waitFor(() => expect(bread.childElementCount).toEqual(3 + 1));
+    await waitFor(() => expect(bread.childElementCount).toEqual(3));
     await waitFor(() => expect(screen.getByTestId('breadHolder')).toHaveTextContent('Category'));
 
-    fireEvent.click(bread.childNodes[0]);
+    fireEvent.click(screen.getByTestId('bread0'));
     await waitFor(() => expect(bread.childElementCount).toEqual(1 + 1));
     await waitFor(() => expect(screen.getByTestId('breadHolder')).not.toHaveTextContent('Category'));
   });
