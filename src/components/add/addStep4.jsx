@@ -50,6 +50,7 @@ function AddStep4() {
 
       </Text>
       <Flex
+        data-testid="addStep4InputHolder"
         dir="column"
         css={{
           '& > label': {

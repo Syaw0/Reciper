@@ -50,6 +50,7 @@ const addStep3 = () => {
 
       </Text>
       <Flex
+        data-testid="addStep3InputHolder"
         dir="column"
         css={{
           '& > label': {

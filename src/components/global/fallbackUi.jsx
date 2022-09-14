@@ -10,13 +10,13 @@ import mainStore from '../../store/mainStore';
 function FallbackUi({ handleErrorState }) {
   const setCurrentPage = mainStore((state) => state.setCurrentPage);
   const handleButton = () => {
-    console.log('e');
     setCurrentPage('Home');
     handleErrorState(false);
   };
 
   return (
     <Flex
+      data-testid="fallbackUi"
       dir="column"
       justify="center"
       align="center"
