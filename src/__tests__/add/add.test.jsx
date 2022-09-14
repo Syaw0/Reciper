@@ -18,7 +18,10 @@ getHomeData.mockImplementation(() => fakeHomeData);
 
 beforeEach(() => {
   // prepare the test area
-  mainStore.setState((state) => ({ ...state, currentPage: 'Add Recipe', currentStep: 1 }));
+  // i change a strict check of file because i can`s set it manually
+  mainStore.setState((state) => ({
+    ...state, currentPage: 'Add Recipe', currentStep: 1, checkStrictFile: false,
+  }));
   render(<App />);
 });
 
@@ -44,6 +47,7 @@ describe('Adding Recipe', () => {
     fireEvent.change(screen.getByTestId('addRecipeServing'), { target: { value: 1 } });
     fireEvent.change(screen.getByTestId('addRecipePrepTime'), { target: { value: 1 } });
     fireEvent.change(screen.getByTestId('addRecipeCookTime'), { target: { value: 1 } });
+    fireEvent.change(screen.getByTestId('addRecipeFile'), { target: { files: ['sd'] } });
     fireEvent.click(nextBtn);
     expect(screen.getByTestId('addStep2')).toBeInTheDocument();
   });

@@ -13,7 +13,9 @@ jest.mock('../../utils/setReq');
 
 beforeEach(() => {
   // prepare the test area
-  mainStore.setState((state) => ({ ...state, currentPage: 'Add Recipe', currentStep: 1 }));
+  mainStore.setState((state) => ({
+    ...state, currentPage: 'Add Recipe', currentStep: 1, checkStrictFile: false,
+  }));
   render(<App />);
   jest.useFakeTimers();
   const nextBtn = screen.getByTestId('addRecipeNextStageBtn');

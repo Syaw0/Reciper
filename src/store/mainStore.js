@@ -27,6 +27,7 @@ export default create((set, get) => ({
   currentRecipeId: '',
   currentRecipeCategory: '',
   recipeCurrentMsg: 'null',
+  checkStrictFile: true,
   setCurrentRecipeId: (recipeId) => {
     set((state) => ({ ...state, currentRecipeId: recipeId }));
   },

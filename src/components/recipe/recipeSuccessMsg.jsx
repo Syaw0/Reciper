@@ -15,7 +15,7 @@ function RecipeSuccessMsg() {
           },
         }}
       >
-        Successfully Edit Recipe And Replace in Db
+        Successfully Delete Recipe!
       </Text>
       <Text css={{
         display: 'flex',

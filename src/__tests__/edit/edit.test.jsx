@@ -22,6 +22,7 @@ getRecipeData.mockImplementation(() => fakeRecipeData);
 setRequest.mockImplementation(() => true);
 
 beforeEach(async () => {
+  mainStore.setState((state) => ({ ...state, checkStrictFile: false }));
   await waitFor(() => render(<App />));
   let normalRecipeCard;
   await waitFor(() => {

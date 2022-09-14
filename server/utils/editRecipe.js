@@ -12,6 +12,7 @@ const editRecipe = (recipeId, category, editedRecipe) => {
     if (category !== editedRecipe.category) {
       delete mainDb[category][recipeId];
       mainDb[editedRecipe.category][recipeId] = editedRecipe;
+      mainDb[editedRecipe.category][recipeId].imgUrl = `http://localhost:8080/img${recipeId}.png`;
       newData = JSON.stringify(mainDb, null, 4);
     } else {
       mainDb[editedRecipe.category][recipeId] = editedRecipe;

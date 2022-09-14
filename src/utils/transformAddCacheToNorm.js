@@ -11,10 +11,10 @@ const transformAddCacheToNorm = (data) => ({
   tips: [
     ...data.step4.tips,
   ],
-  imgUrl: 'https://user-images.githubusercontent.com/78824988/188838110-1dc4e3d2-42c1-40d6-9e59-0b7ac3664cb0.jpeg',
+  imgUrl: '',
   metaData: {
-    prep: `${data.step1.prepTime}Min`,
-    cook: `${data.step1.cookTime}Min`,
+    prep: `${data.step1.prepTime}`,
+    cook: `${data.step1.cookTime}`,
     servings: data.step1.serving,
   },
   difficulty: data.step1.difficulty,

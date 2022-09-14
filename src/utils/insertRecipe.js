@@ -41,8 +41,6 @@ const insertRecipeToServer = async () => {
   } else {
     setStateToErrorMsg();
   }
-
-  console.log('inserting to server');
 };
 
 export default insertRecipeToServer;

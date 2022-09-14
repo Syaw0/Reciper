@@ -29,6 +29,7 @@ const setStateToSuccessMsg = () => {
       editCurrentMsg: 'none',
     }));
     mainStore.getState().setCurrentPage('Home');
+    window.location.reload();
   }, 1000);
 };
 

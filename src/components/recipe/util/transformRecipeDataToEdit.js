@@ -5,7 +5,7 @@ const transformRecipeDataToEdit = (data) => ({
     category: data.category,
     difficulty: data.difficulty,
     publisherName: data.publisher,
-    imgFile: data.imgUrl,
+    imgFile: '',
     serving: data.metaData.servings, //
     prepTime: data.metaData.prep, //
     cookTime: data.metaData.cook, //

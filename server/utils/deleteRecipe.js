@@ -9,13 +9,19 @@ const deleteRecipe = async (recipeId, category) => {
       rej(new Error());
     }
     delete mainDb[category][recipeId];
-    mainDb.currentId -= 1;
     const newData = JSON.stringify(mainDb, null, 4);
     fs.writeFile(path.join(__dirname, '../Db/mainDb.json'), newData, (err) => {
       if (err) {
         rej(new Error());
       }
-      res(true);
+      const imgPath = `${__dirname}/../uploads/${recipeId.split('#')[1]}.png`;
+      fs.unlink(imgPath, (error) => {
+        if (error) {
+          rej(new Error());
+        } else {
+          res(true);
+        }
+      });
     });
   });
 

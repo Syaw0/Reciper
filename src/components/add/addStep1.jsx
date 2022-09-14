@@ -52,7 +52,7 @@ function AddStep1() {
   };
 
   const fileInputHandle = (e) => {
-    setCacheData({ step1: { ...step1, imgFile: e.target.value } });
+    setCacheData({ step1: { ...step1, imgFile: e.target.files[0] } });
   };
 
   return (
@@ -180,7 +180,9 @@ function AddStep1() {
           placeholder="add preparation time for this recipe like 80min (just number)"
         />
 
-        <label htmlFor="addRecipeFile">Upload Image for This Recipe</label>
+        <label htmlFor="addRecipeFile">
+          Upload Image for This Recipe
+        </label>
         <Input
           onChange={fileInputHandle}
           type="file"

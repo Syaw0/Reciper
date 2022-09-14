@@ -56,7 +56,7 @@ function EditNaming() {
   };
 
   const fileInputHandle = (e) => {
-    setEditCacheData({ naming: { ...naming, imgFile: e.target.value } });
+    setEditCacheData({ naming: { ...naming, imgFile: e.target.files[0] } });
   };
 
   return (
