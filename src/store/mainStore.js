@@ -41,8 +41,10 @@ export default create((set, get) => ({
   },
   setCurrentPage: async (pageName, newBreads) => {
     // check if we are not during adding or editing recipe
-    if (get().currentPage === pageName && get().currentPage !== 'Recipe') { return; }
 
+    if (!get().getPageDataError) {
+      if (get().currentPage === pageName && get().currentPage !== 'Recipe') { return; }
+    }
     if (addNavigationCheck(get().currentPage, pageName)) {
       return;
     }
@@ -77,7 +79,7 @@ export default create((set, get) => ({
       }));
     }
     window.scrollTo(0, 0);
-    console.clear();
+    // console.clear();
   },
   setCurrentCategory: (categoryId) => {
     set((state) => ({ ...state, currentCategory: categoryId }));

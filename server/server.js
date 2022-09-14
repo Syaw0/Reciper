@@ -40,10 +40,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-  res.set({
-    // 'Access-Control-Allow-Origin': '*',
-  });
-
   res.send({
     ...fixDataForHome(),
   });
