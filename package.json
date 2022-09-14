@@ -7,7 +7,10 @@
     "dev": "vite",
     "server": "nodemon ./server/server.js",
     "build": "vite build",
-    "test": "jest --verbose --watchAll"
+    "test": "jest --verbose --watchAll",
+    "cypress:open":"npx cypress open" ,
+    "cypress:run":"npx cypress run" ,
+    "cypress:component":"npx cypress run --component"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +23,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "^18.7.6",
     "@vitejs/plugin-react": "^2.0.1",
+    "cypress": "^10.8.0",
     "eslint": "^8.22.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
