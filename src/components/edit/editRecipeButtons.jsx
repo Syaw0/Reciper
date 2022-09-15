@@ -26,7 +26,7 @@ function EditRecipeButtons() {
     setToggleFloat(true);
   };
 
-  const isButtonsDisabled = () => editCurrentMsg in { errorMsg: '', none: '' };
+  const isButtonsDisabled = () => editCurrentMsg in { inputError: '', errorMsg: '', none: '' };
   return (
     <Flex
       justify="between"

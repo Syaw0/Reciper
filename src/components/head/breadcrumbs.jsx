@@ -45,7 +45,7 @@ function BreadCrumbs() {
           }}
         >
           <Button
-            onClick={handleBreadsInternal}
+            onClick={bread.name !== 'SearchFor...' ? handleBreadsInternal : null}
             key={bread.level}
             id={`bread ${bread.level}`}
             data-testid={`bread${bread.level}`}

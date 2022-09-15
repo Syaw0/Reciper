@@ -1,10 +1,6 @@
 /* eslint-disable no-undef */
 describe('Add Stage', () => {
   beforeEach(() => {
-    // mainStore.setState((state) => ({ ...state, checkStrictFile: false }));
-    // in the test env we must turn this value in mainStorage to false
-    // because of strict check value
-
     cy.visit('/');
     cy.wait(200);
     cy.getByTestId('headerNavAdd').click();
@@ -14,6 +10,7 @@ describe('Add Stage', () => {
     cy.getByTestId('addRecipeNextStageBtn').click();
     cy.getByTestId('addPage').contains('Step 1');
   });
+
   it('for go to step next we must fill all inputs', () => {
     cy.getByTestId('addRecipeName').type('felan');
     cy.getByTestId('addRecipeDescription').type('felan');
@@ -21,6 +18,7 @@ describe('Add Stage', () => {
     cy.getByTestId('addRecipeServing').type(2);
     cy.getByTestId('addRecipePrepTime').type(2);
     cy.getByTestId('addRecipeCookTime').type(2);
+    cy.getByTestId('addRecipeFile').selectFile(`${__dirname}/../fixtures/default.png`);
     cy.getByTestId('addRecipeNextStageBtn').click();
     cy.getByTestId('addPage').contains('Step 2');
   });
@@ -49,7 +47,19 @@ describe('Add Stage', () => {
       cy.getByTestId('addRecipeServing').type(2);
       cy.getByTestId('addRecipePrepTime').type(2);
       cy.getByTestId('addRecipeCookTime').type(2);
+      cy.getByTestId('addRecipeFile').selectFile(`${__dirname}/../fixtures/default.png`);
       cy.getByTestId('addRecipeNextStageBtn').click();
+    });
+
+    it('if we go to next step bread change', () => {
+      cy.getByTestId('addBreadPre').contains('Naming');
+      cy.getByTestId('addBreadCurrent').contains('Add Material');
+      cy.getByTestId('addBreadNext').contains('Add Steps');
+      cy.getByTestId('addMaterialInp1').type('Hello');
+      cy.getByTestId('addRecipeNextStageBtn').click();
+      cy.getByTestId('addBreadPre').contains('Add Material');
+      cy.getByTestId('addBreadCurrent').contains('Add Steps');
+      cy.getByTestId('addBreadNext').contains('Add Tips');
     });
 
     it('we can add item by click on the add material', () => {
@@ -88,6 +98,7 @@ describe('Add Stage', () => {
       cy.getByTestId('addRecipeServing').type(2);
       cy.getByTestId('addRecipePrepTime').type(2);
       cy.getByTestId('addRecipeCookTime').type(2);
+      cy.getByTestId('addRecipeFile').selectFile(`${__dirname}/../fixtures/default.png`);
       cy.getByTestId('addRecipeNextStageBtn').click();
       cy.getByTestId('addMaterialInp1').type('Hello');
       cy.getByTestId('addRecipeNextStageBtn').click();
@@ -128,6 +139,7 @@ describe('Add Stage', () => {
       cy.getByTestId('addRecipeServing').type(2);
       cy.getByTestId('addRecipePrepTime').type(2);
       cy.getByTestId('addRecipeCookTime').type(2);
+      cy.getByTestId('addRecipeFile').selectFile(`${__dirname}/../fixtures/default.png`);
       cy.getByTestId('addRecipeNextStageBtn').click();
       cy.getByTestId('addMaterialInp1').type('Hello');
       cy.getByTestId('addRecipeNextStageBtn').click();
@@ -162,7 +174,7 @@ describe('Add Stage', () => {
     });
   });
 
-  context.only('step5', () => {
+  context('step5', () => {
     beforeEach(() => {
       cy.getByTestId('addRecipeName').type('felan');
       cy.getByTestId('addRecipeDescription').type('felan');
@@ -170,6 +182,7 @@ describe('Add Stage', () => {
       cy.getByTestId('addRecipeServing').type(2);
       cy.getByTestId('addRecipePrepTime').type(2);
       cy.getByTestId('addRecipeCookTime').type(2);
+      cy.getByTestId('addRecipeFile').selectFile(`${__dirname}/../fixtures/default.png`);
       cy.getByTestId('addRecipeNextStageBtn').click();
       cy.getByTestId('addMaterialInp1').type('Hello');
       cy.getByTestId('addRecipeNextStageBtn').click();
@@ -181,6 +194,30 @@ describe('Add Stage', () => {
 
     it('we in step 5', () => {
       cy.getByTestId('addStep5').should('exist');
+    });
+
+    it.only('if server is ok when click on the insert first loader show up then success msg fade in and nav to home', () => {
+      cy.intercept('POST', 'http://localhost:8080/addRecipe*', {
+        body: {
+          status: true,
+        },
+      });
+      cy.getByTestId('addRecipeNextStageBtn').click();
+      cy.getByTestId('loader').should('exist');
+      cy.getByTestId('AddStep5SuccessMsg').should('exist');
+      cy.getByTestId('homePage').should('exist');
+    });
+
+    it.only('if server do not response error msg show up', () => {
+      cy.intercept('POST', 'http://localhost:8080/addRecipe*', {
+        body: {
+          status: false,
+        },
+      });
+      cy.getByTestId('addRecipeNextStageBtn').click();
+      cy.getByTestId('loader').should('exist');
+      cy.getByTestId('AddStep5ErrorMsg').should('exist');
+      cy.getByTestId('addPage').should('exist');
     });
   });
 });
